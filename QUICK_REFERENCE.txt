@@ -1,0 +1,168 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║  OBC DOCUMENTS: Google Drive Upload & Link Replacement Workflow             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+█ QUICK START (Pick One Path)
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ PATH A: COLAB (Recommended - Easiest)                                    │
+├──────────────────────────────────────────────────────────────────────────┤
+│ Time: 5-10 minutes                                                       │
+│ Skill: Browser + copy-paste                                              │
+│ Steps:                                                                    │
+│  1. Create folder in Google Drive                                        │
+│  2. Copy folder ID                                                       │
+│  3. Go to: https://colab.research.google.com/                           │
+│  4. Open colab_upload_to_gdrive.py → copy code → paste in Colab         │
+│  5. Update PARENT_FOLDER_ID and LOCAL_PDF_DIRS                          │
+│  6. Click ▶ Run                                                          │
+│  7. Download drive_links_mapping.json                                   │
+│  8. Run: python3 replace_with_gdrive_links.py                           │
+│                                                                           │
+│ ✓ Files uploaded to Google Drive                                        │
+│ ✓ HTML links automatically replaced                                     │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ PATH B: GOOGLE APPS SCRIPT                                               │
+├──────────────────────────────────────────────────────────────────────────┤
+│ Time: 10-15 minutes                                                      │
+│ Skill: Browser + script editing                                          │
+│ Steps:                                                                    │
+│  1. Go to: https://script.google.com                                    │
+│  2. New project → paste appscript_upload_to_gdrive.gs code              │
+│  3. Update PARENT_FOLDER_ID                                              │
+│  4. Run uploadFilesFromWorkspace()                                       │
+│  5. Create ZIP of PDFs, upload to Drive                                  │
+│  6. Run makeFilesShareable()                                             │
+│  7. Run exportLinksToSheet()                                             │
+│  8. Download the generated Google Sheet                                  │
+│  9. Convert sheet to links_mapping.json                                  │
+│  10. Run: python3 replace_with_gdrive_links.py                          │
+│                                                                           │
+│ ✓ Integrated with Google Drive                                          │
+│ ✓ Generates a public link sheet                                         │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ PATH C: MANUAL + CUSTOM IDS                                              │
+├──────────────────────────────────────────────────────────────────────────┤
+│ Time: Flexible (manual step by step)                                     │
+│ Skill: Google Drive UI + text editing                                    │
+│ Steps:                                                                    │
+│  1. Upload PDFs manually to Google Drive folders                         │
+│  2. Get file ID from each PDF's Share link:                              │
+│     https://drive.google.com/file/d/[FILE_ID]/view                      │
+│  3. Edit generate_gdrive_links.py with your file IDs                     │
+│  4. Run: python3 generate_gdrive_links.py                                │
+│  5. Run: python3 replace_with_gdrive_links.py                            │
+│                                                                           │
+│ ✓ Full control over which files to upload                               │
+│ ✓ Can mix multiple Google Drive folders                                 │
+└──────────────────────────────────────────────────────────────────────────┘
+
+█ FILE REFERENCE
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ colab_upload_to_gdrive.py                                               │
+│  → Automated upload script for Google Colab (PATH A)                   │
+│  → No local installation needed                                         │
+│                                                                         │
+│ appscript_upload_to_gdrive.gs                                           │
+│  → Google Apps Script version (PATH B)                                 │
+│  → Runs inside Google Drive environment                                 │
+│                                                                         │
+│ generate_gdrive_links.py                                                │
+│  → Manual file ID → link generator (PATH C)                            │
+│  → Use if files already in Drive                                        │
+│                                                                         │
+│ replace_with_gdrive_links.py                                            │
+│  → CRITICAL: Replaces local links with Google Drive links              │
+│  → Used by all paths (A, B, C)                                          │
+│  → Creates backup: obc_timeline.html.backup                            │
+│                                                                         │
+│ GOOGLE_DRIVE_UPLOAD_GUIDE.md                                            │
+│  → Detailed step-by-step instructions                                   │
+│  → Screenshots & examples included                                      │
+│                                                                         │
+│ drive_links_mapping.json (Generated)                                    │
+│  → Output from Colab or AppScript                                       │
+│  → Input for replace_with_gdrive_links.py                              │
+└─────────────────────────────────────────────────────────────────────────┘
+
+█ COMMAND REFERENCE
+
+  # After getting links, run this to replace HTML links:
+  python3 replace_with_gdrive_links.py
+
+  # Or if using custom file IDs:
+  python3 generate_gdrive_links.py    # Create mapping first
+  python3 replace_with_gdrive_links.py
+
+  # Verify links were updated:
+  grep "drive.google.com" obc_timeline.html | head -5
+
+  # Restore backup if needed:
+  cp obc_timeline.html.backup obc_timeline.html
+
+█ EXAMPLE GOOGLE DRIVE LINK
+
+  Before (local):
+  ../OBC 2025/917-BCW SUB CATAGORIGATION OBC A & B.pdf
+
+  After (Google Drive):
+  https://drive.google.com/file/d/1a2b3c4d5e6f7g8h9i0jklmnop/view?usp=sharing
+
+█ CHECKLIST
+
+  Before starting:
+  ☐ All PDFs organized in local folders (OBC_OLD, OBC_2025, PUBLIC_HEARING)
+  ☐ Google account ready
+  ☐ Know the full path to your PDF folders
+
+  After upload:
+  ☐ Files visible in Google Drive
+  ☐ Links are shareable (anyone with link can view)
+  ☐ drive_links_mapping.json downloaded to workspace
+
+  After replacement:
+  ☐ obc_timeline.html updated with Google Drive links
+  ☐ obc_timeline.html.backup created (for safety)
+  ☐ Tested 2-3 links in the HTML (they open in Drive)
+
+  Final:
+  ☐ Upload updated HTML to your website/GitHub
+  ☐ Test links from the live page
+  ☐ Share the link with others
+
+█ TROUBLESHOOTING
+
+  Q: "Folder not found" error
+  A: Double-check PARENT_FOLDER_ID (no spaces, exact copy)
+
+  Q: "Permission denied" when authorizing
+  A: Clear browser cache, try in incognito mode
+
+  Q: Links not updated in HTML
+  A: Check drive_links_mapping.json is in same folder
+     Verify folder names match (case-sensitive)
+
+  Q: Some links work, some don't
+  A: Check file IDs in mapping are correct
+     Re-run generate_gdrive_links.py with correct IDs
+
+  Q: How to break links later?
+  A: Delete the file in Google Drive
+     Or remove "Anyone can access" permission
+
+█ SECURITY TIPS
+
+  • Links are "view-only" (no editing)
+  • Anyone with link can access (no login needed)
+  • Google Drive tracks view count
+  • Delete in Drive to revoke access
+  • Use different folders for different teams if needed
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Still stuck? See GOOGLE_DRIVE_UPLOAD_GUIDE.md for detailed instructions.
