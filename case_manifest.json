@@ -71,6 +71,16 @@
     "source_type": "local_source_copy"
   },
   {
+    "date": "2025-08-22",
+    "court": "Supreme Court of India",
+    "case_numbers": ["Diary No. 45526 of 2025", "Diary No. 45628 of 2025", "SLP(C) 17422 of 2025 (tagged)"],
+    "title": "Dibyenda Kar v. X and connected matter",
+    "record_type": "interim stay order",
+    "local_file": "case_pdfs/2025-08-22_Supreme-Court_Diary-45526-45628-2025_JEMAS_stay_order.pdf",
+    "source_type": "local_source_copy",
+    "verification_note": "The order stayed the 7 August 2025 Calcutta High Court order in CPAN 1362/2025 until further orders and tagged the matters with SLP(C) 17422/2025."
+  },
+  {
     "date": "2026-07-01",
     "court": "Calcutta High Court",
     "case_numbers": ["WPA 14695 of 2026", "WPA 14698 of 2026"],
@@ -89,5 +99,15 @@
     "local_file": "case_pdfs/2026-07-03_Calcutta-High-Court_WPA-P-305-2026_notifications-944-945-946_order.pdf",
     "source_type": "local_source_copy",
     "verification_note": "The order records that the Supreme Court was already seized of the principal issues and declines to entertain the PIL."
+  },
+  {
+    "date": "2026-07-08",
+    "court": "Calcutta High Court",
+    "case_numbers": ["WPA 14695 of 2026"],
+    "title": "Bistriti Parveen v. State of West Bengal & Ors.",
+    "record_type": "order dismissing writ petition as withdrawn",
+    "local_file": "case_pdfs/2026-07-08_Calcutta-High-Court_WPA-14695-2026_withdrawal_order.pdf",
+    "source_type": "local_source_copy",
+    "verification_note": "The Court allowed withdrawal with liberty to file afresh, vacated any interim order, and did not decide the merits."
   }
 ]

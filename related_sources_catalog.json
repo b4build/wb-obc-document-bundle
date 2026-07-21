@@ -119,5 +119,32 @@
     "bytes": 81329,
     "decision": "included_with_provenance_label",
     "reason": "Directly addresses the PIL challenge to Notifications 944/945 and Letter 946."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/1033-BCW.pdf",
+    "local_file": "obc_pdfs/2026-05-14_1033-Secy-BCW_caste-certificate-reverification.pdf",
+    "title": "14 May 2026 caste-certificate re-verification instruction",
+    "pages": 2,
+    "bytes": 1183277,
+    "decision": "included_with_provenance_label",
+    "reason": "Compact departmental instruction with direct administrative relevance; added as a visually checked scan and described as covering SC, ST, and OBC certificates, not OBC alone."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/display_pdf (3).pdf",
+    "local_file": "case_pdfs/2026-07-08_Calcutta-High-Court_WPA-14695-2026_withdrawal_order.pdf",
+    "title": "WPA 14695/2026 withdrawal order",
+    "pages": 2,
+    "bytes": 54057,
+    "decision": "included_with_provenance_label",
+    "reason": "Compact, text-readable follow-up order in a tracked 2026 OBC recruitment-category case; included as a local source copy and clearly described as procedural."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/Stay on HC Order.pdf",
+    "local_file": "case_pdfs/2025-08-22_Supreme-Court_Diary-45526-45628-2025_JEMAS_stay_order.pdf",
+    "title": "22 August 2025 Supreme Court JEMAS stay order",
+    "pages": 2,
+    "bytes": 39661,
+    "decision": "included_with_provenance_label",
+    "reason": "Direct follow-up order to the included 7 August 2025 JEMAS contempt matter; it records an interim stay and tagging with a tracked OBC SLP."
   }
 ]

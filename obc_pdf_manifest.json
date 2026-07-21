@@ -338,5 +338,13 @@
     "source": "/home/mhbook/Downloads/OBC OLD/obc_related/1993 OBC Rules.pdf",
     "local_pdf": "obc_pdfs/1993-11-25_WB-Commission-for-Backward-Classes-Rules-1993.pdf",
     "summary": "Rules made under section 17 of the 1993 Commission Act."
+  },
+  {
+    "status": "copied_related_source",
+    "notif_no": "1033/Secy/BCW",
+    "date": "2026-05-14",
+    "source": "/home/mhbook/Downloads/OBC OLD/obc_related/1033-BCW.pdf",
+    "local_pdf": "obc_pdfs/2026-05-14_1033-Secy-BCW_caste-certificate-reverification.pdf",
+    "summary": "Administrative instruction to re-verify caste certificates issued since 2011, including related second-generation certificates; the stated scope covers SC, ST, and OBC certificates."
   }
 ]
