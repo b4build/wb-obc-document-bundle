@@ -14,6 +14,7 @@ This repository hosts a self-contained static research site and its source files
 - `obc_hearing_pdf_manifest.json` - hearing/public notice PDF manifest.
 - `evidence_file_inventory.csv` - local evidence file inventory.
 - `contribute.html` - public source/correction report page; it prepares a reviewable GitHub issue without collecting data itself.
+- `obc_timeline_bn.html` - Bengali companion guide linking readers to the full English searchable corpus and source records.
 - `SURVEY_SETUP.md` - privacy-aware guidance for adding a Google Forms survey alongside the public GitHub reporting route.
 - `QUICK_REFERENCE.txt` and `README_WB_OBC_SITE.md` - supporting notes from the local bundle.
 

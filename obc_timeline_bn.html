@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>পশ্চিমবঙ্গ ওবিসি নথি ও মামলা — গবেষণা সহায়িকা</title>
+  <style>
+    :root { --ink:#102b47; --blue:#245478; --paper:#edf3f6; --card:#fff; --gold:#efc65d; --border:#cbdbe4; --muted:#4f677d; --red:#a94331; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:17px/1.72 "Noto Sans Bengali", "Nirmala UI", "Hind Siliguri", system-ui, sans-serif; }
+    a { color:#125c83; text-underline-offset:3px; }
+    a:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+    .skip { position:fixed; left:16px; top:12px; z-index:5; padding:8px 13px; color:var(--ink); background:#fff; border-radius:7px; transform:translateY(-180%); }
+    .skip:focus { transform:translateY(0); }
+    header { position:sticky; top:0; z-index:4; background:rgba(16,43,71,.98); box-shadow:0 2px 12px rgba(0,0,0,.2); }
+    .bar, .wrap { width:min(1180px,calc(100% - 36px)); margin:auto; }
+    .bar { display:flex; align-items:center; justify-content:space-between; gap:18px; min-height:64px; }
+    .brand { color:#f8dca2; font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.08em; text-transform:uppercase; }
+    nav { display:flex; gap:5px; overflow:auto; scrollbar-width:none; }
+    nav a { flex:none; padding:7px 10px; color:#d6e0e6; font:700 13px inherit; text-decoration:none; border-radius:6px; }
+    nav a:hover { background:rgba(255,255,255,.12); color:#fff; }
+    .hero { position:relative; overflow:hidden; padding:84px 0 64px; color:#fff; background:radial-gradient(circle at 80% 10%,#2b608a 0,transparent 34%),linear-gradient(125deg,#102b47,#1b4569); }
+    .hero::after { content:'ওবিসি'; position:absolute; right:6%; bottom:-66px; color:rgba(255,255,255,.06); font:800 160px/1 "Noto Sans Bengali",sans-serif; }
+    .hero > .wrap { position:relative; z-index:1; }
+    .eyebrow { margin:0 0 13px; color:#f8dca2; font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { max-width:780px; margin:0; font-size:clamp(38px,6vw,70px); line-height:1.12; letter-spacing:-.03em; }
+    .lead { max-width:870px; margin:20px 0 0; color:#d9e6ed; font-size:20px; }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:15px; margin-top:34px; }
+    .stat { min-height:120px; padding:18px; background:rgba(7,25,43,.28); border:1px solid rgba(255,255,255,.2); border-left:4px solid var(--gold); border-radius:14px; }
+    .stat strong { display:block; color:#fff2c9; font:800 31px/1.05 ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .stat span { display:block; margin-top:9px; color:#d5e0e6; font-size:14px; line-height:1.42; }
+    main { padding:30px 0 52px; }
+    .intro, .section, .notice { padding:clamp(20px,4vw,34px); background:var(--card); border:1px solid var(--border); border-radius:16px; box-shadow:0 10px 26px rgba(16,43,71,.07); }
+    .intro { margin-top:-24px; position:relative; }
+    h2 { margin:0; font-size:clamp(27px,4vw,39px); line-height:1.2; }
+    h3 { margin:0 0 8px; font-size:21px; line-height:1.35; }
+    .intro p, .section > p { color:var(--muted); }
+    .guide { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:23px 0; }
+    .guide article, .link-card { padding:17px; background:#f4f8fa; border:1px solid var(--border); border-radius:12px; }
+    .guide strong { display:block; margin-bottom:5px; }
+    .guide span { color:var(--muted); font-size:15px; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .button { display:inline-block; padding:9px 13px; color:#fff; background:#1a5d7e; border-radius:8px; font-weight:700; text-decoration:none; }
+    .button.alt { color:var(--ink); background:#f4d987; }
+    .section { margin-top:24px; }
+    .timeline { position:relative; margin:25px 0 0; padding:0 0 0 25px; list-style:none; border-left:2px solid #b9cfdb; }
+    .timeline li { position:relative; margin:0 0 18px; padding:18px 20px; background:#fff; border:1px solid var(--border); border-radius:13px; }
+    .timeline li::before { content:''; position:absolute; left:-34px; top:23px; width:13px; height:13px; background:#b57917; border:3px solid #fff; border-radius:50%; box-shadow:0 0 0 2px #b57917; }
+    .date { color:#7b5314; font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.05em; }
+    .timeline p { margin:7px 0 0; color:var(--muted); }
+    .case-grid, .resource-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; margin-top:22px; }
+    .case-grid article { padding:20px; border:1px solid var(--border); border-radius:13px; background:linear-gradient(145deg,#f7fafb,#edf5f8); }
+    .case-grid p, .resource-grid p { margin:7px 0 0; color:var(--muted); }
+    .notice { margin-top:24px; color:#553d12; background:#fff7df; border-left:4px solid #d6a127; box-shadow:none; }
+    footer { padding:25px 0; color:#d5e0e7; background:var(--ink); }
+    footer a { color:#fff0c8; }
+    @media (max-width:760px) { header { position:relative; } .bar { min-height:auto; padding:11px 0; align-items:flex-start; flex-direction:column; gap:6px; } nav { width:100%; } .hero { padding:48px 0; } .lead { font-size:17px; } .stats { grid-template-columns:repeat(2,1fr); gap:10px; } .stat { min-height:0; } .guide, .case-grid, .resource-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">মূল বিষয়বস্তুতে যান</a>
+  <header><div class="bar"><span class="brand">WB OBC Documentation</span><nav aria-label="বাংলা বিভাগসমূহ"><a href="#home">শুরু</a><a href="#timeline">সময়রেখা</a><a href="#cases">মামলা</a><a href="#sources">নথি</a><a href="index.html" lang="en">English</a></nav></div></header>
+  <section class="hero" id="home"><div class="wrap"><p class="eyebrow">পশ্চিমবঙ্গ · অনগ্রসর শ্রেণি কল্যাণ দপ্তর · ১৯৯৩–২০২৬</p><h1>ওবিসি নথি ও মামলা: বাংলা গবেষণা সহায়িকা</h1><p class="lead">পশ্চিমবঙ্গের ওবিসি তালিকা, সংরক্ষণ, শংসাপত্র, শুনানি, সরকারি নথি এবং মামলা-সংক্রান্ত তথ্য খুঁজে ও যাচাই করার জন্য একটি উৎসভিত্তিক সহায়িকা। মূল নথি ও সম্পূর্ণ অনুসন্ধানযোগ্য সংগ্রহ ইংরেজি সাইটে রাখা আছে।</p><div class="stats"><div class="stat"><strong>84</strong><span>স্থানীয়ভাবে সংরক্ষিত PDF উৎস</span></div><div class="stat"><strong>66</strong><span>২০২৬-এর তালিকা বিজ্ঞপ্তিতে উল্লিখিত শ্রেণি</span></div><div class="stat"><strong>7%</strong><span>১৮ মে ২০২৬-এর বিজ্ঞপ্তিতে উল্লিখিত সংরক্ষণ অবস্থান</span></div><div class="stat"><strong>5</strong><span>অগ্রাধিকারভিত্তিক প্রমাণ-ঘাটতি ও অনুসরণযোগ্য বিষয়</span></div></div></div></section>
+  <main class="wrap" id="main">
+    <section class="intro"><p class="eyebrow" style="color:var(--red)">কীভাবে ব্যবহার করবেন</p><h2>তথ্য থেকে মূল নথিতে যান</h2><p>এই পৃষ্ঠাটি বাংলা ভাষায় দিকনির্দেশনা দেয়। কোনো সারাংশকে চূড়ান্ত আইনগত অবস্থান বলে ধরবেন না—প্রতিটি ক্ষেত্রে মূল সরকারি গেজেট, দপ্তরের বিজ্ঞপ্তি বা আদালতের নথি দেখুন।</p><div class="guide"><article><strong>১. প্রশ্নটি ঠিক করুন</strong><span>বিজ্ঞপ্তি নম্বর, সম্প্রদায়, তারিখ, মামলা নম্বর বা শংসাপত্র-সংক্রান্ত সমস্যা লিখে শুরু করুন।</span></article><article><strong>২. সময়রেখা ও মামলা দেখুন</strong><span>নীতি-পরিবর্তনের জন্য সময়রেখা, আর আদালতের প্রক্রিয়া ও আদেশের জন্য মামলা বিভাগ ব্যবহার করুন।</span></article><article><strong>৩. উৎস যাচাই করুন</strong><span>স্থানীয় PDF, সরকারি লিঙ্ক এবং উৎসের ধরন দেখে নিন। মিরর কপি ও আদালতের বর্তমান অবস্থা আলাদা করে যাচাই করুন।</span></article></div><div class="actions"><a class="button" href="index.html#documents">সম্পূর্ণ নথি সংগ্রহে অনুসন্ধান করুন</a><a class="button alt" href="contribute.html">উৎস বা সংশোধন জানান</a></div></section>
+    <section class="section" id="timeline"><p class="eyebrow" style="color:var(--red)">সংক্ষিপ্ত সময়রেখা</p><h2>গুরুত্বপূর্ণ নথি ও পরিবর্তন</h2><p>এগুলি দিকনির্দেশক সারাংশ। সম্পূর্ণ সময়রেখা ও PDF লিঙ্কের জন্য প্রতিটি কার্ডের ইংরেজি-সংগ্রহ লিঙ্ক ব্যবহার করুন।</p><ol class="timeline"><li><span class="date">১৯৯৩–১৯৯৪</span><h3>কমিশন ও রাজ্য তালিকার ভিত্তি</h3><p>পশ্চিমবঙ্গ কমিশন ফর ব্যাকওয়ার্ড ক্লাসেস আইন এবং পরবর্তী রাজ্য ওবিসি তালিকা/সংরক্ষণ-সংক্রান্ত নথি এই পর্যায়ের ভিত্তি। <a href="index.html#evt-1994-347">মূল সময়রেখা খুলুন</a></p></li><li><span class="date">২৪ সেপ্টেম্বর ২০১০</span><h3>Category-A ও Category-B এবং ১৭% সংরক্ষণ</h3><p>তৎকালীন বিজ্ঞপ্তিতে তালিকাকে দুই শ্রেণিতে ভাগ করা হয় এবং সংরক্ষণের পরিমাণ ১০% ও ৭% হিসাবে নির্ধারিত হয়। <a href="index.html#evt-2010-6309">নথি দেখুন</a></p></li><li><span class="date">২০১২–২০১৮</span><h3>অন্তর্ভুক্তি, সংশোধন ও তালিকা পরিবর্তন</h3><p>একাধিক সম্প্রদায়ের অন্তর্ভুক্তি, নামের সংশোধন ও ধারাবাহিক বিজ্ঞপ্তি এই সময়ের মূল বিষয়। <a href="index.html#evt-2012-1673">শুরুর নথি দেখুন</a></p></li><li><span class="date">২২ মে ২০২৪</span><h3>কলকাতা হাই কোর্টের গুরুত্বপূর্ণ রায়</h3><p>WPO 60/2011 এবং সংযুক্ত মামলাগুলির রায় পরবর্তী বিজ্ঞপ্তি ও মামলার আলোচনায় গুরুত্বপূর্ণ। রায়ের কার্যকর অংশ সরাসরি পড়ুন। <a href="index.html#cases">মামলা বিভাগে যান</a></p></li><li><span class="date">২০২৫–২০২৬</span><h3>শুনানি, পুনঃসমীক্ষা, বিজ্ঞপ্তি ও চলমান মামলা</h3><p>২০২৫–২৬ পর্যায়ে শুনানি-নোটিস, জরিপ/প্রক্রিয়ার নথি, প্রত্যাহার ও নতুন তালিকার বিজ্ঞপ্তি, এবং আদালতের পরবর্তী কার্যক্রম আছে। <a href="index.html#evt-2026-945">২০২৬ তালিকা নথি দেখুন</a></p></li></ol></section>
+    <section class="section" id="cases"><p class="eyebrow" style="color:var(--red)">মামলা-সংক্রান্ত তথ্য</p><h2>আদালতের নথি কীভাবে পড়বেন</h2><p>একটি মামলা “তালিকাভুক্ত”, “স্থগিত”, “আন্তর্বর্তী আদেশ”, “চূড়ান্ত রায়” বা “পক্ষের দাখিল” হতে পারে—এগুলি এক জিনিস নয়। সর্বশেষ অবস্থার জন্য সংশ্লিষ্ট আদালতের কেস-স্ট্যাটাস পরিষেবা দেখুন।</p><div class="case-grid"><article><h3>২০২৪-এর হাই কোর্ট রায়</h3><p>Amal Chandra Das এবং সংযুক্ত মামলার গবেষণা-কপি সংগ্রহে আছে। এটি মিরর কপি হিসেবে চিহ্নিত; অফিসিয়াল/প্রত্যয়িত কপি পেলে সেটিই প্রাধান্য পাবে। <a href="index.html#cases">রেকর্ড খুলুন</a></p></article><article><h3>সুপ্রিম কোর্টের সংযুক্ত আপিল</h3><p>SLP(C) 17751–17755/2024 এবং সংযুক্ত আপিলগুলির কিছু অফিসিয়াল প্রক্রিয়াগত রেকর্ড স্থানীয়ভাবে সংরক্ষিত। এগুলি চূড়ান্ত মেরিটস রায় নয়। <a href="index.html#cases">বিস্তারিত খুলুন</a></p></article><article><h3>বাস্তবায়ন ও ভর্তি-সংক্রান্ত মামলা</h3><p>Aatmadeep/Amal PIL, JEMAS PG এবং সংশ্লিষ্ট পরবর্তী প্রক্রিয়ার রেকর্ডে মিরর-প্রিন্ট ও মূল উৎস-লিঙ্ক স্পষ্টভাবে আলাদা রাখা হয়েছে। <a href="index.html#cases">মামলা ট্র্যাকার খুলুন</a></p></article><article><h3>কী পাঠাবেন</h3><p>মামলা নম্বর, তারিখ, আদালত, নথির ধরন, অফিসিয়াল URL এবং একটি নিরপেক্ষ সারাংশ দিন। ব্যক্তিগত নথি বা সংবেদনশীল তথ্য পাঠাবেন না। <a href="contribute.html">রিপোর্ট ফর্ম খুলুন</a></p></article></div></section>
+    <section class="section" id="sources"><p class="eyebrow" style="color:var(--red)">উৎস ও সহায়তা</p><h2>আরও কোথায় দেখবেন</h2><div class="resource-grid"><article class="link-card"><h3>সম্পূর্ণ PDF সংগ্রহ</h3><p>বিজ্ঞপ্তি নম্বর, তারিখ, বিষয় বা শব্দ দিয়ে পূর্ণ পাঠে অনুসন্ধান করুন। <a href="index.html#documents">Corpus খুলুন</a></p></article><article class="link-card"><h3>শুনানি ও প্রমাণ-ঘাটতি</h3><p>পাবলিক-হিয়ারিং নোটিস, নামযুক্ত সম্প্রদায় এবং এখনও প্রয়োজনীয় নথির তালিকা। <a href="index.html#evidence">Evidence খুলুন</a></p></article><article class="link-card"><h3>শংসাপত্র ও পদ্ধতি</h3><p>ওবিসি শংসাপত্র, ক্রিমি লেয়ার, রোস্টার ও প্রক্রিয়া বোঝার জন্য পটভূমি নথি। <a href="index.html#obc-basics">OBC Basics খুলুন</a></p></article><article class="link-card"><h3>সংশোধন বা নতুন উৎস</h3><p>সরকারি নোটিস, আদালতের আপডেট, সংবাদ-ক্লিপিং বা ওয়েবসাইট-সংক্রান্ত পরামর্শ জানান। <a href="contribute.html">উৎস রিপোর্ট করুন</a></p></article></div></section>
+    <section class="notice"><strong>সতর্কতা:</strong> এটি জনস্বার্থে গবেষণা-সহায়িকা, কোনো সরকারি অভিযোগ দাখিলের ব্যবস্থা বা আইনগত পরামর্শ নয়। জরুরি প্রশাসনিক সমস্যা হলে সংশ্লিষ্ট BDO/SDO/দপ্তর বা যোগ্য আইনজীবীর সঙ্গে যোগাযোগ করুন।</section>
+  </main>
+  <footer><div class="wrap">পশ্চিমবঙ্গ ওবিসি নথি গবেষণা সংগ্রহ · <a href="index.html">English research bundle</a> · <a href="contribute.html">উৎস/সংশোধন রিপোর্ট</a></div></footer>
+</body>
+</html>
