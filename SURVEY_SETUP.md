@@ -22,6 +22,8 @@ Create a Google Form titled “West Bengal OBC research bundle: feedback and mis
 - How did you verify it? (official site, gazette, court record, public mirror, other)
 - May the project publish your response after removing personal information? (yes/no)
 
+For a ready-to-copy, sectioned form covering certificate-office issues, GPS-tagged notice photographs, court updates, government records, reputable press clippings, and general suggestions, use `GOOGLE_FORM_DRAFT.md`.
+
 Keep email collection **off** unless there is a clear privacy notice and a reason to contact contributors. Do not allow file uploads: they require Google sign-in and invite sensitive material.
 
 After publishing, replace the survey card/link in `contribute.html` with the public Google Form URL. Keep the GitHub issue route available for records that benefit from public source review.
