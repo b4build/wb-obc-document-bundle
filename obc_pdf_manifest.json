@@ -314,5 +314,13 @@
     "source": "/home/mhbook/Downloads/prd_wb_orders/pdfs/3804_PN_O_I_ 1S-5_12.pdf",
     "local_pdf": "obc_pdfs/2012-07-06_3804-PN-O-I-1S-5-2012_panchayat_survey_data_entry.pdf",
     "summary": "Works relating to Backward Classes survey data entry and online/offline upload."
+  },
+  {
+    "status": "downloaded_official",
+    "notif_no": "1993–2010 combined OBC orders and notifications",
+    "date": "1993-07-13/2010-09-24",
+    "source": "https://www.anagrasarkalyan.gov.in/documnts/07-07-2017-10-08-05.pdf",
+    "local_pdf": "obc_pdfs/1993-2010_Official-Combined-OBC-Orders-and-Notifications.pdf",
+    "summary": "Official department-hosted 44-page combined record containing the foundational pre-2010 OBC reservation orders and notifications."
   }
 ]

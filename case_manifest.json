@@ -1,0 +1,34 @@
+[
+  {
+    "date": "2024-05-22",
+    "court": "Calcutta High Court",
+    "case_numbers": ["WPO 60 of 2011", "WPA 22145 of 2010", "WPO 1160 of 2013", "WPO 578 of 2012"],
+    "title": "Amal Chandra Das v. State of West Bengal and connected matters",
+    "record_type": "judgment",
+    "local_file": "case_pdfs/2024-05-22_Calcutta-High-Court_Amal-Chandra-Das-WPO-60-2011_judgment.pdf",
+    "source_type": "mirror_copy",
+    "source_url": "https://images.assettype.com/barandbench/2024-05/91d28f32-2fbc-46a4-91b3-10d4b353240b/Amal_Chandra_Das_vs_State_of_West_Bengal.pdf",
+    "verification_note": "Replace with an official or certified High Court copy when obtained."
+  },
+  {
+    "date": "2024-11-22",
+    "court": "Supreme Court of India",
+    "case_numbers": ["SLP(C) 17751-17755 of 2024"],
+    "title": "State of West Bengal & Anr. v. Amal Chandra Das",
+    "record_type": "record of proceedings",
+    "local_file": "case_pdfs/2024-11-22_Supreme-Court_SLP-C-17751-17755-2024_order.pdf",
+    "source_type": "official",
+    "source_url": "https://api.sci.gov.in/supremecourt/2024/27287/27287_2024_2_30_57394_Order_22-Nov-2024.pdf"
+  },
+  {
+    "date": "2025-07-18",
+    "court": "Supreme Court of India",
+    "case_numbers": ["SLP(C) 17528 of 2025"],
+    "title": "State of West Bengal v. Amal Chandra Das & Ors.",
+    "record_type": "office report",
+    "local_file": "case_pdfs/2025-07-18_Supreme-Court_SLP-C-17528-2025_office-report.pdf",
+    "source_type": "official",
+    "source_url": "https://api.sci.gov.in/officereport/2025/34016/34016_2025_2025-07-18_1621.pdf",
+    "verification_note": "An office report is procedural and should not be treated as a merits decision."
+  }
+]

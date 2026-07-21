@@ -1,12 +1,13 @@
 # WB OBC Document Bundle
 
-This repository is intended to host the source files used by `obc_timeline.html`.
-The website itself is deliberately not included here.
+This repository hosts a self-contained static research site and its source files. Open
+`obc_timeline.html` locally or publish the repository through GitHub Pages.
 
 ## Contents
 
 - `obc_pdfs/` - locally bundled PDF source documents used by the timeline, corpus, reports, hearings, and inventory sections.
-- `evidence_visual_pages/` - rendered page previews and sheet images used as visual evidence thumbnails.
+- `case_pdfs/` - locally bundled litigation records; see its README for provenance and verification notes.
+- `case_manifest.json` - structured litigation-record index.
 - `obc_documents.json` - extracted text and structured summaries for the document corpus.
 - `obc_pdf_manifest.json` - PDF manifest for renamed local source files.
 - `obc_hearing_pdf_manifest.json` - hearing/public notice PDF manifest.
@@ -23,7 +24,7 @@ This is the first statewide Panchayat & Rural Development Department guideline/o
 
 ## Intended Website Use
 
-Once this repository is pushed to GitHub, static file links in `obc_timeline.html` can point to raw GitHub URLs:
+The site uses relative links, so downloaded copies work without a network connection. When served by GitHub Pages, the same links continue to work:
 
 ```text
 https://raw.githubusercontent.com/<owner>/wb-obc-document-bundle/main/obc_pdfs/<file>.pdf
@@ -34,4 +35,3 @@ For GitHub Pages-style links, use:
 ```text
 https://<owner>.github.io/wb-obc-document-bundle/obc_pdfs/<file>.pdf
 ```
-
