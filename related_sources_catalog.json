@@ -1,0 +1,60 @@
+[
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/1993_WB_OBC_act1-1993.pdf",
+    "local_file": "obc_pdfs/1993-03-15_WB-Commission-for-Backward-Classes-Act-1993.pdf",
+    "title": "West Bengal Commission for Backward Classes Act, 1993",
+    "pages": 6,
+    "bytes": 82188,
+    "decision": "included",
+    "reason": "Foundational statutory record; compact and directly relevant."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/1993 OBC Rules.pdf",
+    "local_file": "obc_pdfs/1993-11-25_WB-Commission-for-Backward-Classes-Rules-1993.pdf",
+    "title": "West Bengal Commission for Backward Classes Rules, 1993",
+    "pages": 9,
+    "bytes": 2058269,
+    "decision": "included",
+    "reason": "Directly supports the Commission process described in the timeline."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/diary-no-27287.2024-17751-17755.pdf",
+    "title": "Supreme Court diary bundle relating to SLP(C) 17751-17755/2024",
+    "pages": 4478,
+    "bytes": 373604895,
+    "decision": "catalogued_not_bundled",
+    "reason": "Very large filing bundle. The site instead includes the shorter official Supreme Court record of proceedings and links this source for later curated extraction."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/diary-no-36073-2024.pdf",
+    "title": "Supreme Court diary bundle 36073/2024",
+    "pages": 2311,
+    "bytes": 248765910,
+    "decision": "catalogued_not_bundled",
+    "reason": "Very large filing bundle; inspect and extract discrete orders, pleadings, or annexures before adding them."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/OBC SLP Copy.pdf",
+    "title": "OBC SLP copy",
+    "pages": 875,
+    "bytes": 42987171,
+    "decision": "catalogued_not_bundled",
+    "reason": "Large case-paper compilation; add individual orders or material annexures rather than the whole bundle."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/WPA(P)-430-2024.pdf",
+    "title": "WPA(P)-430-2024",
+    "pages": 74,
+    "bytes": 1733895,
+    "decision": "review_next",
+    "reason": "Manageable size but requires case-title and provenance review before publication."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/Atmadeep Job Case.pdf",
+    "title": "Atmadeep Job Case",
+    "pages": 39,
+    "bytes": 6636082,
+    "decision": "review_next",
+    "reason": "Manageable size and appears related to SLP(C) 16936/2024; verify record type and extract the relevant order before publication."
+  }
+]

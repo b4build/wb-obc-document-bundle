@@ -13,6 +13,7 @@
       <span class="site-logo">WB OBC Documentation</span>
       <nav class="site-nav" aria-label="Sections">
         <a href="#home" class="active" data-tab-target="home">Home</a>
+        <a href="#about" data-tab-target="about">About</a>
         <a href="#obc-basics" data-tab-target="obc-basics">OBC Basics</a>
         <a href="#methods" data-tab-target="methods">Methods</a>
         <a href="#reports" data-tab-target="reports">Reports</a>
@@ -50,7 +51,7 @@
         <p>Use this single HTML as a local research desk. The timeline, extracted PDF text, public-hearing notices, policy reports, audit notes, and bundled file paths are cross-linked so you can move from a claim to the supporting record quickly.</p>
       </div>
       <div class="source-status-grid">
-        <a class="source-status" href="#documents"><strong>62</strong><span>PDF sources bundled locally across notifications, hearings, reports, and litigation records</span></a>
+        <a class="source-status" href="#documents"><strong>64</strong><span>PDF sources bundled locally across notifications, hearings, reports, and litigation records</span></a>
         <a class="source-status" href="#public-hearings"><strong>17</strong><span>hearing / public notice PDFs bundled locally</span></a>
         <a class="source-status" href="#reports"><strong>3</strong><span>policy/research reports bundled for context</span></a>
         <a class="source-status" href="#missing-records"><strong>5</strong><span>priority evidence gaps and follow-ups tracked</span></a>
@@ -64,7 +65,8 @@
           <h2>Find the document, rule, or community trail</h2>
           <p>Start with a community name, notification number, date, category, hearing date, or legal keyword. The most useful paths are grouped below.</p>
         </div>
-        <div class="query-actions">
+      <div class="query-actions">
+          <a href="#about">About this bundle</a>
           <a href="#documents">Search full text</a>
           <a href="#timeline">Trace timeline</a>
           <a href="#cases">Track cases</a>
@@ -112,6 +114,27 @@
       </div>
 
       <p class="cloud-note">Portable bundle: source links now use relative paths, so this page works from the repository, GitHub Pages, or a downloaded folder. External links remain only where an original source is not available for local redistribution.</p>
+    </section>
+
+    <section id="about" class="research about-section tab-panel" data-tab-panel="about" hidden>
+      <p class="panel-kicker">About this project</p>
+      <h2 class="section-heading">A source-led record of West Bengal OBC policy</h2>
+      <p class="section-sub">This independent research bundle brings together publicly available notifications, statutes, public-hearing notices, policy reports, and selected court records concerning Other Backward Classes (OBCs) in West Bengal.</p>
+
+      <div class="report-grid">
+        <article class="report-card"><div class="report-meta">Purpose</div><h3>Make the record easier to examine</h3><p>The project is designed as a chronological research desk. It helps readers trace a claim from a timeline entry to a notification, a hearing notice, a policy source, or a court record without treating summaries as a substitute for the original document.</p></article>
+        <article class="report-card"><div class="report-meta">Scope</div><h3>Policy, process, and litigation</h3><p>The bundle covers the statutory framework, State OBC-list changes, reservation and roster records, the 2025–26 notification sequence, public hearings, and a growing litigation tracker. It does not claim to be a complete government archive.</p></article>
+        <article class="report-card"><div class="report-meta">Use with care</div><h3>Research aid, not legal advice</h3><p>Some records are text-extracted or copied from publicly accessible mirrors. Court status, operative directions, and notification validity should always be confirmed from the issuing authority or the relevant court.</p></article>
+      </div>
+
+      <div class="table-wrap about-table"><table><thead><tr><th>How records are handled</th><th>What this means</th></tr></thead><tbody>
+        <tr><td>Local source files</td><td>Relative links keep the site usable from a downloaded folder or GitHub Pages.</td></tr>
+        <tr><td>Source labels</td><td>Entries distinguish official downloads, scanned/text-extracted records, and mirror copies that need verification.</td></tr>
+        <tr><td>Large case bundles</td><td>Very large filings are catalogued but not added by default; this keeps Git history and page delivery practical.</td></tr>
+        <tr><td>Corrections and additions</td><td>Use the Framework tab’s fields to record date, authority, status, source URL, local file, and affected notification/case.</td></tr>
+      </tbody></table></div>
+
+      <div class="callout"><strong>Source principle:</strong> where this site summarizes a record, open the linked document and treat the primary source as controlling. The project does not endorse any political position or make findings about any community.</div>
     </section>
 
     <section id="obc-basics" class="research report-section tab-panel" data-tab-panel="obc-basics" hidden>
@@ -350,6 +373,7 @@
           <h2>Statutory basis for OBC lists</h2>
           <p>The later notifications repeatedly rely on the West Bengal Commission for Backward Classes Act, 1993, especially the definitions of backward classes and lists, and the Commission's advisory role.</p>
           <div class="tags"><span class="tag">Legal basis</span><span class="tag">Referenced in later PDFs</span></div>
+          <details><summary>Source files</summary><ul class="docs"><li><a href="obc_pdfs/1993-03-15_WB-Commission-for-Backward-Classes-Act-1993.pdf" target="_blank" rel="noreferrer">West Bengal Commission for Backward Classes Act, 1993</a></li><li><a href="obc_pdfs/1993-11-25_WB-Commission-for-Backward-Classes-Rules-1993.pdf" target="_blank" rel="noreferrer">West Bengal Commission for Backward Classes Rules, 1993</a></li></ul></details>
         </article>
       </li>
 
@@ -3969,10 +3993,21 @@ const HERO_CONTENT = {
     title: 'OBC Research Dashboard',
     sub: 'A single-file research desk for the West Bengal OBC document bundle: timeline, extracted PDF text, hearing notices, policy reports, audit gaps, and local source links.',
     stats: [
-      ['62', 'PDF sources bundled locally across notifications, hearings, reports, and litigation records.'],
+      ['64', 'PDF sources bundled locally across notifications, hearings, reports, and litigation records.'],
       ['Corpus', 'Searchable text records plus a separate litigation tracker.'],
       ['17', 'Public-hearing and public-notice PDFs bundled locally.'],
       ['7', 'Source gaps and follow-up records tracked in the audit section.']
+    ]
+  },
+  about: {
+    eyebrow: 'About · Scope, method, and source care',
+    title: 'About the OBC Research Bundle',
+    sub: 'A source-led research desk for West Bengal OBC policy and litigation records. It is designed to make documents easier to find, compare, and verify.',
+    stats: [
+      ['Local', 'Relative document links work from a downloaded folder or GitHub Pages.'],
+      ['Primary', 'Original notifications and court records should control over summaries.'],
+      ['Scope', 'A curated research collection, not a complete government archive.'],
+      ['Care', 'Check current court status and official publication before reliance.']
     ]
   },
   'obc-basics': {
@@ -4083,6 +4118,7 @@ function normalise(text) {
 function tabForHash(hash) {
   const id = String(hash || '').replace(/^#/, '');
   if (!id || id === 'home' || id === 'guide' || id === 'query-hub') return 'home';
+  if (id === 'about') return 'about';
   if (id.startsWith('evt-') || id === 'timeline') return 'timeline';
   if (id.startsWith('doc-') || id === 'documents') return 'documents';
   if (id === 'public-hearings' || id === 'missing-records' || id === 'evidence') return 'evidence';

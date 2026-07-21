@@ -1,13 +1,14 @@
 # WB OBC Document Bundle
 
 This repository hosts a self-contained static research site and its source files. Open
-`obc_timeline.html` locally or publish the repository through GitHub Pages.
+`index.html` locally or publish the repository through GitHub Pages.
 
 ## Contents
 
 - `obc_pdfs/` - locally bundled PDF source documents used by the timeline, corpus, reports, hearings, and inventory sections.
 - `case_pdfs/` - locally bundled litigation records; see its README for provenance and verification notes.
 - `case_manifest.json` - structured litigation-record index.
+- `related_sources_catalog.json` - triage of additional local OBC-related material, including large court bundles deliberately not committed.
 - `obc_documents.json` - extracted text and structured summaries for the document corpus.
 - `obc_pdf_manifest.json` - PDF manifest for renamed local source files.
 - `obc_hearing_pdf_manifest.json` - hearing/public notice PDF manifest.
@@ -35,3 +36,11 @@ For GitHub Pages-style links, use:
 ```text
 https://<owner>.github.io/wb-obc-document-bundle/obc_pdfs/<file>.pdf
 ```
+
+## GitHub Pages
+
+1. Push the `main` branch to GitHub.
+2. In **Settings → Pages**, choose **Deploy from a branch**, then select `main` and `/(root)`.
+3. Save. GitHub will publish the site at `https://b4build.github.io/wb-obc-document-bundle/`.
+
+The repository root contains `index.html`, which GitHub Pages uses automatically. The larger litigation bundles listed in `related_sources_catalog.json` are intentionally not published; add concise primary orders or properly described extracts instead.

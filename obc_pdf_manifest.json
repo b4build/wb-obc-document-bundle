@@ -322,5 +322,21 @@
     "source": "https://www.anagrasarkalyan.gov.in/documnts/07-07-2017-10-08-05.pdf",
     "local_pdf": "obc_pdfs/1993-2010_Official-Combined-OBC-Orders-and-Notifications.pdf",
     "summary": "Official department-hosted 44-page combined record containing the foundational pre-2010 OBC reservation orders and notifications."
+  },
+  {
+    "status": "copied_related_source",
+    "notif_no": "West Bengal Commission for Backward Classes Act, 1993",
+    "date": "1993-03-15",
+    "source": "/home/mhbook/Downloads/OBC OLD/obc_related/1993_WB_OBC_act1-1993.pdf",
+    "local_pdf": "obc_pdfs/1993-03-15_WB-Commission-for-Backward-Classes-Act-1993.pdf",
+    "summary": "Foundational Act constituting the West Bengal Commission for Backward Classes."
+  },
+  {
+    "status": "copied_related_source",
+    "notif_no": "West Bengal Commission for Backward Classes Rules, 1993",
+    "date": "1993-11-25",
+    "source": "/home/mhbook/Downloads/OBC OLD/obc_related/1993 OBC Rules.pdf",
+    "local_pdf": "obc_pdfs/1993-11-25_WB-Commission-for-Backward-Classes-Rules-1993.pdf",
+    "summary": "Rules made under section 17 of the 1993 Commission Act."
   }
 ]
