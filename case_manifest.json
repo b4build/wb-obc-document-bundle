@@ -21,6 +21,18 @@
     "source_url": "https://api.sci.gov.in/supremecourt/2024/27287/27287_2024_2_30_57394_Order_22-Nov-2024.pdf"
   },
   {
+    "date": "2025-01-07",
+    "court": "Supreme Court of India",
+    "case_numbers": ["SLP(C) 17751-17755 of 2024", "Diary 30078 of 2024", "Diary 31942 of 2024", "Diary 31944 of 2024", "SLP(C) 16936 of 2024", "SLP(C) 18931-18935 of 2024", "SLP(C) 18926-18930 of 2024", "Diary 36073 of 2024", "SLP(C) 20849 of 2024", "SLP(C) 29017-29021 of 2024"],
+    "title": "State of West Bengal & Anr. v. Amal Chandra Das and connected 2024 appeals",
+    "record_type": "record of proceedings",
+    "local_file": "case_pdfs/2025-01-07_Supreme-Court_SLP-C-17751-17755-2024_connected-appeals_order.pdf",
+    "source_type": "official",
+    "source_url": "https://api.sci.gov.in/supremecourt/2024/27287/27287_2024_2_7_58309_Order_07-Jan-2025.pdf",
+    "follow_up_url": "https://api.sci.gov.in/jonew/cl/2026-05-05/M_J_1.pdf",
+    "verification_note": "By consent, the Court listed the connected matters for final hearing on 28 January 2025. The official 5 May 2026 cause list still lists the cluster; neither source is a final merits disposal order."
+  },
+  {
     "date": "2025-07-18",
     "court": "Supreme Court of India",
     "case_numbers": ["SLP(C) 17528 of 2025"],

@@ -191,5 +191,14 @@
     "bytes": 64345,
     "decision": "included_official_download",
     "reason": "Official follow-up procedural record for the connected 2025 OBC SLPs; it identifies applications to vacate the interim stay without itself resolving them."
+  },
+  {
+    "source_url": "https://api.sci.gov.in/supremecourt/2024/27287/27287_2024_2_7_58309_Order_07-Jan-2025.pdf",
+    "local_file": "case_pdfs/2025-01-07_Supreme-Court_SLP-C-17751-17755-2024_connected-appeals_order.pdf",
+    "title": "7 January 2025 Supreme Court connected OBC appeals record",
+    "pages": 5,
+    "bytes": 45219,
+    "decision": "included_official_download",
+    "reason": "Official record identifying the breadth of the connected 2024 appeal cluster and listing it for final hearing; not a merits disposal order."
   }
 ]
