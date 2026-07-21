@@ -203,14 +203,20 @@
   },
   {
     "source_url": "https://indiankanoon.org/doc/174462035/",
+    "local_file": "case_pdfs/2025-01-21_Calcutta-High-Court_WPA-P-387-430-2024_listing-order.pdf",
     "title": "21 January 2025 Aatmadeep / Amal Chandra Das implementation PIL order",
-    "decision": "linked_court_text_mirror",
-    "reason": "Relevant Calcutta High Court listing order in WPA(P) 387/2024 and 430/2024. Linked externally, not bundled, pending an official or certified court PDF."
+    "pages": 2,
+    "bytes": 370709,
+    "decision": "included_court_text_mirror_print",
+    "reason": "Relevant Calcutta High Court listing order in WPA(P) 387/2024 and 430/2024. A local print of the public court-text mirror is bundled for offline reading; retain the mirror URL and verify against an official or certified court PDF."
   },
   {
     "source_url": "https://indiankanoon.org/doc/30501968/",
+    "local_file": "case_pdfs/2025-05-21_Calcutta-High-Court_WPA-9132-2025_JEMAS-PG-order.pdf",
     "title": "21 May 2025 Supriya Mondal JEMAS PG order",
-    "decision": "linked_court_text_mirror",
-    "reason": "Relevant Calcutta High Court order in WPA 9132/2025. Linked externally, not bundled, pending an official or certified court PDF."
+    "pages": 3,
+    "bytes": 446460,
+    "decision": "included_court_text_mirror_print",
+    "reason": "Relevant Calcutta High Court order in WPA 9132/2025. A local print of the public court-text mirror is bundled for offline reading; retain the mirror URL and verify against an official or certified court PDF."
   }
 ]

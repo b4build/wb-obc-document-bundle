@@ -1,0 +1,44 @@
+name: Source, correction, or missing-record report
+description: Report a public source, a correction, a broken link, or a missing OBC-related court/policy record.
+title: "[Source report]: "
+labels: ["source-report"]
+body:
+  - type: markdown
+    attributes:
+      value: "Please do not include personal data, identity documents, private pleadings, addresses, or phone numbers. This report is public."
+  - type: dropdown
+    id: report_type
+    attributes:
+      label: Report type
+      options: [Source addition, Correction, Missing case or order, Broken link or file problem, Survey feedback]
+    validations:
+      required: true
+  - type: input
+    id: record
+    attributes:
+      label: Record title, notification, or case number
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Official or public source URL
+      placeholder: https://...
+  - type: textarea
+    id: details
+    attributes:
+      label: What should be added or corrected?
+      description: Include the issuing authority/court, date, status, and why it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Provenance and verification notes
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public-report check
+      options:
+        - label: I have not included personal or sensitive information.
+          required: true

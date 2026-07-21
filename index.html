@@ -8,21 +8,23 @@
 
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="site-header-inner">
       <span class="site-logo">WB OBC Documentation</span>
       <nav class="site-nav" aria-label="Sections">
         <a href="#home" class="active" data-tab-target="home">Home</a>
-        <a href="#about" data-tab-target="about">About</a>
-        <a href="#obc-basics" data-tab-target="obc-basics">OBC Basics</a>
-        <a href="#methods" data-tab-target="methods">Methods</a>
-        <a href="#reports" data-tab-target="reports">Reports</a>
         <a href="#timeline" data-tab-target="timeline">Timeline</a>
         <a href="#cases" data-tab-target="cases">Cases</a>
         <a href="#documents" data-tab-target="documents">Corpus</a>
         <a href="#evidence" data-tab-target="evidence">Evidence</a>
+        <a href="#obc-basics" data-tab-target="obc-basics">OBC Basics</a>
+        <a href="#methods" data-tab-target="methods">Methods</a>
+        <a href="#reports" data-tab-target="reports">Reports</a>
         <a href="#entry-framework" data-tab-target="entry-framework">Framework</a>
         <a href="#inventory" data-tab-target="inventory">Files</a>
+        <a href="contribute.html">Report a source</a>
+        <a href="#about" data-tab-target="about">About</a>
         <a href="https://github.com/b4build/wb-obc-document-bundle" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
     </div>
@@ -34,7 +36,7 @@
       <h1 id="hero-title">OBC Reservation and List Timeline</h1>
       <p class="hero-sub" id="hero-sub">A consolidated view of the PDFs in <strong>OBC OLD</strong> and <strong>OBC 2025</strong>, starting with the 1993 Commission Act and continuing through the 2026 notification and litigation record.</p>
       <div class="hero-stats">
-        <div class="hero-stat"><strong id="hero-stat-1-value">82</strong><span id="hero-stat-1-label">PDF sources bundled across notifications, hearings, reports, and court records.</span></div>
+        <div class="hero-stat"><strong id="hero-stat-1-value">84</strong><span id="hero-stat-1-label">PDF sources bundled across notifications, hearings, reports, and court records.</span></div>
         <div class="hero-stat"><strong id="hero-stat-2-value">66</strong><span id="hero-stat-2-label">Classes listed in Notification No. 945-BCW/MR-23/2026.</span></div>
         <div class="hero-stat"><strong id="hero-stat-3-value">7%</strong><span id="hero-stat-3-label">Reservation position stated in the 18 May 2026 list notification.</span></div>
         <div class="hero-stat"><strong id="hero-stat-4-value">5</strong><span id="hero-stat-4-label">Priority evidence gaps and follow-ups tracked in the audit.</span></div>
@@ -42,16 +44,21 @@
     </div>
   </section>
 
-  <main class="wrap">
+  <main id="main-content" class="wrap" tabindex="-1">
 
     <section id="home" class="home-panel tab-panel" data-tab-panel="home" aria-label="Home dashboard">
       <div class="home-intro">
         <p class="panel-kicker">Offline bundle</p>
         <h2>Research Home</h2>
-        <p>Use this single HTML as a local research desk. The timeline, extracted PDF text, public-hearing notices, policy reports, audit notes, and bundled file paths are cross-linked so you can move from a claim to the supporting record quickly.</p>
+        <p>Use this single HTML as a source-led research desk. It connects statutory background, notifications, certificate and roster records, hearing notices, policy reports, litigation, and the PDFs that support each claim.</p>
       </div>
+      <section class="home-brief" aria-label="How to use this site">
+        <article><strong>1. Start with the question</strong><span>Search a community, notification, case number, date, or legal term.</span></article>
+        <article><strong>2. Follow the record</strong><span>Use Timeline for policy changes and Cases for litigation and procedural status.</span></article>
+        <article><strong>3. Open the source</strong><span>Every summary should lead to a bundled PDF or a clearly labelled original source link.</span></article>
+      </section>
       <div class="source-status-grid">
-        <a class="source-status" href="#documents"><strong>82</strong><span>PDF sources bundled locally across notifications, hearings, reports, and litigation records</span></a>
+        <a class="source-status" href="#documents"><strong>84</strong><span>PDF sources bundled locally across notifications, hearings, reports, and litigation records</span></a>
         <a class="source-status" href="#public-hearings"><strong>17</strong><span>hearing / public notice PDFs bundled locally</span></a>
         <a class="source-status" href="#reports"><strong>6</strong><span>policy/process sources bundled for context</span></a>
         <a class="source-status" href="#missing-records"><strong>5</strong><span>priority evidence gaps and follow-ups tracked</span></a>
@@ -62,22 +69,25 @@
       <div id="query-hub" class="query-hub" aria-label="OBC query hub">
         <div>
           <p class="panel-kicker">Start here</p>
-          <h2>Find the document, rule, or community trail</h2>
-          <p>Start with a community name, notification number, date, category, hearing date, or legal keyword. The most useful paths are grouped below.</p>
+          <h2>Find a document, rule, community, or case</h2>
+          <p>Search across the timeline, case tracker, and document corpus. Results open the relevant tab and preserve the underlying source trail.</p>
         </div>
+        <label class="visually-hidden" for="site-search">Search the research bundle</label>
+        <input id="site-search" class="search-input site-search" type="search" placeholder="Try: 945-BCW, Aatmadeep, OBC certificate, 2025, JEMAS" autocomplete="off" aria-controls="site-search-results">
+        <div id="site-search-results" class="site-search-results" aria-live="polite"></div>
       <div class="query-actions">
-          <a href="#about">About this bundle</a>
-          <a href="#documents">Search full text</a>
           <a href="#timeline">Trace timeline</a>
           <a href="#cases">Track cases</a>
+          <a href="#documents">Search full text</a>
           <a href="#reports">Check policy basis</a>
+          <a href="#about">Read scope &amp; source care</a>
         </div>
       </div>
 
       <div class="home-layout">
         <article class="home-card">
-          <h3>Latest notified position in this bundle</h3>
-          <p>Notification No. 944-BCW/MR-23/2026 withdraws the 2025 package. Notification No. 945-BCW/MR-23/2026 lists 66 classes and states the 7% reservation position. Check the Cases tab for later litigation records.</p>
+          <h3>Documented position in this bundle</h3>
+          <p>Notification No. 944-BCW/MR-23/2026 withdraws the 2025 package. Notification No. 945-BCW/MR-23/2026 lists 66 classes and states the 7% reservation position. Litigation can affect implementation, so read the linked case record before relying on a summary.</p>
           <p><a href="#evt-2026-944">Open withdrawal entry</a> · <a href="#evt-2026-945">Open current list entry</a></p>
         </article>
         <article class="home-card">
@@ -86,7 +96,7 @@
           <p><a href="#reports">Open reports</a> · <a href="https://raw.githubusercontent.com/b4build/wb-obc-document-bundle/main/muslim_obc_status.html" target="_blank" rel="noreferrer">Muslim OBC note</a></p>
         </article>
         <article class="home-card">
-          <h3>Completeness Check</h3>
+          <h3>What remains to verify</h3>
           <p>The strongest missing layer is the Commission record behind the 2025 hearing and survey process: class-wise advice, survey data, and benchmark memos.</p>
           <p><a href="#missing-records">Open audit</a> · <a href="#public-hearings">Open hearing table</a></p>
         </article>
@@ -108,12 +118,12 @@
             <tr><td>Search inside extracted PDFs</td><td><a href="#documents">Corpus</a></td><td>Filterable document table with PDF links and text preview buttons.</td></tr>
             <tr><td>Add court records</td><td><a href="#cases">Cases</a></td><td>Case tracker, issue matrix, party/court fields, orders, affected notifications, and evidence gaps.</td></tr>
             <tr><td>Check public-hearing notices</td><td><a href="#public-hearings">Evidence</a></td><td>Hearing dates, times, named communities, and local notice PDFs.</td></tr>
-            <tr><td>Add or audit files</td><td><a href="#entry-framework">Framework</a> / <a href="#inventory">Files</a></td><td>Structured fields for new records and the local PDF inventory.</td></tr>
+            <tr><td>Add or audit files</td><td><a href="contribute.html">Report a source</a> / <a href="#entry-framework">Framework</a></td><td>A guided report route, structured fields, and the local PDF inventory.</td></tr>
           </tbody>
         </table>
       </div>
 
-      <p class="cloud-note">Portable bundle: source links now use relative paths, so this page works from the repository, GitHub Pages, or a downloaded folder. External links remain only where an original source is not available for local redistribution.</p>
+      <p class="cloud-note">Portable bundle: source links use relative paths, so this page works from the repository, GitHub Pages, or a downloaded folder. Court-text mirror PDFs are retained locally for offline reading and always keep a link to their original mirror or official source.</p>
     </section>
 
     <section id="about" class="research about-section tab-panel" data-tab-panel="about" hidden>
@@ -1368,11 +1378,11 @@
         </li>
         <li class="case-event">
           <time datetime="2025-01-21">21 Jan 2025</time>
-          <div><h3>Calcutta High Court: Aatmadeep PIL and Amal Chandra Das PIL listed together</h3><p>In <strong>WPA(P) 387/2024 (Aatmadeep)</strong> with <strong>WPA(P) 430/2024 (Amal Chandra Das)</strong>, the Court recorded a State affidavit about implementation of the 22 May 2024 judgment and allegations that recruitment/admission bodies continued to use the struck-down OBC-A/OBC-B categories. The Court did not determine the merits in this order; it listed the matters for further consideration.</p><p class="case-links"><a href="https://indiankanoon.org/doc/174462035/" target="_blank" rel="noreferrer">Court-text mirror (verify against the High Court record)</a></p></div>
+          <div><h3>Calcutta High Court: Aatmadeep PIL and Amal Chandra Das PIL listed together</h3><p>In <strong>WPA(P) 387/2024 (Aatmadeep)</strong> with <strong>WPA(P) 430/2024 (Amal Chandra Das)</strong>, the Court recorded a State affidavit about implementation of the 22 May 2024 judgment and allegations that recruitment/admission bodies continued to use the struck-down OBC-A/OBC-B categories. The Court did not determine the merits in this order; it listed the matters for further consideration.</p><p class="case-links"><a href="case_pdfs/2025-01-21_Calcutta-High-Court_WPA-P-387-430-2024_listing-order.pdf" target="_blank" rel="noreferrer">Bundled court-text mirror print (2 pp.)</a> · <a href="https://indiankanoon.org/doc/174462035/" target="_blank" rel="noreferrer">Original court-text mirror</a> <span>Not a certified or official High Court PDF; verify against the court record.</span></p></div>
         </li>
         <li class="case-event">
           <time datetime="2025-05-21">21 May 2025</time>
-          <div><h3>Calcutta High Court: WBJEE PG admission implementation order</h3><p>In <strong>WPA 9132/2025, Supriya Mondal &amp; Ors. v. State of West Bengal &amp; Ors.</strong>, concerning JEMAS PG 2024–25 admissions, the Court directed the Joint Entrance Board to identify candidates among the 66 pre-2010 classes, recast the panel at 7% OBC reservation, and complete the specified admission steps. The order was later the subject of appeals <strong>MAT 943/2025</strong> and <strong>MAT 955/2025</strong>, referenced in the 7 August 2025 proceeding; this tracker does not treat those appeals as decided.</p><p class="case-links"><a href="https://indiankanoon.org/doc/30501968/" target="_blank" rel="noreferrer">Court-text mirror (verify against the High Court record)</a></p></div>
+          <div><h3>Calcutta High Court: WBJEE PG admission implementation order</h3><p>In <strong>WPA 9132/2025, Supriya Mondal &amp; Ors. v. State of West Bengal &amp; Ors.</strong>, concerning JEMAS PG 2024–25 admissions, the Court directed the Joint Entrance Board to identify candidates among the 66 pre-2010 classes, recast the panel at 7% OBC reservation, and complete the specified admission steps. The order was later the subject of appeals <strong>MAT 943/2025</strong> and <strong>MAT 955/2025</strong>, referenced in the 7 August 2025 proceeding; this tracker does not treat those appeals as decided.</p><p class="case-links"><a href="case_pdfs/2025-05-21_Calcutta-High-Court_WPA-9132-2025_JEMAS-PG-order.pdf" target="_blank" rel="noreferrer">Bundled court-text mirror print (3 pp.)</a> · <a href="https://indiankanoon.org/doc/30501968/" target="_blank" rel="noreferrer">Original court-text mirror</a> <span>Not a certified or official High Court PDF; verify against the court record.</span></p></div>
         </li>
         <li class="case-event">
           <time datetime="2025-06-17">17 Jun 2025</time>
@@ -1388,7 +1398,7 @@
         </li>
         <li class="case-event">
           <time datetime="2025-08-07">7 Aug 2025</time>
-          <div><h3>Calcutta High Court: JEMAS PG contempt proceedings</h3><p>The order in CPAN 1362 and 1365 of 2025 records contempt proceedings linked to implementation of the 22 May 2024 judgment and the <a href="https://indiankanoon.org/doc/30501968/" target="_blank" rel="noreferrer">21 May 2025 WPA 9132 order</a>. It describes the proceedings and related pending appeals; it should be read for its own operative directions and procedural setting.</p><p class="case-links"><a href="case_pdfs/2025-08-07_Calcutta-High-Court_CPAN-1362-1365-2025_JEMAS_contempt_order.pdf" target="_blank" rel="noreferrer">Bundled High Court order (12 pp.)</a></p></div>
+          <div><h3>Calcutta High Court: JEMAS PG contempt proceedings</h3><p>The order in CPAN 1362 and 1365 of 2025 records contempt proceedings linked to implementation of the 22 May 2024 judgment and the <a href="case_pdfs/2025-05-21_Calcutta-High-Court_WPA-9132-2025_JEMAS-PG-order.pdf" target="_blank" rel="noreferrer">21 May 2025 WPA 9132 court-text mirror print</a>. It describes the proceedings and related pending appeals; it should be read for its own operative directions and procedural setting.</p><p class="case-links"><a href="case_pdfs/2025-08-07_Calcutta-High-Court_CPAN-1362-1365-2025_JEMAS_contempt_order.pdf" target="_blank" rel="noreferrer">Bundled High Court order (12 pp.)</a></p></div>
         </li>
         <li class="case-event">
           <time datetime="2025-08-22">22 Aug 2025</time>
@@ -3923,9 +3933,26 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSyst
 .case-links a { color: #1a5c7c; font-weight: 750; }
 .case-links span { color: var(--muted); }
 .case-matrix { margin-top: 14px; }
+.skip-link { position: fixed; z-index: 999; left: 16px; top: 12px; padding: 9px 13px; background: #fff; color: var(--ink); border-radius: 7px; box-shadow: var(--shadow-md); transform: translateY(-160%); transition: transform .15s ease; }
+.skip-link:focus { transform: translateY(0); }
+:focus-visible { outline: 3px solid #f0c96a; outline-offset: 3px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.home-brief { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 22px 0; }
+.home-brief article { padding: 18px; background: linear-gradient(145deg, #f9fbfc, #edf4f7); border: 1px solid var(--border); border-radius: 14px; }
+.home-brief strong { display: block; margin-bottom: 6px; color: var(--ink); font: 700 14px var(--mono); letter-spacing: .02em; }
+.home-brief span { color: var(--ink-light); font-size: 14px; }
+.site-search { width: 100%; margin: 18px 0 8px; border: 2px solid #b8ccda; box-shadow: 0 3px 12px rgba(17,37,63,.06); }
+.site-search:focus { border-color: #1e6385; }
+.site-search-results { display: grid; gap: 7px; margin: 10px 0 4px; }
+.site-search-results:empty { display: none; }
+.search-result { display: grid; gap: 2px; padding: 11px 13px; color: var(--ink); text-decoration: none; background: #fff; border: 1px solid var(--border); border-radius: 10px; }
+.search-result:hover { border-color: #6c9db8; background: #f4f9fb; }
+.search-result strong { font-size: 14px; }
+.search-result span, .search-result small { color: var(--ink-light); line-height: 1.38; }
+.search-result small { font: 700 10px var(--mono); color: #537187; letter-spacing: .06em; text-transform: uppercase; }
 
 @media (max-width: 820px) {
-  .site-header { position: relative; }
+  .site-header { position: sticky; }
   .site-header-inner { min-height: 62px; }
   .hero { padding: 52px 0 44px; }
   .hero::after { display: none; }
@@ -3938,13 +3965,15 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSyst
   .case-event h3 { font-size: 18px; }
 }
 @media (max-width: 520px) {
-  .site-header-inner { padding: 10px 14px; }
+  .site-header-inner { height: auto; padding: 10px 14px; align-items: stretch; flex-direction: column; gap: 5px; }
   .site-nav { gap: 2px; margin: 0 -4px; padding: 0 4px 4px; }
   .site-nav a { padding: 7px 9px; font-size: 10px; }
+  .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .hero-stat { min-height: 0; padding: 18px; }
   .home-panel, .research { border-radius: 12px; }
   .case-event { padding-bottom: 22px; }
   .case-matrix table { font-size: 13px; }
+  .home-brief { grid-template-columns: 1fr; }
 }
 </style>
 
@@ -4121,7 +4150,7 @@ const HERO_CONTENT = {
     title: 'OBC Research Dashboard',
     sub: 'A source-led record from the 1993 Commission Act through the 2026 notification and litigation record: timeline, extracted PDF text, hearings, policy reports, audit gaps, and local source links.',
     stats: [
-      ['82', 'PDF sources bundled locally across notifications, hearings, reports, and litigation records.'],
+      ['84', 'PDF sources bundled locally across notifications, hearings, reports, and litigation records.'],
       ['Corpus', 'Searchable text records plus a separate litigation tracker.'],
       ['17', 'Public-hearing and public-notice PDFs bundled locally.'],
       ['5', 'Priority source gaps and follow-up records tracked in the audit section.']
@@ -4210,8 +4239,8 @@ const HERO_CONTENT = {
     sub: 'Follow the principal court records alongside the notification timeline. Each entry distinguishes a bundled primary record, a mirror, and a record that still needs an official copy.',
     stats: [
       ['2024', 'Calcutta High Court judgment bundled as a research copy.'],
-      ['2', 'Official Supreme Court procedural records bundled locally.'],
-      ['1', 'High Court interim-order source still needs an official local copy.'],
+      ['Local', 'Court records and court-text mirror prints are bundled with provenance labels.'],
+      ['Sources', 'Original mirror and official-source links remain visible beside local copies.'],
       ['Verify', 'Always check the relevant court for the latest case status.']
     ]
   },
@@ -4242,6 +4271,78 @@ const HERO_CONTENT = {
 function normalise(text) {
   return String(text || '').replace(/\s+/g, ' ').trim().toLowerCase();
 }
+
+const siteSearch = document.getElementById('site-search');
+const siteSearchResults = document.getElementById('site-search-results');
+
+function conciseText(text, limit = 180) {
+  const value = String(text || '').replace(/\s+/g, ' ').trim();
+  return value.length > limit ? `${value.slice(0, limit - 1).trimEnd()}…` : value;
+}
+
+function bundleSearchIndex() {
+  const timelineItems = Array.from(document.querySelectorAll('#timeline .event')).map(event => ({
+    type: 'Timeline',
+    title: conciseText(event.querySelector('h2')?.textContent || event.querySelector('.card')?.textContent, 110),
+    detail: conciseText(event.querySelector('.card p')?.textContent || '', 170),
+    text: `${event.dataset.search || ''} ${event.textContent || ''}`,
+    href: event.id ? `#${event.id}` : '#timeline'
+  }));
+  const caseItems = Array.from(document.querySelectorAll('#cases .case-event')).map((event, index) => {
+    if (!event.id) event.id = `case-${index + 1}`;
+    return {
+      type: 'Case',
+      title: conciseText(event.querySelector('h3')?.textContent || '', 110),
+      detail: conciseText(event.querySelector('p')?.textContent || '', 170),
+      text: event.textContent || '',
+      href: `#${event.id}`
+    };
+  });
+  const documentItems = docRows.map((row, index) => {
+    const doc = OBC_DOCS[Number(row.dataset.docIdx)];
+    return {
+      type: 'Document',
+      title: doc?.notif_no || row.querySelector('code')?.textContent || `Corpus record ${index + 1}`,
+      detail: conciseText(doc?.summary || row.textContent, 170),
+      text: `${doc?.notif_no || ''} ${doc?.date || ''} ${doc?.type || ''} ${doc?.status || ''} ${doc?.summary || ''} ${doc?.text || ''} ${row.textContent || ''}`,
+      href: row.id ? `#${row.id}` : '#documents'
+    };
+  });
+  return [...timelineItems, ...caseItems, ...documentItems].map(item => ({ ...item, searchText: normalise(`${item.title} ${item.detail} ${item.text}`) }));
+}
+
+const BUNDLE_SEARCH_INDEX = bundleSearchIndex();
+
+function renderBundleSearch() {
+  if (!siteSearch || !siteSearchResults) return;
+  const term = normalise(siteSearch.value);
+  siteSearchResults.replaceChildren();
+  if (!term) return;
+  if (term.length < 2) {
+    siteSearchResults.textContent = 'Type at least two characters to search the bundle.';
+    return;
+  }
+  const matches = BUNDLE_SEARCH_INDEX.filter(item => item.searchText.includes(term)).slice(0, 12);
+  if (!matches.length) {
+    siteSearchResults.textContent = 'No matching timeline entry, case, or corpus record was found.';
+    return;
+  }
+  matches.forEach(item => {
+    const link = document.createElement('a');
+    link.className = 'search-result';
+    link.href = item.href;
+    const title = document.createElement('strong');
+    title.textContent = item.title;
+    const detail = document.createElement('span');
+    detail.textContent = item.detail;
+    const type = document.createElement('small');
+    type.textContent = item.type;
+    link.append(title, detail, type);
+    siteSearchResults.append(link);
+  });
+}
+
+if (siteSearch) siteSearch.addEventListener('input', renderBundleSearch);
 
 function tabForHash(hash) {
   const id = String(hash || '').replace(/^#/, '');
@@ -4461,6 +4562,7 @@ buttons.forEach(button => {
 applyFilters();
 applyDocFilters();
 syncTabFromHash();
+if (window.location.hash === '#home') requestAnimationFrame(() => window.scrollTo({ top: 0 }));
 </script>
 
 

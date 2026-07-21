@@ -13,6 +13,8 @@ This repository hosts a self-contained static research site and its source files
 - `obc_pdf_manifest.json` - PDF manifest for renamed local source files.
 - `obc_hearing_pdf_manifest.json` - hearing/public notice PDF manifest.
 - `evidence_file_inventory.csv` - local evidence file inventory.
+- `contribute.html` - public source/correction report page; it prepares a reviewable GitHub issue without collecting data itself.
+- `SURVEY_SETUP.md` - privacy-aware guidance for adding a Google Forms survey alongside the public GitHub reporting route.
 - `QUICK_REFERENCE.txt` and `README_WB_OBC_SITE.md` - supporting notes from the local bundle.
 
 ## Important PRD Survey Addition
@@ -44,3 +46,7 @@ https://<owner>.github.io/wb-obc-document-bundle/obc_pdfs/<file>.pdf
 3. Save. GitHub will publish the site at `https://b4build.github.io/wb-obc-document-bundle/`.
 
 The repository root contains `index.html`, which GitHub Pages uses automatically. The larger litigation bundles listed in `related_sources_catalog.json` are intentionally not published; add concise primary orders or properly described extracts instead.
+
+## Public reports and surveys
+
+Use `contribute.html` for public source additions, corrections, missing records, and broken-link reports. It opens a prefilled GitHub issue so that the source trail can be reviewed in public. For anonymous or aggregate feedback, the recommended option is a Google Form configured according to `SURVEY_SETUP.md`; do not collect sensitive personal or case material through a public form.
