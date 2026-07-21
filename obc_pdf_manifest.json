@@ -346,5 +346,37 @@
     "source": "/home/mhbook/Downloads/OBC OLD/obc_related/1033-BCW.pdf",
     "local_pdf": "obc_pdfs/2026-05-14_1033-Secy-BCW_caste-certificate-reverification.pdf",
     "summary": "Administrative instruction to re-verify caste certificates issued since 2011, including related second-generation certificates; the stated scope covers SC, ST, and OBC certificates."
+  },
+  {
+    "status": "copied_related_source",
+    "notif_no": "1464-BCW/MR-59/10",
+    "date": "2010-04-30",
+    "source": "/home/mhbook/Downloads/OBC OLD/obc_related/OLD OBC guidelines.pdf",
+    "local_pdf": "obc_pdfs/2010-04-30_1464-BCW-MR-59-10_OBC-certificate-guidelines.pdf",
+    "summary": "Guidelines for OBC certificate issuance; superseded by Memo No. 1204-SBCW/MR-67/10 in 2015."
+  },
+  {
+    "status": "copied_related_source",
+    "notif_no": "6320-BCW/MR-84/10",
+    "date": "2010-09-24",
+    "source": "/home/mhbook/Downloads/OBC OLD/obc_related/2010  Hundred point roster.pdf",
+    "local_pdf": "obc_pdfs/2010-09-24_6320-BCW-MR-84-10_100-point-roster.pdf",
+    "summary": "2010 model 100-point roster following the Category-A/Category-B structure and reservation changes."
+  },
+  {
+    "status": "copied_related_source",
+    "notif_no": "1204-SBCW/MR-67/10",
+    "date": "2015-07-27",
+    "source": "/home/mhbook/Downloads/OBC OLD/obc_related/Update guidelines for issuance of OBC certificates (2015).pdf",
+    "local_pdf": "obc_pdfs/2015-07-27_1204-SBCW-MR-67-10_updated-OBC-certificate-guidelines.pdf",
+    "summary": "Updated OBC certificate-issuance guidelines, superseding the 2010 memo."
+  },
+  {
+    "status": "copied_related_source",
+    "notif_no": "NCBC/MS/1/2015",
+    "date": "2015-03-02",
+    "source": "/home/mhbook/Downloads/OBC OLD/obc_related/Report on Sub-Categorization within OBCs -2015- Pandey635681469081640773.pdf",
+    "local_pdf": "obc_pdfs/2015-03-02_NCBC_sub-categorization-within-OBCs_report.pdf",
+    "summary": "National Commission for Backward Classes report on sub-categorisation within OBCs; Central-list policy context, not a West Bengal State-list notification."
   }
 ]

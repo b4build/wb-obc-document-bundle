@@ -146,5 +146,41 @@
     "bytes": 39661,
     "decision": "included_with_provenance_label",
     "reason": "Direct follow-up order to the included 7 August 2025 JEMAS contempt matter; it records an interim stay and tagging with a tracked OBC SLP."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/OLD OBC guidelines.pdf",
+    "local_file": "obc_pdfs/2010-04-30_1464-BCW-MR-59-10_OBC-certificate-guidelines.pdf",
+    "title": "2010 OBC certificate guidelines",
+    "pages": 8,
+    "bytes": 2465092,
+    "decision": "included_with_provenance_label",
+    "reason": "Direct West Bengal BCW memorandum; included as a visually checked historical source and labelled as superseded by the 2015 update."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/2010  Hundred point roster.pdf",
+    "local_file": "obc_pdfs/2010-09-24_6320-BCW-MR-84-10_100-point-roster.pdf",
+    "title": "2010 model 100-point roster",
+    "pages": 5,
+    "bytes": 1244822,
+    "decision": "included_with_provenance_label",
+    "reason": "Direct gazetted implementation record for the 2010 OBC Category-A/Category-B arrangement."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/Update guidelines for issuance of OBC certificates (2015).pdf",
+    "local_file": "obc_pdfs/2015-07-27_1204-SBCW-MR-67-10_updated-OBC-certificate-guidelines.pdf",
+    "title": "2015 updated OBC certificate guidelines",
+    "pages": 11,
+    "bytes": 2643783,
+    "decision": "included_with_provenance_label",
+    "reason": "Direct West Bengal BCW memorandum superseding the 2010 certificate guidelines; included with an explicit historical-status caution."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/Report on Sub-Categorization within OBCs -2015- Pandey635681469081640773.pdf",
+    "local_file": "obc_pdfs/2015-03-02_NCBC_sub-categorization-within-OBCs_report.pdf",
+    "title": "NCBC report on sub-categorization within OBCs",
+    "pages": 17,
+    "bytes": 5573734,
+    "decision": "included_with_provenance_label",
+    "reason": "Useful National Commission policy context, clearly separated from West Bengal State-list authority."
   }
 ]
