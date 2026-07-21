@@ -91,6 +91,33 @@
     "pages": 117,
     "bytes": 3223900,
     "decision": "needs_ocr_and_provenance_review",
-    "reason": "Manageable size but image-only; identify the exact case, date, and operative order before publication."
+    "reason": "Image-only party filing in WPA(P) 319/2026, Mijanul Kabir & Anr. v. State of West Bengal & Ors.; it contains personal contact information and is not published in this bundle."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/Central obc related.pdf",
+    "local_file": "obc_pdfs/2011_NCBC-Advice-West-Bengal_Compilation.pdf",
+    "title": "NCBC advice concerning West Bengal compilation",
+    "pages": 80,
+    "bytes": 11088773,
+    "decision": "included_with_provenance_label",
+    "reason": "Central-list context collection. Included as a local scan and clearly distinguished from State-list notifications."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/OBC Survey Block Form.pdf",
+    "local_file": "obc_pdfs/WBCBC_OBC-Survey-Block-Proforma.pdf",
+    "title": "West Bengal Commission for Backward Classes block survey proforma",
+    "pages": 7,
+    "bytes": 111823,
+    "decision": "included_with_provenance_label",
+    "reason": "Useful primary process template for population, social, educational, occupational, and representation evidence."
+  },
+  {
+    "source_path": "/home/mhbook/Downloads/OBC OLD/obc_related/display_pdf-17_260703200059.pdf",
+    "local_file": "case_pdfs/2026-07-03_Calcutta-High-Court_WPA-P-305-2026_notifications-944-945-946_order.pdf",
+    "title": "WPA(P) 305/2026 order",
+    "pages": 4,
+    "bytes": 81329,
+    "decision": "included_with_provenance_label",
+    "reason": "Directly addresses the PIL challenge to Notifications 944/945 and Letter 946."
   }
 ]

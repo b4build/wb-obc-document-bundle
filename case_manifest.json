@@ -79,5 +79,15 @@
     "local_files": ["case_pdfs/2026-07-01_Calcutta-High-Court_WPA-14695-2026_Bistriti-Parveen_order.pdf", "case_pdfs/2026-07-01_Calcutta-High-Court_WPA-14698-2026_Yasin-Chowdhury_order.pdf"],
     "source_type": "local_source_copy",
     "verification_note": "The orders extend the application-editing date and list the matters; they do not decide the merits."
+  },
+  {
+    "date": "2026-07-03",
+    "court": "Calcutta High Court",
+    "case_numbers": ["WPA(P) 305 of 2026"],
+    "title": "Right and Justice Foundation & Anr. v. State of West Bengal & Ors.",
+    "record_type": "order dismissing PIL",
+    "local_file": "case_pdfs/2026-07-03_Calcutta-High-Court_WPA-P-305-2026_notifications-944-945-946_order.pdf",
+    "source_type": "local_source_copy",
+    "verification_note": "The order records that the Supreme Court was already seized of the principal issues and declines to entertain the PIL."
   }
 ]

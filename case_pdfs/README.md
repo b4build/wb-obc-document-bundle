@@ -13,5 +13,6 @@ It is a research archive, not a statement of current case status. Check the rele
 | `2025-07-28_Supreme-Court_SLP-C-17422-17528-17973-17974-2025_stay_order.pdf` | Supreme Court interim stay order | Local source copy; it records notice and an interim stay of the 17 June 2025 High Court order. |
 | `2025-08-07_Calcutta-High-Court_CPAN-1362-1365-2025_JEMAS_contempt_order.pdf` | JEMAS PG contempt proceedings | Local source copy relating to implementation of the 2024 judgment in an admission context. |
 | `2026-07-01_Calcutta-High-Court_WPA-14695-2026_Bistriti-Parveen_order.pdf` / `2026-07-01_Calcutta-High-Court_WPA-14698-2026_Yasin-Chowdhury_order.pdf` | Recruitment-category interim orders | Local source copies. They extend application-editing dates and list the matters; neither is a final merits decision. |
+| `2026-07-03_Calcutta-High-Court_WPA-P-305-2026_notifications-944-945-946_order.pdf` | Right and Justice Foundation PIL order | Local source copy. The Division Bench declined to entertain the PIL, recording that the Supreme Court was already seized of the principal issues. |
 
 The pre-2010 OBC orders bundle is in `../obc_pdfs/1993-2010_Official-Combined-OBC-Orders-and-Notifications.pdf`; it was downloaded from the West Bengal Anagrasar Kalyan Department and has SHA-256 `76a8e964210ea2999e4198c9039486187d85d2402b986dc4510bea8f34366132`.
