@@ -182,5 +182,14 @@
     "bytes": 5573734,
     "decision": "included_with_provenance_label",
     "reason": "Useful National Commission policy context, clearly separated from West Bengal State-list authority."
+  },
+  {
+    "source_url": "https://api.sci.gov.in/officereport/2025/34144/34144_2025_2026-03-11.pdf",
+    "local_file": "case_pdfs/2026-03-11_Supreme-Court_SLP-C-17422-17528-17973-17974_office-report.pdf",
+    "title": "11 March 2026 Supreme Court connected OBC SLP office report",
+    "pages": 5,
+    "bytes": 64345,
+    "decision": "included_official_download",
+    "reason": "Official follow-up procedural record for the connected 2025 OBC SLPs; it identifies applications to vacate the interim stay without itself resolving them."
   }
 ]

@@ -81,6 +81,18 @@
     "verification_note": "The order stayed the 7 August 2025 Calcutta High Court order in CPAN 1362/2025 until further orders and tagged the matters with SLP(C) 17422/2025."
   },
   {
+    "date": "2026-03-11",
+    "court": "Supreme Court of India",
+    "case_numbers": ["SLP(C) 17422 of 2025", "SLP(C) 17528 of 2025", "SLP(C) 17973-17974 of 2025"],
+    "title": "State of West Bengal v. Purabi Das & Ors. and connected matters",
+    "record_type": "official office report",
+    "local_file": "case_pdfs/2026-03-11_Supreme-Court_SLP-C-17422-17528-17973-17974_office-report.pdf",
+    "source_type": "official",
+    "source_url": "https://api.sci.gov.in/officereport/2025/34144/34144_2025_2026-03-11.pdf",
+    "follow_up_url": "https://api.sci.gov.in/jonew/cl/2026-05-05/M_J_1.pdf",
+    "verification_note": "Records listing with applications for clarification/direction and vacation of interim stay; the official 5 May 2026 cause list also lists those applications. Neither source is a disposal order or itself alters the 28 July 2025 stay."
+  },
+  {
     "date": "2026-07-01",
     "court": "Calcutta High Court",
     "case_numbers": ["WPA 14695 of 2026", "WPA 14698 of 2026"],
