@@ -30,5 +30,54 @@
     "source_type": "official",
     "source_url": "https://api.sci.gov.in/officereport/2025/34016/34016_2025_2025-07-18_1621.pdf",
     "verification_note": "An office report is procedural and should not be treated as a merits decision."
+  },
+  {
+    "date": "2024-07-28",
+    "court": "Supreme Court of India",
+    "case_numbers": ["SLP(C) 16936 of 2024"],
+    "title": "Aatmadeep v. State of West Bengal & Ors.",
+    "record_type": "party paper book",
+    "local_file": "case_pdfs/2024-07-28_Supreme-Court_SLP-C-16936-2024_Aatmadeep_paper-book.pdf",
+    "source_type": "party_filing",
+    "verification_note": "A party paper book is context material, not a judicial order."
+  },
+  {
+    "date": "2025-06-17",
+    "court": "Calcutta High Court",
+    "case_numbers": ["WPA(P) 111 of 2025", "WPA(P) 119 of 2025", "WPA(P) 132 of 2025", "WPA(P) 430 of 2024"],
+    "title": "Benchmark-survey and 2025 notification challenge",
+    "record_type": "order",
+    "local_file": "case_pdfs/2025-06-17_Calcutta-High-Court_WPA-P-111-119-132-2025_benchmark-survey_order.pdf",
+    "source_type": "local_source_copy",
+    "verification_note": "Superseded for interim-effect purposes by the 28 July 2025 Supreme Court stay; obtain a certified/official High Court copy when available."
+  },
+  {
+    "date": "2025-07-28",
+    "court": "Supreme Court of India",
+    "case_numbers": ["SLP(C) 17422 of 2025", "SLP(C) 17528 of 2025", "SLP(C) 17973-17974 of 2025"],
+    "title": "State of West Bengal v. Purabi Das & Ors. and connected matters",
+    "record_type": "interim stay order",
+    "local_file": "case_pdfs/2025-07-28_Supreme-Court_SLP-C-17422-17528-17973-17974-2025_stay_order.pdf",
+    "source_type": "local_source_copy",
+    "verification_note": "The order records an interim stay of the 17 June 2025 High Court order; verify subsequent Supreme Court proceedings."
+  },
+  {
+    "date": "2025-08-07",
+    "court": "Calcutta High Court",
+    "case_numbers": ["CPAN 1362 of 2025", "CPAN 1365 of 2025", "WPA 9132 of 2025"],
+    "title": "JEMAS PG contempt proceedings",
+    "record_type": "order",
+    "local_file": "case_pdfs/2025-08-07_Calcutta-High-Court_CPAN-1362-1365-2025_JEMAS_contempt_order.pdf",
+    "source_type": "local_source_copy"
+  },
+  {
+    "date": "2026-07-01",
+    "court": "Calcutta High Court",
+    "case_numbers": ["WPA 14695 of 2026", "WPA 14698 of 2026"],
+    "title": "Bistriti Parveen and Yasin Chowdhury recruitment-category orders",
+    "record_type": "interim orders",
+    "local_files": ["case_pdfs/2026-07-01_Calcutta-High-Court_WPA-14695-2026_Bistriti-Parveen_order.pdf", "case_pdfs/2026-07-01_Calcutta-High-Court_WPA-14698-2026_Yasin-Chowdhury_order.pdf"],
+    "source_type": "local_source_copy",
+    "verification_note": "The orders extend the application-editing date and list the matters; they do not decide the merits."
   }
 ]
