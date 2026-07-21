@@ -200,5 +200,17 @@
     "bytes": 45219,
     "decision": "included_official_download",
     "reason": "Official record identifying the breadth of the connected 2024 appeal cluster and listing it for final hearing; not a merits disposal order."
+  },
+  {
+    "source_url": "https://indiankanoon.org/doc/174462035/",
+    "title": "21 January 2025 Aatmadeep / Amal Chandra Das implementation PIL order",
+    "decision": "linked_court_text_mirror",
+    "reason": "Relevant Calcutta High Court listing order in WPA(P) 387/2024 and 430/2024. Linked externally, not bundled, pending an official or certified court PDF."
+  },
+  {
+    "source_url": "https://indiankanoon.org/doc/30501968/",
+    "title": "21 May 2025 Supriya Mondal JEMAS PG order",
+    "decision": "linked_court_text_mirror",
+    "reason": "Relevant Calcutta High Court order in WPA 9132/2025. Linked externally, not bundled, pending an official or certified court PDF."
   }
 ]

@@ -33,6 +33,26 @@
     "verification_note": "By consent, the Court listed the connected matters for final hearing on 28 January 2025. The official 5 May 2026 cause list still lists the cluster; neither source is a final merits disposal order."
   },
   {
+    "date": "2025-01-21",
+    "court": "Calcutta High Court",
+    "case_numbers": ["WPA(P) 387 of 2024", "WPA(P) 430 of 2024"],
+    "title": "Aatmadeep and Amal Chandra Das implementation PILs",
+    "record_type": "listing order",
+    "source_type": "court_text_mirror",
+    "source_url": "https://indiankanoon.org/doc/174462035/",
+    "verification_note": "The order records a State affidavit and allegations about implementation; it lists the matters for further consideration and does not decide the merits. Verify against the High Court record."
+  },
+  {
+    "date": "2025-05-21",
+    "court": "Calcutta High Court",
+    "case_numbers": ["WPA 9132 of 2025", "MAT 943 of 2025", "MAT 955 of 2025"],
+    "title": "Supriya Mondal & Ors. v. State of West Bengal & Ors.",
+    "record_type": "admission implementation order",
+    "source_type": "court_text_mirror",
+    "source_url": "https://indiankanoon.org/doc/30501968/",
+    "verification_note": "The 21 May writ order was disposed of with directions for JEMAS PG admissions. MAT 943/2025 and MAT 955/2025 are later appeals referred to in the 7 August 2025 order; verify appeal status separately."
+  },
+  {
     "date": "2025-07-18",
     "court": "Supreme Court of India",
     "case_numbers": ["SLP(C) 17528 of 2025"],
