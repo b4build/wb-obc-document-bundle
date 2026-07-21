@@ -14,18 +14,28 @@
       <span class="site-logo">WB OBC Documentation</span>
       <nav class="site-nav" aria-label="Sections">
         <a href="#home" class="active" data-tab-target="home">Home</a>
-        <a href="#timeline" data-tab-target="timeline">Timeline</a>
-        <a href="#cases" data-tab-target="cases">Cases</a>
-        <a href="#documents" data-tab-target="documents">Corpus</a>
-        <a href="#evidence" data-tab-target="evidence">Evidence</a>
-        <a href="#obc-basics" data-tab-target="obc-basics">OBC Basics</a>
-        <a href="#methods" data-tab-target="methods">Methods</a>
-        <a href="#reports" data-tab-target="reports">Reports</a>
-        <a href="#entry-framework" data-tab-target="entry-framework">Framework</a>
-        <a href="#inventory" data-tab-target="inventory">Files</a>
-        <a href="obc_timeline_bn.html" lang="bn">বাংলা</a>
-        <a href="contribute.html">Report a source</a>
+        <details class="nav-group">
+          <summary>Research</summary>
+          <div class="nav-group-items">
+            <a href="#timeline" data-tab-target="timeline">Timeline</a>
+            <a href="#cases" data-tab-target="cases">Cases</a>
+            <a href="#documents" data-tab-target="documents">Corpus</a>
+            <a href="#evidence" data-tab-target="evidence">Evidence</a>
+            <a href="#entry-framework" data-tab-target="entry-framework">Framework</a>
+            <a href="#inventory" data-tab-target="inventory">Files</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>Learn</summary>
+          <div class="nav-group-items">
+            <a href="#obc-basics" data-tab-target="obc-basics">OBC Basics</a>
+            <a href="#methods" data-tab-target="methods">Methods</a>
+            <a href="#reports" data-tab-target="reports">Reports</a>
+          </div>
+        </details>
+        <a href="contribute.html">Contribute</a>
         <a href="#about" data-tab-target="about">About</a>
+        <a href="obc_timeline_bn.html" lang="bn">বাংলা</a>
         <a href="https://github.com/b4build/wb-obc-document-bundle" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
     </div>
@@ -100,6 +110,15 @@
           <h3>What remains to verify</h3>
           <p>The strongest missing layer is the Commission record behind the 2025 hearing and survey process: class-wise advice, survey data, and benchmark memos.</p>
           <p><a href="#missing-records">Open audit</a> · <a href="#public-hearings">Open hearing table</a></p>
+        </article>
+        <article class="home-card">
+          <h3>Public data collection forms</h3>
+          <p>These public forms are linked here so visitors can share evidence, observations, or feedback related to the OBC record.</p>
+          <ul>
+            <li><a href="https://forms.gle/A9jJxPrRt83aBRLB8" target="_blank" rel="noreferrer">Public form 1</a></li>
+            <li><a href="https://forms.gle/tJFuB4Fie61mAHk76" target="_blank" rel="noreferrer">Public form 2</a></li>
+            <li><a href="https://forms.gle/885nfjh7fev8sxtV6" target="_blank" rel="noreferrer">Public form 3</a></li>
+          </ul>
         </article>
       </div>
 
@@ -2549,6 +2568,7 @@ a {
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 12px rgba(0,0,0,.22);
+  overflow: visible;
 }
 
 .site-header-inner {
@@ -2558,7 +2578,7 @@ a {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 32px;
-  height: 60px;
+  min-height: 60px;
 }
 
 .site-logo {
@@ -2574,9 +2594,8 @@ a {
   display: flex;
   gap: 6px;
   justify-content: flex-end;
-  overflow-x: auto;
+  flex-wrap: wrap;
   scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 .site-nav::-webkit-scrollbar {
@@ -2600,6 +2619,102 @@ a {
 
 .site-nav a:hover,
 .site-nav a.active {
+  background: rgba(255,255,255,.12);
+  color: #fff;
+}
+
+.nav-group {
+  position: relative;
+}
+
+.nav-group summary {
+  display: inline-block;
+  padding: 8px 12px;
+  color: #c8c0b0;
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+  list-style: none;
+  border: none;
+  background: transparent;
+  line-height: 1;
+}
+
+.nav-group summary::marker,
+.nav-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-group summary::after {
+  content: ' ▼';
+  font-size: 8px;
+  transition: transform .2s;
+  opacity: 0.6;
+}
+
+.nav-group[open] summary::after {
+  transform: rotate(-180deg);
+}
+
+.nav-group summary:hover {
+  background: rgba(255,255,255,.12);
+  color: #fff;
+}
+
+.nav-group-items {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: rgba(26,26,46,.95);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 6px;
+  min-width: 180px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity .15s, transform .15s;
+  pointer-events: none;
+}
+
+.nav-group:hover .nav-group-items,
+.nav-group[open] .nav-group-items {
+  display: flex;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+  transition-delay: 0.05s;
+}
+
+.nav-group-items a {
+  padding: 10px 16px;
+  color: #c8c0b0;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  border-radius: 0;
+  transition: background .15s, color .15s;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.nav-group-items a:first-child {
+  margin-top: 0;
+}
+
+.nav-group-items a:last-child {
+  border-bottom: none;
+}
+
+.nav-group-items a:hover {
   background: rgba(255,255,255,.12);
   color: #fff;
 }
@@ -4564,6 +4679,16 @@ applyFilters();
 applyDocFilters();
 syncTabFromHash();
 if (window.location.hash === '#home') requestAnimationFrame(() => window.scrollTo({ top: 0 }));
+
+// Handle submenu hover behavior
+document.querySelectorAll('.nav-group').forEach(group => {
+  group.addEventListener('mouseenter', () => {
+    group.setAttribute('open', '');
+  });
+  group.addEventListener('mouseleave', () => {
+    group.removeAttribute('open');
+  });
+});
 </script>
 
 
