@@ -27,6 +27,11 @@
     .choice { padding:16px; border:1px solid var(--border); border-radius:11px; background:#f7fafb; }
     .choice strong { display:block; margin-bottom:5px; }
     .choice p { margin:0; color:var(--muted); font-size:14px; }
+    .survey-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:22px 0 24px; }
+    .survey-card { padding:16px; border:1px solid var(--border); border-radius:12px; background:#f7fafb; }
+    .survey-card h3 { margin:0 0 8px; font-size:18px; }
+    .survey-frame { width:100%; min-height:540px; border:1px solid var(--border); border-radius:10px; background:#fff; }
+    .survey-link { display:inline-block; margin-top:10px; font-size:14px; }
     form { display:grid; gap:18px; }
     .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
     label { display:grid; gap:6px; font-weight:700; }
@@ -38,6 +43,7 @@
     button { width:max-content; padding:11px 16px; color:#fff; font:700 15px inherit; background:#1b5d7d; border:0; border-radius:8px; cursor:pointer; }
     button:hover { background:#124760; }
     .fine { color:var(--muted); font-size:13px; }
+    @media (max-width:900px) { .survey-grid { grid-template-columns:1fr; } .survey-frame { min-height:480px; } }
     @media (max-width:680px) { .bar { align-items:flex-start; padding:14px 0; flex-direction:column; } .hero { padding-top:34px; } .choices,.grid { grid-template-columns:1fr; } }
   </style>
 </head>
@@ -53,9 +59,26 @@
       <div class="choices">
         <article class="choice"><strong>Source or correction</strong><p>Use the form below. It prepares a structured GitHub issue that can be checked publicly.</p></article>
         <article class="choice"><strong>Private or sensitive material</strong><p>Do not submit it here. This archive is public; remove personal data and use a trusted private contact route.</p></article>
-        <article class="choice"><strong>Survey responses</strong><p>For anonymous, aggregate feedback, use one of the public forms: <a href="https://forms.gle/A9jJxPrRt83aBRLB8" target="_blank" rel="noreferrer">Form 1</a>, <a href="https://forms.gle/tJFuB4Fie61mAHk76" target="_blank" rel="noreferrer">Form 2</a>, or <a href="https://forms.gle/885nfjh7fev8sxtV6" target="_blank" rel="noreferrer">Form 3</a>.</p></article>
+        <article class="choice"><strong>Survey responses</strong><p>For anonymous, aggregate feedback, use one of the public surveys below. They open directly on this page so you can review them without leaving the archive.</p></article>
       </div>
       <div class="notice"><strong>Before you submit:</strong> link to the original publisher or court where possible; state what the source proves; and do not upload Aadhaar numbers, addresses, phone numbers, private pleadings, or other personal data.</div>
+      <div class="survey-grid" aria-label="Public survey forms">
+        <article class="survey-card">
+          <h3>Survey 1</h3>
+          <iframe class="survey-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdIhM5UkpmxkwPsAQHIMy6_2N4r7ARGAPrF09HwL-Z4M1f4dw/viewform?embedded=true" title="Public survey form 1" loading="lazy"></iframe>
+          <a class="survey-link" href="https://forms.gle/A9jJxPrRt83aBRLB8" target="_blank" rel="noreferrer">Open in a new tab</a>
+        </article>
+        <article class="survey-card">
+          <h3>Survey 2</h3>
+          <iframe class="survey-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSciAgXrLuzD9siSmn1T6o9KoCqxZNPQAOXBgXDd8xvljFr5pg/viewform?embedded=true" title="Public survey form 2" loading="lazy"></iframe>
+          <a class="survey-link" href="https://forms.gle/tJFuB4Fie61mAHk76" target="_blank" rel="noreferrer">Open in a new tab</a>
+        </article>
+        <article class="survey-card">
+          <h3>Survey 3</h3>
+          <iframe class="survey-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdvs2DWah-fdenL6tk7llnlb8Cl2fMW8xqixpw9G4nrU_fhFQ/viewform?embedded=true" title="Public survey form 3" loading="lazy"></iframe>
+          <a class="survey-link" href="https://forms.gle/885nfjh7fev8sxtV6" target="_blank" rel="noreferrer">Open in a new tab</a>
+        </article>
+      </div>
       <form id="report-form">
         <div class="grid">
           <label>Report type
