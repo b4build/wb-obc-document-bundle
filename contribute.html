@@ -5,107 +5,272 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Report a source · West Bengal OBC Documentation</title>
   <style>
-    :root { --ink:#11253f; --blue:#245478; --gold:#f0c96a; --paper:#edf2f5; --border:#cbdbe4; --muted:#536a7d; }
+    :root { --ink:#11253f; --ink-light:#3d4c5d; --blue:#245478; --gold:#f0c96a; --paper:#edf2f5; --panel:#fff; --border:#d5e0e8; --muted:#536a7d; --accent:#a94331; --gold-light:#fff7df; --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; --shadow-sm:0 2px 8px rgba(17,37,63,.07); --shadow-md:0 8px 32px rgba(17,37,63,.10); }
     * { box-sizing:border-box; }
-    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.62 var(--sans); }
     a { color:#125c83; }
     a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
     .skip { position:fixed; top:12px; left:14px; z-index:5; padding:8px 12px; color:var(--ink); background:#fff; border-radius:7px; transform:translateY(-150%); }
     .skip:focus { transform:translateY(0); }
-    header { background:linear-gradient(125deg,var(--ink),var(--blue)); color:#fff; }
+    header { position:relative; overflow:hidden; background:radial-gradient(circle at 82% 12%, #2a587e 0, transparent 34%), linear-gradient(125deg, #11253f 0%, #183858 54%, #245478 100%); color:#fff; }
+    header::after { content:'CONTRIBUTE'; position:absolute; right:clamp(18px,8vw,130px); bottom:-22px; color:rgba(255,255,255,.06); font:800 clamp(32px,7vw,92px)/1 var(--mono); letter-spacing:-.07em; pointer-events:none; }
+    body.lang-bn header::after { content:'অবদান'; font-family:"Noto Sans Bengali","Hind Siliguri",var(--sans); letter-spacing:0; }
+    body.lang-bn { font-family:"Noto Sans Bengali","Hind Siliguri",var(--sans); }
     .bar, main { width:min(940px,calc(100% - 32px)); margin:auto; }
     .bar { display:flex; justify-content:space-between; gap:16px; align-items:center; min-height:64px; }
-    .brand { color:#f9dba0; font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.08em; text-transform:uppercase; }
+    .brand { color:#f9dba0; font:700 12px var(--mono); letter-spacing:.08em; text-transform:uppercase; }
+    .bar-actions { display:flex; align-items:center; gap:12px; }
     .bar a { color:#fff; }
+    .language-switch { display:inline-flex; align-items:center; gap:4px; padding:3px; border:1px solid rgba(255,255,255,.18); border-radius:999px; }
+    .language-switch a { display:inline-flex; align-items:center; min-height:28px; padding:5px 8px; border-radius:999px; color:#c8d5df; font:800 11px var(--mono); letter-spacing:.04em; text-decoration:none; text-transform:uppercase; }
+    .language-switch a.active { background:rgba(255,255,255,.16); color:#fff; pointer-events:none; }
     .hero { padding:52px 0 56px; }
-    .eyebrow { margin:0 0 10px; color:#f9dba0; font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.1em; text-transform:uppercase; }
-    h1 { max-width:700px; margin:0; font-size:clamp(35px,6vw,58px); line-height:1.05; letter-spacing:-.035em; }
+    .eyebrow { margin:0 0 10px; color:#f9dba0; font:700 12px var(--mono); letter-spacing:.1em; text-transform:uppercase; }
+    h1 { max-width:700px; margin:0; font-size:clamp(35px,6vw,58px); line-height:1.05; letter-spacing:0; text-wrap:balance; }
     .hero p:last-child { max-width:760px; margin:18px 0 0; color:#dce6ec; font-size:18px; }
-    main { margin-top:-22px; padding-bottom:42px; }
-    .panel { padding:clamp(20px,4vw,34px); background:#fff; border:1px solid var(--border); border-radius:16px; box-shadow:0 10px 28px rgba(17,37,63,.09); }
+    main { display:grid; gap:22px; margin-top:-22px; padding-bottom:42px; }
+    .panel { padding:clamp(20px,4vw,34px); background:var(--panel); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow-md); }
+    .panel.secondary { box-shadow:var(--shadow-sm); }
+    .section-kicker { margin:0 0 8px; color:var(--accent); font:800 11px var(--mono); letter-spacing:.08em; text-transform:uppercase; }
+    h2 { margin:0; font-size:28px; line-height:1.15; }
+    .section-sub { max-width:760px; margin:8px 0 0; color:var(--ink-light); }
     .choices { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:0 0 26px; }
-    .choice { padding:16px; border:1px solid var(--border); border-radius:11px; background:#f7fafb; }
+    .choice { padding:16px; border:1px solid var(--border); border-radius:14px; background:#f8faf9; box-shadow:var(--shadow-sm); }
     .choice strong { display:block; margin-bottom:5px; }
     .choice p { margin:0; color:var(--muted); font-size:14px; }
-    .survey-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:22px 0 24px; }
-    .survey-card { padding:16px; border:1px solid var(--border); border-radius:12px; background:#f7fafb; }
-    .survey-card h3 { margin:0 0 8px; font-size:18px; }
-    .survey-frame { width:100%; min-height:540px; border:1px solid var(--border); border-radius:10px; background:#fff; }
-    .survey-link { display:inline-block; margin-top:10px; font-size:14px; }
-    form { display:grid; gap:18px; }
+    .form-route-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:22px 0 0; }
+    .form-route { display:flex; flex-direction:column; gap:4px; padding:14px; border:1px solid var(--border); border-radius:14px; background:var(--panel); box-shadow:var(--shadow-sm); }
+    .form-route-icon { display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; margin-bottom:4px; color:var(--accent); background:var(--gold-light); border-radius:8px; transition:background .15s,color .15s,transform .15s; }
+    .form-route-icon:hover { color:#fff; background:var(--accent); transform:translateY(-1px); }
+    .form-route-icon svg { width:18px; height:18px; }
+    .form-route h3 { margin:0; font-size:16px; line-height:1.25; }
+    .form-route h3 a { color:var(--ink); text-decoration:none; }
+    .form-route h3 a:hover { color:var(--accent); text-decoration:underline; }
+    .form-route p { margin:0; color:var(--muted); font-size:13px; }
+    form { display:grid; gap:18px; margin-top:22px; padding-top:22px; border-top:1px solid var(--border); }
     .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
     label { display:grid; gap:6px; font-weight:700; }
     .optional { color:var(--muted); font-size:13px; font-weight:400; }
     input, select, textarea { width:100%; padding:11px 12px; color:var(--ink); font:inherit; background:#fff; border:1px solid #9bb5c6; border-radius:8px; }
     textarea { min-height:128px; resize:vertical; }
     .help { margin:0; color:var(--muted); font-size:14px; }
-    .notice { padding:14px 16px; background:#fff7df; border-left:4px solid #d59f27; border-radius:7px; }
+    .notice { margin:18px 0 0; padding:14px 16px; background:#fff7df; border-left:4px solid #d59f27; border-radius:7px; }
     button { width:max-content; padding:11px 16px; color:#fff; font:700 15px inherit; background:#1b5d7d; border:0; border-radius:8px; cursor:pointer; }
     button:hover { background:#124760; }
     .fine { color:var(--muted); font-size:13px; }
-    @media (max-width:900px) { .survey-grid { grid-template-columns:1fr; } .survey-frame { min-height:480px; } }
-    @media (max-width:680px) { .bar { align-items:flex-start; padding:14px 0; flex-direction:column; } .hero { padding-top:34px; } .choices,.grid { grid-template-columns:1fr; } }
+    @media (max-width:900px) { .form-route-grid { grid-template-columns:1fr; } }
+    @media (max-width:680px) { .bar { align-items:flex-start; padding:14px 0; flex-direction:column; } .bar-actions { width:100%; justify-content:space-between; } .hero { padding-top:34px; } .choices,.grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
-  <a class="skip" href="#report-form">Skip to report form</a>
+  <a class="skip" href="#public-forms" data-i18n="skip">Skip to public forms</a>
   <header>
-    <div class="bar"><span class="brand">WB OBC Documentation</span><a href="index.html#home">Back to research bundle</a></div>
-    <div class="bar hero"><div><p class="eyebrow">Contribute a record</p><h1>Report a source, correction, or gap</h1><p>Help improve this public research archive by sharing a document trail—not personal case files or sensitive information.</p></div></div>
+    <div class="bar">
+      <span class="brand">WB OBC Documentation</span>
+      <div class="bar-actions">
+        <a id="back-link" href="index.html#home" data-i18n="back">Back to research bundle</a>
+        <span class="language-switch" aria-label="Language">
+          <a href="contribute.html?lang=en" data-lang-option="en">EN</a>
+          <a href="contribute.html?lang=bn" lang="bn" data-lang-option="bn">বাংলা</a>
+        </span>
+      </div>
+    </div>
+    <div class="bar hero"><div><p class="eyebrow" data-i18n="heroKicker">Contribute a record</p><h1 data-i18n="heroTitle">Report a source, correction, or gap</h1><p data-i18n="heroSub">Help improve this public research archive by sharing a document trail—not personal case files or sensitive information.</p></div></div>
   </header>
   <main>
-    <section class="panel" aria-labelledby="form-title">
-      <h2 id="form-title">Choose the right route</h2>
-      <div class="choices">
-        <article class="choice"><strong>Source or correction</strong><p>Use the form below. It prepares a structured GitHub issue that can be checked publicly.</p></article>
-        <article class="choice"><strong>Private or sensitive material</strong><p>Do not submit it here. This archive is public; remove personal data and use a trusted private contact route.</p></article>
-        <article class="choice"><strong>Survey responses</strong><p>For anonymous, aggregate feedback, use one of the public surveys below. They open directly on this page so you can review them without leaving the archive.</p></article>
+    <section id="public-forms" class="panel" aria-labelledby="public-forms-title">
+      <p class="section-kicker" data-i18n="formsKicker">Public Google Forms</p>
+      <h2 id="public-forms-title" data-i18n="formsTitle">Share information through the guided forms</h2>
+      <p class="section-sub" data-i18n="formsSub">Use these first for structured public inputs: office or certificate problems, court updates, legal records, government documents, and media reports.</p>
+      <div class="notice"><strong data-i18n="beforeStrong">Before you submit:</strong> <span data-i18n="beforeText">link to the original publisher or court where possible; state what the source proves; and do not upload Aadhaar numbers, addresses, phone numbers, private pleadings, or other personal data.</span></div>
+      <div class="form-route-grid" aria-label="Public data collection forms">
+        <article class="form-route">
+          <a class="form-route-icon" href="https://forms.gle/A9jJxPrRt83aBRLB8" target="_blank" rel="noreferrer" aria-label="Open office or certificate problem form">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="4" width="32" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="15" y1="14" x2="33" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="15" y1="22" x2="33" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="15" y1="30" x2="26" y2="30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M29 33l3 3 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <h3><a href="https://forms.gle/A9jJxPrRt83aBRLB8" target="_blank" rel="noreferrer" data-i18n="form1Title">Report office or certificate problems</a></h3>
+          <p data-i18n="form1Text">Share procedural issues at BDO/SDO offices so repeated problems can be identified.</p>
+        </article>
+        <article class="form-route">
+          <a class="form-route-icon" href="https://forms.gle/tJFuB4Fie61mAHk76" target="_blank" rel="noreferrer" aria-label="Open court case update or legal record form">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 4h14l8 8v28a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M28 4v8h8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><line x1="17" y1="24" x2="31" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="17" y1="31" x2="31" y2="31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="17" y1="38" x2="25" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </a>
+          <h3><a href="https://forms.gle/tJFuB4Fie61mAHk76" target="_blank" rel="noreferrer" data-i18n="form2Title">Submit court case updates or legal records</a></h3>
+          <p data-i18n="form2Text">Submit verifiable orders or judgments. Public-domain records only, not private or confidential files.</p>
+        </article>
+        <article class="form-route">
+          <a class="form-route-icon" href="https://forms.gle/885nfjh7fev8sxtV6" target="_blank" rel="noreferrer" aria-label="Open government document or media report form">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="16" cy="20" r="3.2" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M6 33l10-9 8 6 8-7 10 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          </a>
+          <h3><a href="https://forms.gle/885nfjh7fev8sxtV6" target="_blank" rel="noreferrer" data-i18n="form3Title">Submit government documents, records, or media reports</a></h3>
+          <p data-i18n="form3Text">Help improve the research record by submitting relevant documents or corrections.</p>
+        </article>
       </div>
-      <div class="notice"><strong>Before you submit:</strong> link to the original publisher or court where possible; state what the source proves; and do not upload Aadhaar numbers, addresses, phone numbers, private pleadings, or other personal data.</div>
-      <div class="survey-grid" aria-label="Public survey forms">
-        <article class="survey-card">
-          <h3>Survey 1</h3>
-          <iframe class="survey-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdIhM5UkpmxkwPsAQHIMy6_2N4r7ARGAPrF09HwL-Z4M1f4dw/viewform?embedded=true" title="Public survey form 1" loading="lazy"></iframe>
-          <a class="survey-link" href="https://forms.gle/A9jJxPrRt83aBRLB8" target="_blank" rel="noreferrer">Open in a new tab</a>
-        </article>
-        <article class="survey-card">
-          <h3>Survey 2</h3>
-          <iframe class="survey-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSciAgXrLuzD9siSmn1T6o9KoCqxZNPQAOXBgXDd8xvljFr5pg/viewform?embedded=true" title="Public survey form 2" loading="lazy"></iframe>
-          <a class="survey-link" href="https://forms.gle/tJFuB4Fie61mAHk76" target="_blank" rel="noreferrer">Open in a new tab</a>
-        </article>
-        <article class="survey-card">
-          <h3>Survey 3</h3>
-          <iframe class="survey-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdvs2DWah-fdenL6tk7llnlb8Cl2fMW8xqixpw9G4nrU_fhFQ/viewform?embedded=true" title="Public survey form 3" loading="lazy"></iframe>
-          <a class="survey-link" href="https://forms.gle/885nfjh7fev8sxtV6" target="_blank" rel="noreferrer">Open in a new tab</a>
-        </article>
+    </section>
+
+    <section class="panel secondary" aria-labelledby="github-report-title">
+      <p class="section-kicker" data-i18n="githubKicker">Public GitHub issue</p>
+      <h2 id="github-report-title" data-i18n="githubTitle">Open a structured source or correction report</h2>
+      <p class="section-sub" data-i18n="githubSub">Use this route when the issue should be tracked publicly in the repository: source additions, corrections, missing court records, broken links, or file problems. You will review the prefilled GitHub issue before posting.</p>
+      <div class="choices">
+        <article class="choice"><strong data-i18n="choice1Title">Source or correction</strong><p data-i18n="choice1Text">Best for verifiable public records that should become part of the archive.</p></article>
+        <article class="choice"><strong data-i18n="choice2Title">Missing or broken record</strong><p data-i18n="choice2Text">Use this for missing case orders, broken PDF links, incorrect dates, or source-label problems.</p></article>
+        <article class="choice"><strong data-i18n="choice3Title">Sensitive material</strong><p data-i18n="choice3Text">Do not submit it here. Remove personal data and use a trusted private route instead.</p></article>
       </div>
       <form id="report-form">
         <div class="grid">
-          <label>Report type
-            <select id="type" required><option value="Source addition">Source addition</option><option value="Correction">Correction</option><option value="Missing case or order">Missing case or order</option><option value="Broken link or file problem">Broken link or file problem</option><option value="Survey feedback">Survey feedback</option></select>
+          <label><span data-i18n="typeLabel">Report type</span>
+            <select id="type" required><option value="Source addition" data-i18n="typeSource">Source addition</option><option value="Correction" data-i18n="typeCorrection">Correction</option><option value="Missing case or order" data-i18n="typeMissing">Missing case or order</option><option value="Broken link or file problem" data-i18n="typeBroken">Broken link or file problem</option><option value="Survey feedback" data-i18n="typeSurvey">Survey feedback</option></select>
           </label>
-          <label>Record date <span class="optional">if known</span>
+          <label><span data-i18n="dateLabel">Record date</span> <span class="optional" data-i18n="ifKnown">if known</span>
             <input id="date" type="date">
           </label>
         </div>
-        <label>Title / notification / case number
-          <input id="title" required placeholder="Example: WPA 1234 of 2025 or Notification No. ...">
+        <label><span data-i18n="titleLabel">Title / notification / case number</span>
+          <input id="title" required placeholder="Example: WPA 1234 of 2025 or Notification No. ..." data-i18n-placeholder="titlePlaceholder">
         </label>
-        <label>Official or public source URL <span class="optional">if available</span>
+        <label><span data-i18n="urlLabel">Official or public source URL</span> <span class="optional" data-i18n="ifAvailable">if available</span>
           <input id="url" type="url" placeholder="https://...">
         </label>
-        <label>What should be added or corrected?
-          <textarea id="details" required placeholder="Briefly describe the record, its court/authority, why it matters, and any date or status information."></textarea>
+        <label><span data-i18n="detailsLabel">What should be added or corrected?</span>
+          <textarea id="details" required placeholder="Briefly describe the record, its court/authority, why it matters, and any date or status information." data-i18n-placeholder="detailsPlaceholder"></textarea>
         </label>
-        <label>Provenance / verification notes <span class="optional">where did you find it?</span>
-          <textarea id="provenance" placeholder="Official download, gazette, court record, newspaper notice, public mirror, etc."></textarea>
+        <label><span data-i18n="provenanceLabel">Provenance / verification notes</span> <span class="optional" data-i18n="whereFound">where did you find it?</span>
+          <textarea id="provenance" placeholder="Official download, gazette, court record, newspaper notice, public mirror, etc." data-i18n-placeholder="provenancePlaceholder"></textarea>
         </label>
-        <button type="submit">Open structured GitHub report</button>
-        <p class="fine">Submitting opens a prefilled issue on GitHub. You review it before posting; nothing is transmitted from this page automatically. For a Google Forms survey, follow <a href="SURVEY_SETUP.md">the setup guide</a>.</p>
+        <button type="submit" data-i18n="submitButton">Open structured GitHub report</button>
+        <p class="fine"><span data-i18n="fineText">Submitting opens a prefilled issue on GitHub. You review it before posting; nothing is transmitted from this page automatically.</span></p>
       </form>
     </section>
   </main>
   <script>
+    const TRANSLATIONS = {
+      en: {
+        title: 'Report a source · West Bengal OBC Documentation',
+        skip: 'Skip to public forms',
+        back: 'Back to research bundle',
+        heroKicker: 'Contribute a record',
+        heroTitle: 'Report a source, correction, or gap',
+        heroSub: 'Help improve this public research archive by sharing a document trail—not personal case files or sensitive information.',
+        formsKicker: 'Public Google Forms',
+        formsTitle: 'Share information through the guided forms',
+        formsSub: 'Use these first for structured public inputs: office or certificate problems, court updates, legal records, government documents, and media reports.',
+        beforeStrong: 'Before you submit:',
+        beforeText: 'link to the original publisher or court where possible; state what the source proves; and do not upload Aadhaar numbers, addresses, phone numbers, private pleadings, or other personal data.',
+        form1Title: 'Report office or certificate problems',
+        form1Text: 'Share procedural issues at BDO/SDO offices so repeated problems can be identified.',
+        form2Title: 'Submit court case updates or legal records',
+        form2Text: 'Submit verifiable orders or judgments. Public-domain records only, not private or confidential files.',
+        form3Title: 'Submit government documents, records, or media reports',
+        form3Text: 'Help improve the research record by submitting relevant documents or corrections.',
+        githubKicker: 'Public GitHub issue',
+        githubTitle: 'Open a structured source or correction report',
+        githubSub: 'Use this route when the issue should be tracked publicly in the repository: source additions, corrections, missing court records, broken links, or file problems. You will review the prefilled GitHub issue before posting.',
+        choice1Title: 'Source or correction',
+        choice1Text: 'Best for verifiable public records that should become part of the archive.',
+        choice2Title: 'Missing or broken record',
+        choice2Text: 'Use this for missing case orders, broken PDF links, incorrect dates, or source-label problems.',
+        choice3Title: 'Sensitive material',
+        choice3Text: 'Do not submit it here. Remove personal data and use a trusted private route instead.',
+        typeLabel: 'Report type',
+        typeSource: 'Source addition',
+        typeCorrection: 'Correction',
+        typeMissing: 'Missing case or order',
+        typeBroken: 'Broken link or file problem',
+        typeSurvey: 'Survey feedback',
+        dateLabel: 'Record date',
+        ifKnown: 'if known',
+        titleLabel: 'Title / notification / case number',
+        titlePlaceholder: 'Example: WPA 1234 of 2025 or Notification No. ...',
+        urlLabel: 'Official or public source URL',
+        ifAvailable: 'if available',
+        detailsLabel: 'What should be added or corrected?',
+        detailsPlaceholder: 'Briefly describe the record, its court/authority, why it matters, and any date or status information.',
+        provenanceLabel: 'Provenance / verification notes',
+        whereFound: 'where did you find it?',
+        provenancePlaceholder: 'Official download, gazette, court record, newspaper notice, public mirror, etc.',
+        submitButton: 'Open structured GitHub report',
+        fineText: 'Submitting opens a prefilled issue on GitHub. You review it before posting; nothing is transmitted from this page automatically.'
+      },
+      bn: {
+        title: 'উৎস জানান · পশ্চিমবঙ্গ ওবিসি নথি',
+        skip: 'জনসাধারণের ফর্মে যান',
+        back: 'বাংলা গবেষণা পাতায় ফিরুন',
+        heroKicker: 'রেকর্ডে অবদান',
+        heroTitle: 'উৎস, সংশোধন বা ঘাটতি জানান',
+        heroSub: 'ব্যক্তিগত মামলা-ফাইল বা সংবেদনশীল তথ্য নয়; যাচাইযোগ্য নথির সূত্র দিয়ে এই জনস্বার্থ গবেষণা সংগ্রহ উন্নত করতে সাহায্য করুন।',
+        formsKicker: 'জনসাধারণের Google Forms',
+        formsTitle: 'নির্দেশিত ফর্মের মাধ্যমে তথ্য জানান',
+        formsSub: 'অফিস বা শংসাপত্র সমস্যা, আদালতের আপডেট, আইনি রেকর্ড, সরকারি নথি এবং মিডিয়া রিপোর্টের জন্য আগে এই ফর্মগুলি ব্যবহার করুন।',
+        beforeStrong: 'জমা দেওয়ার আগে:',
+        beforeText: 'সম্ভব হলে মূল প্রকাশক বা আদালতের লিঙ্ক দিন; উৎসটি কী প্রমাণ করে লিখুন; এবং আধার নম্বর, ঠিকানা, ফোন নম্বর, ব্যক্তিগত প্লিডিং বা অন্য ব্যক্তিগত তথ্য আপলোড করবেন না।',
+        form1Title: 'অফিস বা শংসাপত্র সংক্রান্ত সমস্যা রিপোর্ট করুন',
+        form1Text: 'BDO/SDO অফিসে প্রক্রিয়াগত সমস্যা হলে জানান, যাতে পুনরাবৃত্ত সমস্যা চিহ্নিত করা যায়।',
+        form2Title: 'আদালতের মামলার আপডেট বা আইনি নথি জমা দিন',
+        form2Text: 'যাচাইযোগ্য আদেশ বা রায় জমা দিন। ব্যক্তিগত বা গোপনীয় ফাইল নয়; শুধু পাবলিক ডোমেইন রেকর্ড।',
+        form3Title: 'সরকারি নথি, রেকর্ড বা মিডিয়া রিপোর্ট জমা দিন',
+        form3Text: 'প্রাসঙ্গিক নথি বা সংশোধনী জমা দিয়ে গবেষণা রেকর্ড উন্নত করতে সাহায্য করুন।',
+        githubKicker: 'পাবলিক GitHub issue',
+        githubTitle: 'কাঠামোবদ্ধ উৎস বা সংশোধন রিপোর্ট খুলুন',
+        githubSub: 'রিপোজিটরিতে প্রকাশ্যে ট্র্যাক করার মতো উৎস সংযোজন, সংশোধন, অনুপস্থিত আদালত রেকর্ড, ভাঙা লিঙ্ক বা ফাইল সমস্যার জন্য এই পথ ব্যবহার করুন। পোস্ট করার আগে প্রিফিলড GitHub issue আপনি দেখে নিতে পারবেন।',
+        choice1Title: 'উৎস বা সংশোধন',
+        choice1Text: 'যাচাইযোগ্য পাবলিক রেকর্ডের জন্য, যা সংরক্ষণাগারের অংশ হওয়া উচিত।',
+        choice2Title: 'অনুপস্থিত বা ভাঙা রেকর্ড',
+        choice2Text: 'অনুপস্থিত মামলার আদেশ, ভাঙা PDF লিঙ্ক, ভুল তারিখ বা উৎস-লেবেল সমস্যার জন্য ব্যবহার করুন।',
+        choice3Title: 'সংবেদনশীল তথ্য',
+        choice3Text: 'এখানে জমা দেবেন না। ব্যক্তিগত তথ্য সরিয়ে বিশ্বস্ত ব্যক্তিগত যোগাযোগপথ ব্যবহার করুন।',
+        typeLabel: 'রিপোর্টের ধরন',
+        typeSource: 'উৎস সংযোজন',
+        typeCorrection: 'সংশোধন',
+        typeMissing: 'অনুপস্থিত মামলা বা আদেশ',
+        typeBroken: 'ভাঙা লিঙ্ক বা ফাইল সমস্যা',
+        typeSurvey: 'ফর্ম প্রতিক্রিয়া',
+        dateLabel: 'রেকর্ডের তারিখ',
+        ifKnown: 'জানা থাকলে',
+        titleLabel: 'শিরোনাম / বিজ্ঞপ্তি / মামলা নম্বর',
+        titlePlaceholder: 'যেমন: WPA 1234 of 2025 বা Notification No. ...',
+        urlLabel: 'সরকারি বা পাবলিক উৎস URL',
+        ifAvailable: 'থাকলে',
+        detailsLabel: 'কী যোগ বা সংশোধন করা উচিত?',
+        detailsPlaceholder: 'রেকর্ড, আদালত/কর্তৃপক্ষ, কেন গুরুত্বপূর্ণ, এবং তারিখ বা অবস্থার তথ্য সংক্ষেপে লিখুন।',
+        provenanceLabel: 'উৎস / যাচাই নোট',
+        whereFound: 'কোথায় পেয়েছেন?',
+        provenancePlaceholder: 'সরকারি ডাউনলোড, গেজেট, আদালত রেকর্ড, সংবাদপত্র নোটিস, পাবলিক মিরর ইত্যাদি।',
+        submitButton: 'কাঠামোবদ্ধ GitHub রিপোর্ট খুলুন',
+        fineText: 'জমা দিলে GitHub-এ একটি প্রিফিলড issue খুলবে। পোস্ট করার আগে আপনি তা দেখে নেবেন; এই পাতা থেকে কিছু স্বয়ংক্রিয়ভাবে পাঠানো হয় না।'
+      }
+    };
+
+    function activeLanguage() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('lang') === 'bn' ? 'bn' : 'en';
+    }
+
+    function applyLanguage(lang) {
+      const copy = TRANSLATIONS[lang] || TRANSLATIONS.en;
+      document.documentElement.lang = lang === 'bn' ? 'bn' : 'en';
+      document.body.classList.toggle('lang-bn', lang === 'bn');
+      document.title = copy.title;
+      document.querySelectorAll('[data-i18n]').forEach(node => {
+        const key = node.dataset.i18n;
+        if (copy[key]) node.textContent = copy[key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(node => {
+        const key = node.dataset.i18nPlaceholder;
+        if (copy[key]) node.placeholder = copy[key];
+      });
+      document.querySelectorAll('[data-lang-option]').forEach(link => {
+        const isActive = link.dataset.langOption === lang;
+        link.classList.toggle('active', isActive);
+        link.setAttribute('aria-current', isActive ? 'true' : 'false');
+        link.href = `contribute.html?lang=${link.dataset.langOption}${window.location.hash || ''}`;
+      });
+      const backLink = document.getElementById('back-link');
+      if (backLink) backLink.href = lang === 'bn' ? 'obc_timeline_bn.html#home' : 'index.html#home';
+    }
+
+    applyLanguage(activeLanguage());
+
     document.getElementById('report-form').addEventListener('submit', event => {
       event.preventDefault();
       const value = id => document.getElementById(id).value.trim();
