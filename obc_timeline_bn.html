@@ -1859,19 +1859,20 @@ body { font-family: 'SolaimanLipi', 'Hind Siliguri', 'Noto Sans Bengali', Inter,
           <button type="button" class="nav-group-toggle" aria-expanded="false">গবেষণা <span class="nav-caret" aria-hidden="true">▾</span></button>
           <div class="nav-group-items">
             <a href="#timeline" data-tab-target="timeline">সময়রেখা</a>
-            <a href="#cases" data-tab-target="cases">মামলা</a>
-            <a href="index.html#documents" target="_blank" rel="noreferrer">নথি সংগ্রহ (ইংরেজি)</a>
-            <a href="#evidence" data-tab-target="evidence">প্রমাণ</a>
-            <a href="#entry-framework" data-tab-target="entry-framework">কাঠামো</a>
-            <a href="#inventory" data-tab-target="inventory">ফাইল তালিকা</a>
+            <a href="#cases" data-tab-target="cases">লিটিগেশন</a>
+            <a href="#obc-list" data-tab-target="obc-list">ওবিসি তালিকা</a>
+            <a href="index.html#documents" target="_blank" rel="noreferrer">উৎস PDF (ইংরেজি)</a>
+            <a href="#evidence" data-tab-target="evidence">শুনানি ও ঘাটতি</a>
+            <a href="#entry-framework" data-tab-target="entry-framework">রেকর্ড যোগের গাইড</a>
+            <a href="#inventory" data-tab-target="inventory">ফাইল ইনভেন্টরি</a>
           </div>
         </div>
         <div class="nav-group">
           <button type="button" class="nav-group-toggle" aria-expanded="false">জানুন <span class="nav-caret" aria-hidden="true">▾</span></button>
           <div class="nav-group-items">
             <a href="#obc-basics" data-tab-target="obc-basics">ওবিসি মূল ধারণা</a>
-            <a href="#methods" data-tab-target="methods">পদ্ধতি</a>
-            <a href="#reports" data-tab-target="reports">প্রতিবেদন</a>
+            <a href="#methods" data-tab-target="methods">প্রমাণ যাচাই পদ্ধতি</a>
+            <a href="#reports" data-tab-target="reports">নীতি প্রতিবেদন</a>
           </div>
         </div>
         <a href="contribute.html?lang=bn">অবদান জানান</a>
@@ -2008,6 +2009,44 @@ body { font-family: 'SolaimanLipi', 'Hind Siliguri', 'Noto Sans Bengali', Inter,
       </div>
 
       <p class="cloud-note">বহনযোগ্য সংগ্রহ: উৎস লিঙ্কগুলি তুলনামূলক পথ (relative path) ব্যবহার করে, তাই এই পাতাটি রিপোজিটরি, GitHub Pages, অথবা ডাউনলোড করা ফোল্ডার থেকেও কাজ করে। আদালতের পাঠ্যের মিরর PDF অফলাইন পড়ার জন্য স্থানীয়ভাবে রাখা হয়েছে এবং সবসময় তাদের মূল মিরর বা সরকারি উৎসের লিঙ্ক বজায় রাখে।</p>
+    </section>
+
+    <section id="obc-list" class="research tab-panel" data-tab-panel="obc-list" hidden>
+      <h2 class="section-heading">বর্তমান পশ্চিমবঙ্গ ওবিসি শ্রেণি তালিকা</h2>
+      <p class="section-sub">১৮ মে ২০২৬ তারিখের বিজ্ঞপ্তি নং 945-BCW/MR-23/2026 বর্তমান রাজ্য ওবিসি তালিকায় ৬৬টি শ্রেণি এবং পশ্চিমবঙ্গ সরকারের চাকরি ও পদে ৭% সংরক্ষণের অবস্থান জানায়।</p>
+
+      <div class="report-grid">
+        <article class="report-card">
+          <div class="report-meta">বর্তমান তালিকা</div>
+          <h3>৬৬টি শ্রেণি</h3>
+          <p>দ্রুত খোঁজার জন্য এই সারণিতে 945-BCW বিজ্ঞপ্তিতে থাকা শ্রেণি-নামগুলি দেওয়া হয়েছে।</p>
+        </article>
+        <article class="report-card">
+          <div class="report-meta">সংরক্ষণ</div>
+          <h3>৭% অবস্থান</h3>
+          <p>বিজ্ঞপ্তি বলছে ২০১০-এর আগের ৬৬টি শ্রেণিতে হাইকোর্ট হস্তক্ষেপ করেনি, কিন্তু আগের A/B শতাংশ-বিভাজন বাতিল হয়েছে।</p>
+        </article>
+        <article class="report-card">
+          <div class="report-meta">উৎস সতর্কতা</div>
+          <h3>নির্ভর করার আগে PDF দেখুন</h3>
+          <p><a href="obc_pdfs/2026-05-18_945-BCW-MR-23-2026_current_list.pdf" target="_blank" rel="noreferrer">945-BCW উৎস PDF খুলুন</a> · <a href="obc_pdfs/2026-05-18_945-BCW-MR-23-2026-(Gazette)_current_list.pdf" target="_blank" rel="noreferrer">Gazette কপি খুলুন</a></p>
+        </article>
+      </div>
+
+      <div class="table-wrap">
+        <table id="obc-class-table">
+          <thead>
+            <tr>
+              <th>ক্রমিক</th>
+              <th>ওবিসি শ্রেণি</th>
+              <th>বর্তমান অবস্থা</th>
+              <th>উৎস</th>
+            </tr>
+          </thead>
+          <tbody id="obc-class-list"></tbody>
+        </table>
+      </div>
+      <p class="cloud-note">সম্পূর্ণ current / historical / withdrawn status table-এর জন্য <a href="index.html#obc-list">ইংরেজি OBC List ট্যাব</a> দেখুন। এই বাংলা সারণি বর্তমান 945-BCW তালিকার দ্রুত পাঠযোগ্য সংস্করণ।</p>
     </section>
 
     <section id="about" class="research about-section tab-panel" data-tab-panel="about" hidden>
@@ -3635,6 +3674,75 @@ function escapeHtml(value) {
   return div.innerHTML;
 }
 
+const OBC_CLASSES_2026 = [
+  'Kapali',
+  'Baishya Kapali',
+  'Kurmi',
+  'Sutradhar',
+  'Karmakar',
+  'Kumbhakar',
+  'Swarnakar',
+  'Teli, Kolu',
+  'Napit',
+  'Yogi, Nath',
+  'Goala, Gope (Pallav Gope, Ballav Gope, Yadav Gope, Gope, Ahir and Yadav)',
+  'Moira (Halwai), Modak (Halwai)',
+  'Barujibi',
+  'Satchasi',
+  'Malakar',
+  'Jolah (Ansari-Momin)',
+  'Kansari',
+  'Tanti, Tantubaya',
+  'Dhanuk',
+  'Shankakar',
+  'Keori/Koiri',
+  'Raju',
+  'Nagar',
+  'Karani',
+  'Sarak',
+  'Tamboli/Tamali',
+  'Kosta/Kostha',
+  'Roniwar/Rauniyar',
+  'Scheduled Castes converts to Christianity and their progeny',
+  'Lakhera/Laahera',
+  'Fakir, Sain',
+  'Kahar',
+  'Betkar (Bentkar)',
+  'Chitrakar',
+  'Bhujel',
+  'Newar',
+  'Mangar',
+  'Nembang',
+  'Sampang',
+  'Bungchheng',
+  'Thami',
+  'Jogi',
+  'Dhimal',
+  'Hawari, Dhobi (other than those included in the list of Scheduled Castes)',
+  'Bhar',
+  'Khandait',
+  'Gangot',
+  'Turha',
+  'Dhunia',
+  'Patidar',
+  'Kasai',
+  'Hele / Halia / Chasi-Kaibartta, Das Kaibartta',
+  'Bansi Barman',
+  'Nashya-Sekh',
+  'Pahadia Muslim',
+  'Khen (Non-Bania category)',
+  'Sukli',
+  'Sunuwar',
+  'Bharbhuja',
+  'Dewan',
+  'Rai (including Chamling)',
+  'Rayeen (Kunjra)',
+  'Shershabadia',
+  'Devanga',
+  'Hajjam (Muslim)',
+  'Chowduli (Muslim)'
+];
+
 const tabPanels = Array.from(document.querySelectorAll('[data-tab-panel]'));
 const tabLinks = Array.from(document.querySelectorAll('[data-tab-target]'));
 const sectionLinks = Array.from(document.querySelectorAll('main a[href^="#"]')).filter(link => !link.dataset.tabTarget);
@@ -3645,6 +3753,21 @@ const heroStatEls = [1, 2, 3, 4].map(index => ({
   value: document.getElementById(`hero-stat-${index}-value`),
   label: document.getElementById(`hero-stat-${index}-label`)
 }));
+
+function renderObcClassList() {
+  const tbody = document.getElementById('obc-class-list');
+  if (!tbody) return;
+  tbody.innerHTML = OBC_CLASSES_2026.map((name, index) => `
+    <tr id="obc-class-${index + 1}">
+      <td>${index + 1}</td>
+      <td><strong>${escapeHtml(name)}</strong></td>
+      <td><span class="tag current">বর্তমান 945-BCW তালিকায় আছে</span></td>
+      <td><a href="obc_pdfs/2026-05-18_945-BCW-MR-23-2026_current_list.pdf" target="_blank" rel="noreferrer">945-BCW/MR-23/2026</a></td>
+    </tr>
+  `).join('');
+}
+
+renderObcClassList();
 
 const HERO_CONTENT = {
   home: {
@@ -3724,6 +3847,17 @@ const HERO_CONTENT = {
       ['ঘাটতি', 'কমিশনের পরামর্শ, সমীক্ষা সারণি, এবং আপত্তি রেকর্ড এখনও সবচেয়ে গুরুত্বপূর্ণ।']
     ]
   },
+  'obc-list': {
+    eyebrow: 'ওবিসি তালিকা · 945-BCW',
+    title: 'ওবিসি শ্রেণি তালিকা',
+    sub: 'বর্তমান ৬৬টি শ্রেণির দ্রুত বাংলা সারণি; historical এবং withdrawn status-এর পূর্ণ সারণি ইংরেজি OBC List ট্যাবে আছে।',
+    stats: [
+      ['৬৬', 'বর্তমান 945-BCW বিজ্ঞপ্তিতে তালিকাভুক্ত শ্রেণি।'],
+      ['৭%', 'চাকরি ও পদে সংরক্ষণের অবস্থান।'],
+      ['২০২৬', '২০২৫ প্যাকেজ প্রত্যাহারের পর তালিকা রিসেট।'],
+      ['উৎস', '945-BCW PDF সরাসরি যুক্ত।']
+    ]
+  },
   cases: {
     eyebrow: 'মামলা · আদেশ ও প্রক্রিয়াগত রেকর্ড',
     title: 'পশ্চিমবঙ্গ ওবিসি মামলার ট্র্যাকার',
@@ -3767,6 +3901,7 @@ function tabForHash(hash) {
   const id = String(hash || '').replace(/^#/, '');
   if (!id || id === 'home' || id === 'guide' || id === 'query-hub') return 'home';
   if (id === 'about') return 'about';
+  if (id === 'obc-list' || id.startsWith('obc-class-')) return 'obc-list';
   if (id.startsWith('evt-') || id === 'timeline') return 'timeline';
   if (id === 'public-hearings' || id === 'missing-records' || id === 'evidence') return 'evidence';
   if (id === 'cases' || id.startsWith('case-')) return 'cases';

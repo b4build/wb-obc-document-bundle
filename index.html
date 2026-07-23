@@ -37,19 +37,20 @@
           <button type="button" class="nav-group-toggle" aria-expanded="false">Research <span class="nav-caret" aria-hidden="true">▾</span></button>
           <div class="nav-group-items">
             <a href="#timeline" data-tab-target="timeline">Timeline</a>
-            <a href="#cases" data-tab-target="cases">Cases</a>
-            <a href="#documents" data-tab-target="documents">Corpus</a>
-            <a href="#evidence" data-tab-target="evidence">Evidence</a>
-            <a href="#entry-framework" data-tab-target="entry-framework">Framework</a>
-            <a href="#inventory" data-tab-target="inventory">Files</a>
+            <a href="#cases" data-tab-target="cases">Litigation</a>
+            <a href="#obc-list" data-tab-target="obc-list">OBC List</a>
+            <a href="#documents" data-tab-target="documents">Source PDFs</a>
+            <a href="#evidence" data-tab-target="evidence">Hearings &amp; Gaps</a>
+            <a href="#entry-framework" data-tab-target="entry-framework">Add Record Guide</a>
+            <a href="#inventory" data-tab-target="inventory">File Inventory</a>
           </div>
         </div>
         <div class="nav-group">
           <button type="button" class="nav-group-toggle" aria-expanded="false">Learn <span class="nav-caret" aria-hidden="true">▾</span></button>
           <div class="nav-group-items">
             <a href="#obc-basics" data-tab-target="obc-basics">OBC Basics</a>
-            <a href="#methods" data-tab-target="methods">Methods</a>
-            <a href="#reports" data-tab-target="reports">Reports</a>
+            <a href="#methods" data-tab-target="methods">Evidence Method</a>
+            <a href="#reports" data-tab-target="reports">Policy Reports</a>
           </div>
         </div>
         <a href="contribute.html">Contribute</a>
@@ -88,7 +89,7 @@
       </div>
       <section class="home-brief" aria-label="How to use this site">
         <article><strong>1. Start with the question</strong><span>Search a community, notification, case number, date, or legal term.</span></article>
-        <article><strong>2. Follow the record</strong><span>Use Timeline for policy changes and Cases for litigation and procedural status.</span></article>
+        <article><strong>2. Follow the record</strong><span>Use Timeline for policy changes and Litigation for court orders and procedural status.</span></article>
         <article><strong>3. Open the source</strong><span>Every summary should lead to a bundled PDF or a clearly labelled original source link.</span></article>
       </section>
       <div class="source-status-grid">
@@ -103,8 +104,8 @@
       <div id="query-hub" class="query-hub" aria-label="OBC query hub">
         <div class="search-intro">
           <p class="panel-kicker">Bundle search</p>
-          <h2>Search the timeline, cases, and corpus together</h2>
-          <p>This searches three connected indexes at once: timeline entries, litigation records, and extracted document text. Results are labelled by source area and open the matching tab.</p>
+          <h2>Search the timeline, litigation, OBC list, and source PDFs together</h2>
+          <p>This searches connected indexes at once: timeline entries, litigation records, class-list rows, and extracted document text. Results are labelled by source area and open the matching tab.</p>
         </div>
         <div class="search-panel">
           <label class="visually-hidden" for="site-search">Search the research bundle</label>
@@ -114,13 +115,15 @@
         <div class="search-footer">
           <div class="search-scope" aria-label="Search coverage">
             <span><strong>Timeline</strong> notification trail</span>
-            <span><strong>Cases</strong> court orders and status notes</span>
-            <span><strong>Corpus</strong> extracted PDF text</span>
+            <span><strong>Litigation</strong> court orders and status notes</span>
+            <span><strong>OBC List</strong> current and historical class rows</span>
+            <span><strong>Source PDFs</strong> extracted document text</span>
           </div>
           <div class="query-actions" aria-label="Quick navigation">
             <a href="#timeline">Trace timeline</a>
-            <a href="#cases">Track cases</a>
-            <a href="#documents">Search full text</a>
+            <a href="#cases">Track litigation</a>
+            <a href="#obc-list">Check class status</a>
+            <a href="#documents">Search source PDFs</a>
             <a href="#reports">Check policy basis</a>
             <a href="#about">Read scope &amp; source care</a>
           </div>
@@ -186,15 +189,86 @@
             <tr><td>Understand the OBC category</td><td><a href="#obc-basics">OBC Basics</a></td><td>Plain-language explanation of backward classes, Muslim OBCs, and evidence logic.</td></tr>
             <tr><td>Judge backwardness scientifically</td><td><a href="#methods">Methods</a></td><td>Indicators, data sources, caste census logic, representation data, benefits, risks, and missing evidence.</td></tr>
             <tr><td>Follow a notification trail</td><td><a href="#timeline">Timeline</a></td><td>Chronological entries with related-document links and source PDFs.</td></tr>
-            <tr><td>Search inside extracted PDFs</td><td><a href="#documents">Corpus</a></td><td>Filterable document table with PDF links and text preview buttons.</td></tr>
-            <tr><td>Add court records</td><td><a href="#cases">Cases</a></td><td>Case tracker, issue matrix, party/court fields, orders, affected notifications, and evidence gaps.</td></tr>
-            <tr><td>Check public-hearing notices</td><td><a href="#public-hearings">Evidence</a></td><td>Hearing dates, times, named communities, and local notice PDFs.</td></tr>
-            <tr><td>Add or audit files</td><td><a href="contribute.html">Report a source</a> / <a href="#entry-framework">Framework</a></td><td>A guided report route, structured fields, and the local PDF inventory.</td></tr>
+            <tr><td>Check whether a class is current or withdrawn</td><td><a href="#obc-list">OBC List</a></td><td>Status table with inclusion date, exclusion/withdrawal date, source trail, and current status.</td></tr>
+            <tr><td>Search inside extracted PDFs</td><td><a href="#documents">Source PDFs</a></td><td>Filterable document table with PDF links and text preview buttons.</td></tr>
+            <tr><td>Add court records</td><td><a href="#cases">Litigation</a></td><td>Litigation tracker, issue matrix, party/court fields, orders, affected notifications, and evidence gaps.</td></tr>
+            <tr><td>Check public-hearing notices</td><td><a href="#public-hearings">Hearings &amp; Gaps</a></td><td>Hearing dates, times, named communities, and local notice PDFs.</td></tr>
+            <tr><td>Add or audit files</td><td><a href="contribute.html">Report a source</a> / <a href="#entry-framework">Add Record Guide</a></td><td>A guided report route, structured fields, and the local PDF inventory.</td></tr>
           </tbody>
         </table>
       </div>
 
       <p class="cloud-note">Portable bundle: source links use relative paths, so this page works from the repository, GitHub Pages, or a downloaded folder. Court-text mirror PDFs are retained locally for offline reading and always keep a link to their original mirror or official source.</p>
+    </section>
+
+    <section id="obc-list" class="research tab-panel" data-tab-panel="obc-list" hidden>
+      <h2 class="section-heading">West Bengal OBC Class Status List</h2>
+      <p class="section-sub">A consolidated lookup for classes found in the bundled OBC record. It includes the current 66 classes in <a href="obc_pdfs/2026-05-18_945-BCW-MR-23-2026_current_list.pdf" target="_blank" rel="noreferrer">Notification No. 945-BCW/MR-23/2026</a>, older post-2010 entries affected by the 22 May 2024 judgment record, and the 2025 additions withdrawn by <a href="obc_pdfs/2026-05-18_944-BCW-MR-23-2026_withdrawal.pdf" target="_blank" rel="noreferrer">Notification No. 944-BCW/MR-23/2026</a>.</p>
+
+      <div class="report-grid">
+        <article class="report-card">
+          <div class="report-meta">Current</div>
+          <h3>66 classes in 945-BCW</h3>
+          <p>These rows are marked current because they appear in the 18 May 2026 list notification.</p>
+        </article>
+        <article class="report-card">
+          <div class="report-meta">Historical / affected</div>
+          <h3>Post-2010 entries</h3>
+          <p>Rows not present in <a href="obc_pdfs/2026-05-18_945-BCW-MR-23-2026_current_list.pdf" target="_blank" rel="noreferrer">945-BCW</a> are labelled from the bundled judgment and notification trail, with source-care notes.</p>
+        </article>
+        <article class="report-card">
+          <div class="report-meta">Withdrawn</div>
+          <h3>2025 package</h3>
+          <p>Classes added by <a href="obc_pdfs/2025-05-27_1057-BCW-MR-38-2025_inclusion.pdf" target="_blank" rel="noreferrer">1057-BCW</a> and <a href="obc_pdfs/2025-06-03_1107-BCW-MR-38-2025_inclusion.pdf" target="_blank" rel="noreferrer">1107-BCW</a> are shown as withdrawn on 18 May 2026 by <a href="obc_pdfs/2026-05-18_944-BCW-MR-23-2026_withdrawal.pdf" target="_blank" rel="noreferrer">944-BCW</a>. <a href="obc_pdfs/2026-05-18_945-BCW-MR-23-2026_current_list.pdf" target="_blank" rel="noreferrer">Open current list</a></p>
+        </article>
+      </div>
+
+      <div class="obc-list-toolbar" aria-label="OBC class table filters">
+        <label>
+          <span>Search class or note</span>
+          <input id="obc-class-search" class="search-input" type="search" placeholder="Try: Kapali, Nashya, withdrawn, 1994, 1057-BCW">
+        </label>
+        <label>
+          <span>Status</span>
+          <select id="obc-status-filter" class="doc-status-filter">
+            <option value="all">All statuses</option>
+            <option value="current">Current</option>
+            <option value="withdrawn">Withdrawn</option>
+            <option value="historical">Historical / affected</option>
+          </select>
+        </label>
+        <label>
+          <span>First included</span>
+          <select id="obc-period-filter" class="doc-status-filter">
+            <option value="all">Any date</option>
+            <option value="1994">1994 founding / first extension</option>
+            <option value="1995-2001">1995-2001 additions</option>
+            <option value="2010">2010 categorisation record</option>
+            <option value="2012-2024">2012-2024 affected entries</option>
+            <option value="2025-2026">2025-2026 reset</option>
+          </select>
+        </label>
+        <label>
+          <span>Source trail</span>
+          <input id="obc-source-filter" class="search-input" type="search" placeholder="Notification no., e.g. 944-BCW">
+        </label>
+        <p id="obc-class-count" class="filter-count" aria-live="polite"></p>
+      </div>
+
+      <div class="table-wrap">
+        <table id="obc-class-table">
+          <thead>
+            <tr>
+              <th>OBC class</th>
+              <th>First bundled inclusion</th>
+              <th>Exclusion / withdrawal date</th>
+              <th>Current status</th>
+              <th>Source trail</th>
+            </tr>
+          </thead>
+          <tbody id="obc-class-list"></tbody>
+        </table>
+      </div>
     </section>
 
     <section id="about" class="research about-section tab-panel" data-tab-panel="about" hidden>
@@ -1430,6 +1504,8 @@
         <article><strong>2026</strong><span>Recruitment-related OBC classification challenges added to the tracker</span></article>
       </div>
 
+      <div class="callout litigation-note-jump"><strong>Employee-protection argument note:</strong> user-supplied grounds and precedent links for bona fide employees appointed on government-issued OBC certificates are included after the timeline. <a href="#employee-protection-note">Open the legal-principles note</a>.</div>
+
       <ol class="case-timeline">
         <li class="case-event">
           <time datetime="2024-05-22">22 May 2024</time>
@@ -1492,6 +1568,85 @@
           <div><h3>Calcutta High Court: Bistriti Parveen petition withdrawn</h3><p>In <strong>WPA 14695/2026, Bistriti Parveen v. State of West Bengal &amp; Ors.</strong>, the petitioner stated that she had exercised the option available under the challenged 12 June 2026 notification and sought permission to withdraw. The Court dismissed the writ petition as withdrawn with liberty to file afresh, vacated any interim order, and disposed of connected applications. This is a procedural closure of that petition, not a merits ruling on the OBC classification issues.</p><p class="case-links"><a href="case_pdfs/2026-07-08_Calcutta-High-Court_WPA-14695-2026_withdrawal_order.pdf" target="_blank" rel="noreferrer">Bundled High Court order (2 pp.)</a> <span>Local source copy; verify with the court record.</span></p></div>
         </li>
       </ol>
+
+      <section id="employee-protection-note" class="litigation-note" aria-labelledby="employee-protection-title">
+        <p class="panel-kicker">Litigation support note · not an official order</p>
+        <h3 id="employee-protection-title">Legal principles for existing OBC-certificate appointees</h3>
+        <p class="section-sub">A user-supplied bilingual note argues that bona fide employees appointed on government-issued and verified OBC certificates should not face blanket termination merely because a reservation policy or class-list process is later invalidated. Treat this as an argument map: verify every citation against the actual judgment before using it.</p>
+
+        <div class="report-grid">
+          <article class="report-card">
+            <div class="report-meta">Factual premise</div>
+            <h3>No fraud or false claim</h3>
+            <p>The note’s protection argument depends on the employee having acted in good faith, without misrepresentation, and on certificates having been issued and verified by competent government authorities before appointment.</p>
+          </article>
+          <article class="report-card">
+            <div class="report-meta">Service finality</div>
+            <h3>Completed appointments</h3>
+            <p>It distinguishes policy validity from appointment validity and says completed recruitment, seniority, promotion, pension, vested rights, and livelihood interests require individualised treatment.</p>
+          </article>
+          <article class="report-card">
+            <div class="report-meta">Process safeguard</div>
+            <h3>No blanket cancellation</h3>
+            <p>The note relies on Articles 14, 16, and 21, natural justice, proportionality, legitimate expectation, and administrative fairness to oppose mass termination without hearing.</p>
+          </article>
+        </div>
+
+        <div class="table-wrap legal-note-table">
+          <table>
+            <thead>
+              <tr><th>Ground from the note</th><th>Short argument preserved from the DOCX</th><th>Legal hook cited in the note</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>No fraud or misrepresentation</td><td>Employees did not secure appointment by deception; the certificates were government-issued and were relied on in good faith.</td><td>Article 14; doctrine of good faith; rule of law</td></tr>
+              <tr><td>Government verification</td><td>The appointing authority verified the certificate before employment, so a later policy defect should not be equated with employee misconduct.</td><td>Articles 14 and 16; service jurisprudence</td></tr>
+              <tr><td>State-caused administrative error</td><td>The State should not punish innocent employees for its own administrative acts or lapses.</td><td>Article 14; administrative fairness; doctrine of fairness</td></tr>
+              <tr><td>Policy validity versus appointment validity</td><td>Invalidity of a policy or class-list process does not automatically invalidate all appointments already completed under government-issued certificates.</td><td><em>Milind</em>; Article 142</td></tr>
+              <tr><td>Long service and vested rights</td><td>Long service creates reliance interests in salary, seniority, promotion, retirement benefits, pension, and career stability.</td><td>Doctrine of vested rights; right to livelihood under Article 21</td></tr>
+              <tr><td>Natural justice</td><td>No employee should be removed by a blanket order without notice, individual hearing, and a specific finding.</td><td>Audi alteram partem; Articles 14 and 21</td></tr>
+              <tr><td>Collective punishment</td><td>The note rejects mass termination because constitutional liability should be individual, not collective.</td><td>Articles 14 and 21; proportionality</td></tr>
+              <tr><td>Burden of proof</td><td>Fraud, false claim, or illegality should be proved by the person alleging it.</td><td>Sections 101-102, Indian Evidence Act, 1872</td></tr>
+              <tr><td>Re-verification limits</td><td>Blanket re-verification or reopening of completed verification requires lawful authority and should not be arbitrary.</td><td>Rule of law; Article 14; finality</td></tr>
+              <tr><td>Public interest and stability</td><td>Continuity of service supports public administration and avoids disruption from large-scale dismissal.</td><td>Public interest doctrine; Article 142</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap legal-note-table">
+          <table>
+            <thead>
+              <tr><th>Theme</th><th>How the note uses it</th><th>Cited authorities to verify</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Bona fide appointment protection</td><td>Invalidation of caste status or policy should not automatically undo completed appointments where there is no fraud.</td><td><a href="https://indiankanoon.org/doc/678652/" target="_blank" rel="noreferrer"><em>State of Maharashtra v. Milind</em></a> (2001) 1 SCC 4; <a href="https://indiankanoon.org/doc/44390798/" target="_blank" rel="noreferrer"><em>Kavita Solunke v. State of Maharashtra</em></a> (2012) 8 SCC 430</td></tr>
+              <tr><td>Fraud exception</td><td>Protection is weaker or unavailable if appointment was obtained through fraud or a false caste claim.</td><td><a href="https://indiankanoon.org/doc/1475926/" target="_blank" rel="noreferrer"><em>R. Vishwanatha Pillai v. State of Kerala</em></a> (2004) 2 SCC 105; <a href="https://indiankanoon.org/doc/151832745/" target="_blank" rel="noreferrer"><em>Chairman, FCI v. Jagdish Balaram Bahira</em></a> (2017) 8 SCC 670</td></tr>
+              <tr><td>Non-arbitrariness and livelihood</td><td>Mass dismissal after long service may be attacked as arbitrary, disproportionate, and harmful to livelihood.</td><td><a href="https://indiankanoon.org/doc/1327287/" target="_blank" rel="noreferrer"><em>E.P. Royappa</em></a> (1974) 4 SCC 3; <a href="https://indiankanoon.org/doc/1766147/" target="_blank" rel="noreferrer"><em>Maneka Gandhi</em></a> (1978) 1 SCC 248; <a href="https://indiankanoon.org/doc/709776/" target="_blank" rel="noreferrer"><em>Olga Tellis</em></a> (1985) 3 SCC 545</td></tr>
+              <tr><td>Reliance on government action</td><td>Employees may argue legitimate expectation, promissory estoppel, good faith, and administrative fairness because they relied on official certificates and verification.</td><td><a href="https://indiankanoon.org/doc/813925/" target="_blank" rel="noreferrer"><em>Navjyoti Co-operative Group Housing Society</em></a> (1992) 4 SCC 477; <a href="https://indiankanoon.org/doc/1964881/" target="_blank" rel="noreferrer"><em>Hindustan Development Corporation</em></a> (1993) 3 SCC 499; <a href="https://indiankanoon.org/doc/871220/" target="_blank" rel="noreferrer"><em>Motilal Padampat Sugar Mills</em></a> (1979) 2 SCC 409</td></tr>
+              <tr><td>Recruitment finality</td><td>The note says completed recruitment should not ordinarily be reopened after many years, especially without individual findings.</td><td><a href="https://indiankanoon.org/doc/302891/" target="_blank" rel="noreferrer"><em>K. Manjusree v. State of Andhra Pradesh</em></a> (2008) 3 SCC 512; <a href="https://indiankanoon.org/doc/560061/" target="_blank" rel="noreferrer"><em>State of Punjab v. Jagdip Singh</em></a>, AIR 1964 SC 521</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap legal-note-table">
+          <table>
+            <thead>
+              <tr><th>Constitutional / doctrinal label</th><th>Use in the note</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Article 14</td><td>Opposes arbitrary cancellation and demands fairness by the State.</td></tr>
+              <tr><td>Article 16</td><td>Frames public employment as requiring non-arbitrary, equal treatment of already appointed employees.</td></tr>
+              <tr><td>Article 21</td><td>Links long-standing government employment with livelihood and dignified continuity.</td></tr>
+              <tr><td>Article 142</td><td>Supports a complete-justice argument for protecting bona fide employees where facts justify it.</td></tr>
+              <tr><td>Legitimate expectation</td><td>Employees relied on official certificates, official verification, and completed recruitment decisions.</td></tr>
+              <tr><td>Promissory estoppel</td><td>The note argues that the State should not resile from its own representation after citizens acted on it.</td></tr>
+              <tr><td>Proportionality</td><td>Mass dismissal is presented as disproportionate where the alleged defect is administrative or procedural.</td></tr>
+              <tr><td>Finality and good faith</td><td>Completed recruitment should not be reopened after years unless fraud or a legally sufficient ground is shown.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout"><strong>Use discipline:</strong> this note is useful for framing questions in employee-protection litigation, but it is not a substitute for the operative order in the pending West Bengal OBC matters. It should be read with the fraud exception in <em>Vishwanatha Pillai</em> and <em>Jagdish Balaram Bahira</em>, and with actual court orders, pleadings, and verified SCC/official judgment links before treating any principle as controlling.</div>
+      </section>
 
       <div class="table-wrap case-matrix">
         <table><thead><tr><th>Record</th><th>Forum</th><th>Issue tracked</th><th>Local evidence</th><th>Status discipline</th></tr></thead><tbody>
@@ -4273,6 +4428,20 @@ tr:last-child td {
 .documents-section {
   margin-top: 36px;
 }
+.litigation-note {
+  margin: 28px 0;
+  padding-top: 4px;
+}
+.litigation-note > h3 {
+  margin: 0 0 8px;
+  color: var(--ink-strong);
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.12;
+}
+.legal-note-table {
+  margin-top: 16px;
+}
 .doc-toolbar {
   display: grid;
   grid-template-columns: minmax(260px, 1fr) auto;
@@ -4292,9 +4461,36 @@ tr:last-child td {
   color: var(--ink);
   font: 14px/1.3 var(--sans);
 }
+.obc-list-toolbar {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.4fr) minmax(150px, .65fr) minmax(190px, .8fr) minmax(190px, 1fr);
+  gap: 12px;
+  align-items: end;
+  margin: 20px 0;
+}
+.obc-list-toolbar label {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.obc-list-toolbar label span {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.filter-count {
+  grid-column: 1 / -1;
+  margin: -2px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
 @media (max-width: 820px) {
   .corpus-overview { grid-template-columns: 1fr; }
   .doc-toolbar { grid-template-columns: 1fr; }
+  .obc-list-toolbar { grid-template-columns: 1fr; }
 }
 #doc-search { font-family: inherit; }
 .doc-row.hidden { display: none; }
@@ -4482,9 +4678,231 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSyst
 const OBC_DOCS = JSON.parse(document.getElementById('obc-docs-json').textContent);
 const SUPPLEMENTAL_DOCS = JSON.parse(document.getElementById('bcw-supplemental-docs-json')?.textContent || '[]');
 const SUPPLEMENTAL_TIMELINE = JSON.parse(document.getElementById('bcw-supplemental-timeline-json')?.textContent || '[]');
+const OBC_CLASSES_2026 = [
+  'Kapali',
+  'Baishya Kapali',
+  'Kurmi',
+  'Sutradhar',
+  'Karmakar',
+  'Kumbhakar',
+  'Swarnakar',
+  'Teli, Kolu',
+  'Napit',
+  'Yogi, Nath',
+  'Goala, Gope (Pallav Gope, Ballav Gope, Yadav Gope, Gope, Ahir and Yadav)',
+  'Moira (Halwai), Modak (Halwai)',
+  'Barujibi',
+  'Satchasi',
+  'Malakar',
+  'Jolah (Ansari-Momin)',
+  'Kansari',
+  'Tanti, Tantubaya',
+  'Dhanuk',
+  'Shankakar',
+  'Keori/Koiri',
+  'Raju',
+  'Nagar',
+  'Karani',
+  'Sarak',
+  'Tamboli/Tamali',
+  'Kosta/Kostha',
+  'Roniwar/Rauniyar',
+  'Scheduled Castes converts to Christianity and their progeny',
+  'Lakhera/Laahera',
+  'Fakir, Sain',
+  'Kahar',
+  'Betkar (Bentkar)',
+  'Chitrakar',
+  'Bhujel',
+  'Newar',
+  'Mangar',
+  'Nembang',
+  'Sampang',
+  'Bungchheng',
+  'Thami',
+  'Jogi',
+  'Dhimal',
+  'Hawari, Dhobi (other than those included in the list of Scheduled Castes)',
+  'Bhar',
+  'Khandait',
+  'Gangot',
+  'Turha',
+  'Dhunia',
+  'Patidar',
+  'Kasai',
+  'Hele / Halia / Chasi-Kaibartta, Das Kaibartta',
+  'Bansi Barman',
+  'Nashya-Sekh',
+  'Pahadia Muslim',
+  'Khen (Non-Bania category)',
+  'Sukli',
+  'Sunuwar',
+  'Bharbhuja',
+  'Dewan',
+  'Rai (including Chamling)',
+  'Rayeen (Kunjra)',
+  'Shershabadia',
+  'Devanga',
+  'Hajjam (Muslim)',
+  'Chowduli (Muslim)'
+];
+const OBC_CLASS_FIRST_INCLUSION = {
+  'Kapali': '1994-07-13; Notification No. 346-TW/EC',
+  'Baishya Kapali': '1994-07-13; Notification No. 346-TW/EC',
+  'Kurmi': '1994-07-13; Notification No. 346-TW/EC',
+  'Sutradhar': '1994-07-13; Notification No. 346-TW/EC',
+  'Karmakar': '1994-07-13; Notification No. 346-TW/EC',
+  'Kumbhakar': '1994-07-13; Notification No. 346-TW/EC',
+  'Swarnakar': '1994-07-13; Notification No. 346-TW/EC',
+  'Teli, Kolu': '1994-07-13; Notification No. 346-TW/EC',
+  'Napit': '1994-07-13; Notification No. 346-TW/EC',
+  'Yogi, Nath': '1994-07-13; Notification No. 346-TW/EC',
+  'Goala, Gope (Pallav Gope, Ballav Gope, Yadav Gope, Gope, Ahir and Yadav)': '1994-07-13; amended 1997-02-11 and 2013-09-12',
+  'Moira (Halwai), Modak (Halwai)': '1994-07-13; Notification No. 346-TW/EC',
+  'Barujibi': '1994-07-13; Notification No. 346-TW/EC',
+  'Satchasi': '1994-07-13; Notification No. 346-TW/EC',
+  'Malakar': '1994-12-13; Notification No. 705-TW/EC',
+  'Jolah (Ansari-Momin)': '1994-12-13; Notification No. 705-TW/EC',
+  'Kansari': '1994-12-13; Notification No. 705-TW/EC',
+  'Tanti, Tantubaya': '1994-12-13; Notification No. 705-TW/EC',
+  'Dhanuk': '1994-12-13; Notification No. 705-TW/EC',
+  'Shankakar': '1994-12-13; Notification No. 705-TW/EC',
+  'Keori/Koiri': '1994-12-13; Notification No. 705-TW/EC',
+  'Raju': '1994-12-13; Notification No. 705-TW/EC',
+  'Nagar': '1994-12-13; Notification No. 705-TW/EC',
+  'Karani': '1994-12-13; Notification No. 705-TW/EC',
+  'Sarak': '1994-12-13; Notification No. 705-TW/EC',
+  'Tamboli/Tamali': '1994-12-13; Notification No. 705-TW/EC',
+  'Kosta/Kostha': '1995-05-12; Notification No. 370-TW/EC',
+  'Roniwar/Rauniyar': '1995-05-12; Notification No. 370-TW/EC',
+  'Scheduled Castes converts to Christianity and their progeny': '1995-05-12; Notification No. 370-TW/EC',
+  'Lakhera/Laahera': '1996-03-08; Notification No. 183-TW/EC',
+  'Fakir, Sain': '1996-03-08; Notification No. 183-TW/EC',
+  'Kahar': '1996-03-08; Notification No. 183-TW/EC',
+  'Betkar (Bentkar)': '1996-03-08; Notification No. 183-TW/EC',
+  'Chitrakar': '1996-03-08; Notification No. 183-TW/EC',
+  'Bhujel': '1995-12-01; Notification No. 1179-TW/EC',
+  'Newar': '1995-12-01; Notification No. 1179-TW/EC',
+  'Mangar': '1995-12-01; amended 2001-07-10',
+  'Nembang': '1995-12-01; Notification No. 1179-TW/EC',
+  'Sampang': '1995-12-01; Notification No. 1179-TW/EC',
+  'Bungchheng': '1995-12-01; Notification No. 1179-TW/EC',
+  'Thami': '1995-12-01; Notification No. 1179-TW/EC',
+  'Jogi': '1995-12-01; Notification No. 1179-TW/EC',
+  'Dhimal': '1995-12-01; Notification No. 1179-TW/EC',
+  'Hawari, Dhobi (other than those included in the list of Scheduled Castes)': '1997-02-11; Notification No. 93-TW/EC',
+  'Bhar': '1997-02-11; Notification No. 93-TW/EC',
+  'Khandait': '1997-02-11; Notification No. 93-TW/EC',
+  'Gangot': '1997-02-11; Notification No. 93-TW/EC',
+  'Turha': '1997-02-11; Notification No. 93-TW/EC',
+  'Dhunia': '1997-02-11; Notification No. 93-TW/EC',
+  'Patidar': '1997-02-11; Notification No. 93-TW/EC',
+  'Kasai': '1997-02-11; Notification No. 93-TW/EC',
+  'Hele / Halia / Chasi-Kaibartta, Das Kaibartta': '1997-11-06; Notification No. 1054-BCW/EC/MR-302/97',
+  'Bansi Barman': '1999-03-01; Notification No. 84-BCW/RC/MR-302/97',
+  'Nashya-Sekh': '1999-03-01; Notification No. 84-BCW/RC/MR-302/97',
+  'Pahadia Muslim': '1999-03-01; Notification No. 84-BCW/RC/MR-302/97',
+  'Khen (Non-Bania category)': '1999-03-01; amended 2017-09-14',
+  'Sukli': '1999-03-01; Notification No. 84-BCW/RC/MR-302/97',
+  'Sunuwar': '1999-03-01; Notification No. 84-BCW/RC/MR-302/97',
+  'Bharbhuja': '1999-03-01; Notification No. 84-BCW/RC/MR-302/97',
+  'Dewan': '2001-07-10; Notification No. 2927-BCW/MR-436/99',
+  'Rai (including Chamling)': '2001-07-10; Notification No. 2927-BCW/MR-436/99',
+  'Rayeen (Kunjra)': '2010-09-24; in 6309-BCW/MR-84/10 categorisation; earlier source not separately identified in this bundle',
+  'Shershabadia': '2010-09-24; in 6309-BCW/MR-84/10 categorisation; earlier source not separately identified in this bundle',
+  'Devanga': '2010-09-24; in 6309-BCW/MR-84/10 categorisation; earlier source not separately identified in this bundle',
+  'Hajjam (Muslim)': '2010-09-24; in 6309-BCW/MR-84/10 categorisation; earlier source not separately identified in this bundle',
+  'Chowduli (Muslim)': '2010-09-24; in 6309-BCW/MR-84/10 categorisation; earlier source not separately identified in this bundle'
+};
+const OBC_CLASS_CHANGES = [
+  { name: 'Bhangi (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Dhatri/Dai/Dhaity (Muslim)', included: '2012-05-11', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '1673-BCW; 945-BCW judgment recital' },
+  { name: 'Gharami (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Ghorkhan', included: '2012-05-11', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '1673-BCW; 945-BCW judgment recital' },
+  { name: 'Goldar/Golder (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Halsana (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Kayal (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Naiya (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Shikari/Sikari (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1107-BCW; 1172-BCW; 944-BCW' },
+  { name: 'Adaldar (Muslim)', included: '2012-05-11', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '1673-BCW; 945-BCW judgment recital' },
+  { name: 'Akunji/Akan/Akhan (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Bag (Muslim)', included: '2012-05-11', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '1673-BCW; 945-BCW judgment recital' },
+  { name: 'Chaprashi (Muslim)', included: '2012-05-11', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '1673-BCW; 945-BCW judgment recital' },
+  { name: 'Churihar', included: '2012-05-11', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '1673-BCW; 945-BCW judgment recital' },
+  { name: 'Daptari (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Dewan (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Dhabak (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Gazi (Muslim), Par (Muslim)', included: '2012-05-11 / amended 2016-02-26', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 773-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Khan (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Sadhukhan (Muslim)', included: '2013-03-01', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '762-BCW; 945-BCW judgment recital' },
+  { name: 'Majhi', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Malita/Malitha/Malitya (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Mistri (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Paik (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Pailan (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Purkait (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Sana (Muslim)', included: '2012-05-11', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '1673-BCW; 945-BCW judgment recital' },
+  { name: 'Sareng (Muslim)', included: '2012-05-11', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '1673-BCW; 945-BCW judgment recital' },
+  { name: 'Sardar (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Sarkar (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Shah (Shah/Sahaji)', included: '2013-03-01', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '762-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Tarafdar (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Gavara', included: '2012-05-11', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '1673-BCW; 945-BCW judgment recital' },
+  { name: 'Mouli (Muslim)', included: '2012-05-11', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '1673-BCW; 945-BCW judgment recital' },
+  { name: 'Sepai (Muslim)', included: '2012-05-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1673-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Sekh/Seikh', included: '2012-10-10', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '845-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Bayen (Muslim)', included: '2014-08-29', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '2770-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Bhuiya/Bhunya (Muslim)', included: '2014-08-29', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '2770-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Borah/Bara/Bora (Muslim)', included: '2014-08-29 / amended 2016-02-04', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2770-BCW; 468-BCW; 945-BCW judgment recital' },
+  { name: 'Gorey (Muslim)', included: '2014-08-29', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2770-BCW; 945-BCW judgment recital' },
+  { name: 'Hati (Muslim)', included: '2014-08-29', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2770-BCW; 945-BCW judgment recital' },
+  { name: 'Jatuya (Muslim)', included: '2014-08-29', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2770-BCW; 945-BCW judgment recital' },
+  { name: 'Khondekar/Khonkar (Muslim)', included: '2014-08-29', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '2770-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Pahar (Muslim)', included: '2014-08-29', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2770-BCW; 945-BCW judgment recital' },
+  { name: 'Raptan (Muslim)', included: '2014-08-29', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2770-BCW; 945-BCW judgment recital' },
+  { name: 'Baradi (Muslim)', included: '2014-08-29', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2770-BCW; 945-BCW judgment recital' },
+  { name: 'Dalal (Muslim)', included: '2014-08-29', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '2770-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Hoseni Goyala (Muslim)', included: '2014-08-29', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2770-BCW; 945-BCW judgment recital' },
+  { name: 'Khalashi (Muslim)', included: '2014-08-29', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2770-BCW; 945-BCW judgment recital' },
+  { name: 'Kichni (Muslim)', included: '2014-08-29', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2770-BCW; 945-BCW judgment recital' },
+  { name: 'Mukti/Mufti (Muslim)', included: '2014-08-29', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '2770-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Kalal/Iraqi', included: '2015-01-16', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '183-BCW; 945-BCW judgment recital' },
+  { name: 'Kalwar', included: '2015-06-01', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '2102-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Atta (Muslim)', included: '2015-06-01', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2102-BCW; 945-BCW judgment recital' },
+  { name: 'Khansama', included: '2015-06-01', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '2102-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Sarala/Sarwala (Muslim)', included: '2015-06-01', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2102-BCW; 945-BCW judgment recital' },
+  { name: 'Bagani (Muslim)', included: '2015-06-01', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2102-BCW; 945-BCW judgment recital' },
+  { name: 'Bhandari (Muslim)', included: '2015-06-01', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '2102-BCW; 945-BCW judgment recital' },
+  { name: 'Hawaikar (Muslim)', included: '2016-02-04', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '468-BCW; 945-BCW judgment recital' },
+  { name: 'Khajonkriya/Khajankriya (Muslim)', included: '2016-02-04', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '468-BCW; 945-BCW judgment recital' },
+  { name: 'Katha (Muslim)', included: '2016-02-04', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '468-BCW; 945-BCW judgment recital' },
+  { name: 'Mudi/Mehedi (Muslim)', included: '2016-02-04', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '468-BCW; 945-BCW judgment recital' },
+  { name: 'Sahana (Muslim)', included: '2016-02-04', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '468-BCW; 945-BCW judgment recital' },
+  { name: 'Kazi/Kaji/Quazi/Quaji (Muslim)', included: '2016-02-26', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '773-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Kotal (Muslim)', included: '2016-12-26', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: '4283-BCW; 945-BCW judgment recital' },
+  { name: 'Gurung', included: '2016-12-26', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '4282-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Hazari (Muslim)', included: '2017-06-07', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1905-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Layek (Muslim)', included: '2017-12-05', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '4144-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Khas', included: '2018-03-28', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '1132-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Shikder/Shikdar/Sikder/Sikdar (Muslim)', included: '2018-06-27', removed: '2024-05-22', status: 'Post-2010 entry; not in 945-BCW current list', source: 'SBCW-165; 945-BCW judgment recital' },
+  { name: 'Chowdhury/Chowdhuri (Muslim)', included: '2022-07-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '2019-BCW; 1107-BCW; 944-BCW' },
+  { name: 'Bairagi/Baishnab', included: '2022-07-11', removed: '2026-05-18', status: 'Withdrawn from 2025 package; not in 945-BCW current list', source: '2020-BCW; 1057-BCW; 944-BCW' },
+  { name: 'Bepari/Byapari Muslim', included: '2025-06-03', removed: '2026-05-18', status: 'Withdrawn 2025 addition; not in 945-BCW current list', source: '1107-BCW; 944-BCW' },
+  { name: 'Mali, Faraji (Muslim)', included: '2025-06-03', removed: '2026-05-18', status: 'Withdrawn 2025 addition; not in 945-BCW current list', source: '1107-BCW; 944-BCW' },
+  { name: 'Muchi / Chamar Muslim', included: '2025-06-03', removed: '2026-05-18', status: 'Withdrawn 2025 addition; not in 945-BCW current list', source: '1107-BCW; 944-BCW' },
+  { name: 'Muslim Barujibi / Barui', included: '2025-06-03', removed: '2026-05-18', status: 'Withdrawn 2025 addition; not in 945-BCW current list', source: '1107-BCW; 944-BCW' },
+  { name: 'Nikari (Muslim)', included: '2025-06-03', removed: '2026-05-18', status: 'Withdrawn 2025 addition; not in 945-BCW current list', source: '1107-BCW; 944-BCW' },
+  { name: 'Muslim Penchi', included: '2025-06-03', removed: '2026-05-18', status: 'Withdrawn 2025 addition; not in 945-BCW current list', source: '1107-BCW; 1172-BCW; 944-BCW' },
+  { name: 'Sadgope / Sadgop', included: '2025-06-03', removed: '2026-05-18', status: 'Withdrawn 2025 addition; not in 945-BCW current list', source: '1107-BCW; 1172-BCW; 944-BCW' },
+  { name: 'Nepali Brahmin', included: '2025-06-03', removed: '2026-05-18', status: 'Withdrawn 2025 addition; not in 945-BCW current list', source: '1107-BCW; 1172-BCW; 944-BCW' }
+];
 
 function escapeHtml(value) {
   return String(value || '').replace(/[&<>\"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;', "'": '&#39;' }[char]));
+}
+
+function escapeAttr(value) {
+  return escapeHtml(value).replace(/`/g, '&#96;');
 }
 
 function titleCase(value) {
@@ -4528,6 +4946,131 @@ function rewriteStaticAssetLinks() {
       a.setAttribute('href', base + href);
     }
   });
+}
+
+const NOTIFICATION_LINKS = {
+  '6309-BCW': 'obc_pdfs/2010-09-24_6309-BCW-MR-84-10_categorisation.pdf',
+  '1673-BCW': 'obc_pdfs/2012-05-11_1673-BCW-MR-209-11_inclusion.pdf',
+  '845-BCW': 'obc_pdfs/2012-10-10_845-BCW-MR-147-12_inclusion.pdf',
+  '762-BCW': 'obc_pdfs/2013-03-01_762-BCW-MR-116-12_amendment.pdf',
+  '2770-BCW': 'obc_pdfs/2014-08-29_2770-BCW-MR-116-12_inclusion_amendment.pdf',
+  '183-BCW': 'obc_pdfs/2015-01-16_183-BCW-MR-209-11_inclusion.pdf',
+  '2102-BCW': 'obc_pdfs/2015-06-01_2102-BCW-MR-209-11_inclusion.pdf',
+  '468-BCW': 'obc_pdfs/2016-02-04_468-BCW-MR-209-11_inclusion_amendment.pdf',
+  '773-BCW': 'obc_pdfs/2016-02-26_773-BCW-MR-209-11_inclusion_amendment.pdf',
+  '4282-BCW': 'obc_pdfs/2016-12-26_4282-BCW-MR-118-16_inclusion.pdf',
+  '4283-BCW': 'obc_pdfs/2016-12-26_4283-BCW-MR-209-11-(Pt.I)_inclusion_amendment.pdf',
+  '1905-BCW': 'obc_pdfs/2017-06-07_1905-BCW-MR-19-17_inclusion.pdf',
+  '4144-BCW': 'obc_pdfs/2017-12-05_4144-BCW-MR-92-17_inclusion.pdf',
+  '1132-BCW': 'obc_pdfs/2018-03-28_1132-BCW-MR-05-17_inclusion.pdf',
+  'SBCW-165': 'obc_pdfs/2018-06-27_SBCW-165-MR-29-18_inclusion.pdf',
+  '2019-BCW': 'obc_pdfs/2022-07-11_2019-BCW-MR-30-2020_inclusion.pdf',
+  '2020-BCW': 'obc_pdfs/2022-07-11_2020-BCW-MR-03-2021_inclusion.pdf',
+  '1057-BCW': 'obc_pdfs/2025-05-27_1057-BCW-MR-38-2025_inclusion.pdf',
+  '1107-BCW': 'obc_pdfs/2025-06-03_1107-BCW-MR-38-2025_inclusion.pdf',
+  '1172-BCW': 'obc_pdfs/2025-06-03_1107-BCW-MR-38-2025_inclusion.pdf',
+  '944-BCW': 'obc_pdfs/2026-05-18_944-BCW-MR-23-2026_withdrawal.pdf',
+  '945-BCW': 'obc_pdfs/2026-05-18_945-BCW-MR-23-2026_current_list.pdf'
+};
+
+function linkedNotificationTrail(source) {
+  const parts = String(source || '').split(';').map(part => part.trim()).filter(Boolean);
+  if (!parts.length) return '';
+  const notificationKeys = Object.keys(NOTIFICATION_LINKS).sort((a, b) => b.length - a.length);
+  return parts.map(part => {
+    const key = notificationKeys.find(candidate => part.includes(candidate));
+    if (!key) return escapeHtml(part);
+    const href = resolveAssetPath(NOTIFICATION_LINKS[key]);
+    return `<a href="${href}" target="_blank" rel="noreferrer">${escapeHtml(part)}</a>`;
+  }).join(' · ');
+}
+
+function obcStatusGroup(status) {
+  if (/^Current\b/.test(status || '')) return 'current';
+  if (/Withdrawn/.test(status || '')) return 'withdrawn';
+  return 'historical';
+}
+
+function obcInclusionPeriod(included) {
+  const year = Number(String(included || '').match(/\b(19|20)\d{2}\b/)?.[0] || 0);
+  if (year === 1994) return '1994';
+  if (year >= 1995 && year <= 2001) return '1995-2001';
+  if (year === 2010) return '2010';
+  if (year >= 2012 && year <= 2024) return '2012-2024';
+  if (year >= 2025 && year <= 2026) return '2025-2026';
+  return 'unknown';
+}
+
+function renderObcClassList() {
+  const tbody = document.getElementById('obc-class-list');
+  if (!tbody) return;
+  const normaliseClass = value => normalise(String(value || '').replace(/\bmuslim\b/gi, ''));
+  const extractSection = (text, start, end) => {
+    const startIndex = text.indexOf(start);
+    if (startIndex < 0) return '';
+    const endIndex = text.indexOf(end, startIndex);
+    return text.slice(startIndex + start.length, endIndex > startIndex ? endIndex : undefined);
+  };
+  const parseNumberedClasses = text => Array.from(text.matchAll(/(?:^|\s)(\d{1,3})\.?\s*([A-Za-z][A-Za-z0-9()\/,\-\s]+?)(?=\s+\d{1,3}\.?\s+[A-Za-z]|$)/g))
+    .map(match => match[2].replace(/\s+/g, ' ').trim())
+    .filter(Boolean);
+  const legacyDoc = OBC_DOCS.find(doc => doc.notif_no === '6309-BCW/MR-84/10');
+  const legacyText = legacyDoc?.text || '';
+  const legacyNames = [
+    ...parseNumberedClasses(extractSection(legacyText, 'MORE BACKWARD (Category-A):', 'BACKWARD (Category-B):')),
+    ...parseNumberedClasses(extractSection(legacyText, 'BACKWARD (Category-B):', 'By order'))
+  ];
+  const currentRows = OBC_CLASSES_2026.map((name, index) => ({
+    name,
+    included: OBC_CLASS_FIRST_INCLUSION[name] || 'First inclusion date not identified in bundled source; current list confirmed 2026-05-18',
+    removed: '',
+    status: 'Current in 945-BCW; 7% reservation position',
+    source: `945-BCW/MR-23/2026 serial ${index + 1}`
+  }));
+  const knownNames = new Set([...currentRows, ...OBC_CLASS_CHANGES].map(row => normaliseClass(row.name)));
+  const legacyRows = legacyNames
+    .filter(name => !knownNames.has(normaliseClass(name)))
+    .map(name => ({
+      name,
+      included: '2010-09-24 in bundled 6309-BCW categorisation; original inclusion may be earlier',
+      removed: 'Not in 945-BCW current list',
+      status: 'Historical 2010 category entry; verify before reliance',
+      source: '6309-BCW/MR-84/10; compare 945-BCW/MR-23/2026'
+    }));
+  const rows = [...currentRows, ...OBC_CLASS_CHANGES, ...legacyRows];
+  tbody.innerHTML = rows.map((row, index) => `
+    <tr id="obc-class-${index + 1}" data-status-group="${obcStatusGroup(row.status)}" data-period="${obcInclusionPeriod(row.included)}" data-source="${escapeAttr(normalise(row.source || ''))}" data-search="${escapeAttr(normalise(`${row.name || ''} ${row.included || ''} ${row.removed || ''} ${row.status || ''} ${row.source || ''}`))}">
+      <td><strong>${escapeHtml(row.name)}</strong></td>
+      <td>${escapeHtml(row.included || '')}</td>
+      <td>${escapeHtml(row.removed || 'Not applicable in current bundled record')}</td>
+      <td><span class="tag ${/Current/.test(row.status) ? 'current' : /Withdrawn/.test(row.status) ? 'withdrawn' : 'scan'}">${escapeHtml(row.status || '')}</span></td>
+      <td>${linkedNotificationTrail(row.source || '')}</td>
+    </tr>
+  `).join('');
+  filterObcClassList();
+}
+
+function filterObcClassList() {
+  const rows = Array.from(document.querySelectorAll('#obc-class-list tr'));
+  if (!rows.length) return;
+  const textTerm = normalise(document.getElementById('obc-class-search')?.value || '');
+  const sourceTerm = normalise(document.getElementById('obc-source-filter')?.value || '');
+  const status = document.getElementById('obc-status-filter')?.value || 'all';
+  const period = document.getElementById('obc-period-filter')?.value || 'all';
+  let visible = 0;
+
+  rows.forEach(row => {
+    const matchesText = !textTerm || (row.dataset.search || '').includes(textTerm);
+    const matchesSource = !sourceTerm || (row.dataset.source || '').includes(sourceTerm);
+    const matchesStatus = status === 'all' || row.dataset.statusGroup === status;
+    const matchesPeriod = period === 'all' || row.dataset.period === period;
+    const show = matchesText && matchesSource && matchesStatus && matchesPeriod;
+    row.hidden = !show;
+    if (show) visible += 1;
+  });
+
+  const count = document.getElementById('obc-class-count');
+  if (count) count.textContent = `${visible} of ${rows.length} class rows shown`;
 }
 
 function renderSupplementalDocs() {
@@ -4631,6 +5174,13 @@ function sortTimelineChronologically() {
 
 renderSupplementalDocs();
 renderSupplementalTimeline();
+renderObcClassList();
+['obc-class-search', 'obc-source-filter'].forEach(id => {
+  document.getElementById(id)?.addEventListener('input', filterObcClassList);
+});
+['obc-status-filter', 'obc-period-filter'].forEach(id => {
+  document.getElementById(id)?.addEventListener('change', filterObcClassList);
+});
 sortTimelineChronologically();
 rewriteStaticAssetLinks();
 
@@ -4661,10 +5211,10 @@ const HERO_CONTENT = {
   home: {
     eyebrow: 'West Bengal · Backward Classes Welfare Department · 1993–2026',
     title: 'OBC Research Dashboard',
-    sub: 'A source-led record from the 1993 Commission Act through the 2026 notification and litigation record: timeline, extracted PDF text, hearings, policy reports, audit gaps, and local source links.',
+    sub: 'A source-led record from the 1993 Commission Act through the 2026 notification and litigation record: timeline, OBC class status, extracted PDF text, hearings, policy reports, audit gaps, and local source links.',
     stats: [
       ['84', 'PDF sources bundled locally across notifications, hearings, reports, and litigation records.'],
-      ['Corpus', 'Searchable text records plus a separate litigation tracker.'],
+      ['OBC List', 'Current 66-class list plus searchable source records.'],
       ['17', 'Public-hearing and public-notice PDFs bundled locally.'],
       ['5', 'Priority source gaps and follow-up records tracked in the audit section.']
     ]
@@ -4725,8 +5275,8 @@ const HERO_CONTENT = {
     ]
   },
   documents: {
-    eyebrow: 'Corpus · Search extracted text',
-    title: 'Document Text Corpus',
+    eyebrow: 'Source PDFs · Search extracted text',
+    title: 'Source PDF Text',
     sub: 'Search notification numbers, dates, community names, statuses, summaries, and extracted text from the bundled PDF set.',
     stats: [
       ['56', 'PDF texts embedded with summaries.'],
@@ -4736,7 +5286,7 @@ const HERO_CONTENT = {
     ]
   },
   evidence: {
-    eyebrow: 'Evidence · Hearings and audit gaps',
+    eyebrow: 'Hearings & gaps · Public notices and audit',
     title: 'Public Hearings and Completeness Audit',
     sub: 'Review the Jana Shunani notice table, missing records, original-source links, and procedural gaps behind the notification trail.',
     stats: [
@@ -4757,9 +5307,20 @@ const HERO_CONTENT = {
       ['Verify', 'Always check the relevant court for the latest case status.']
     ]
   },
+  'obc-list': {
+    eyebrow: 'OBC List · Notification 945-BCW',
+    title: 'OBC Class Status List',
+    sub: 'A dedicated lookup table for current, historical, affected, and withdrawn classes found in the bundled West Bengal OBC record.',
+    stats: [
+      ['66', 'Classes listed in the current notification.'],
+      ['7%', 'Reservation position stated for services and posts.'],
+      ['2026', 'List reset after the 2025 package was withdrawn.'],
+      ['PDF', 'Source and Gazette copies are linked from the table page.']
+    ]
+  },
   'entry-framework': {
-    eyebrow: 'Framework · Add and audit records',
-    title: 'New Entry Framework',
+    eyebrow: 'Add record guide · Add and audit records',
+    title: 'New Record Guide',
     sub: 'Use structured fields, evidence checks, status labels, and cross-links when adding new PDFs, orders, hearings, court records, reports, or missing sources.',
     stats: [
       ['Date', 'Use ISO dates and exact document numbers.'],
@@ -4812,24 +5373,41 @@ function bundleSearchIndex() {
   const caseItems = Array.from(document.querySelectorAll('#cases .case-event')).map((event, index) => {
     if (!event.id) event.id = `case-${index + 1}`;
     return {
-      type: 'Case',
+      type: 'Litigation',
       title: conciseText(event.querySelector('h3')?.textContent || '', 110),
       detail: conciseText(event.querySelector('p')?.textContent || '', 170),
       text: event.textContent || '',
       href: `#${event.id}`
     };
   });
+  const legalNoteItems = Array.from(document.querySelectorAll('#cases .litigation-note')).map((section, index) => {
+    if (!section.id) section.id = `litigation-note-${index + 1}`;
+    return {
+      type: 'Litigation',
+      title: conciseText(section.querySelector('h3')?.textContent || 'Litigation support note', 110),
+      detail: conciseText(section.querySelector('.section-sub')?.textContent || section.querySelector('p')?.textContent || '', 170),
+      text: section.textContent || '',
+      href: `#${section.id}`
+    };
+  });
+  const classItems = Array.from(document.querySelectorAll('#obc-class-list tr')).map((row, index) => ({
+    type: 'OBC List',
+    title: conciseText(row.cells[0]?.textContent || `OBC class ${index + 1}`, 110),
+    detail: conciseText(`${row.cells[1]?.textContent || ''}; ${row.cells[2]?.textContent || ''}; ${row.cells[3]?.textContent || ''}`, 170),
+    text: row.textContent || '',
+    href: row.id ? `#${row.id}` : `#obc-class-${index + 1}`
+  }));
   const documentItems = docRows.map((row, index) => {
     const doc = OBC_DOCS[Number(row.dataset.docIdx)];
     return {
-      type: 'Document',
+      type: 'Source PDF',
       title: doc?.notif_no || row.querySelector('code')?.textContent || `Corpus record ${index + 1}`,
       detail: conciseText(doc?.summary || row.textContent, 170),
       text: `${doc?.notif_no || ''} ${doc?.date || ''} ${doc?.type || ''} ${doc?.status || ''} ${doc?.summary || ''} ${doc?.text || ''} ${row.textContent || ''}`,
       href: row.id ? `#${row.id}` : '#documents'
     };
   });
-  return [...timelineItems, ...caseItems, ...documentItems].map(item => ({ ...item, searchText: normalise(`${item.title} ${item.detail} ${item.text}`) }));
+  return [...timelineItems, ...caseItems, ...legalNoteItems, ...classItems, ...documentItems].map(item => ({ ...item, searchText: normalise(`${item.title} ${item.detail} ${item.text}`) }));
 }
 
 const BUNDLE_SEARCH_INDEX = bundleSearchIndex();
@@ -4862,12 +5440,12 @@ function renderBundleSearch() {
     .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title))
     .slice(0, 12);
   if (!matches.length) {
-    siteSearchResults.textContent = 'No matching timeline entry, case, or corpus record was found.';
+    siteSearchResults.textContent = 'No matching timeline, litigation, OBC list, or source PDF record was found.';
     return;
   }
   const status = document.createElement('p');
   status.className = 'search-result-status';
-  status.textContent = `Showing ${matches.length} best match${matches.length === 1 ? '' : 'es'} across timeline, cases, and corpus.`;
+  status.textContent = `Showing ${matches.length} best match${matches.length === 1 ? '' : 'es'} across timeline, litigation, OBC list, and source PDFs.`;
   siteSearchResults.append(status);
   matches.forEach(item => {
     const link = document.createElement('a');
@@ -4906,10 +5484,11 @@ function tabForHash(hash) {
   const id = String(hash || '').replace(/^#/, '');
   if (!id || id === 'home' || id === 'guide' || id === 'query-hub') return 'home';
   if (id === 'about') return 'about';
+  if (id === 'obc-list' || id.startsWith('obc-class-')) return 'obc-list';
   if (id.startsWith('evt-') || id === 'timeline') return 'timeline';
   if (id.startsWith('doc-') || id === 'documents') return 'documents';
   if (id === 'public-hearings' || id === 'missing-records' || id === 'evidence') return 'evidence';
-  if (id === 'cases' || id.startsWith('case-')) return 'cases';
+  if (id === 'cases' || id.startsWith('case-') || id === 'employee-protection-note' || id.startsWith('litigation-note-')) return 'cases';
   if (id === 'entry-framework') return 'entry-framework';
   if (id === 'inventory') return 'inventory';
   if (id === 'methods') return 'methods';
@@ -4950,7 +5529,13 @@ function showTab(tabName, targetHash) {
   const target = hash && document.getElementById(hash.replace(/^#/, ''));
   const isTopLevelTab = hash === `#${tabName}` || (target && target.dataset && target.dataset.tabPanel === tabName);
   if (target && !isTopLevelTab && hash !== '#guide' && hash !== '#query-hub' && hash !== '#home') {
-    setTimeout(() => target.scrollIntoView({ block: 'start' }), 0);
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        const headerOffset = document.querySelector('.site-header')?.offsetHeight || 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - headerOffset - 16;
+        window.scrollTo({ top: Math.max(0, top) });
+      }, 30);
+    });
   }
 }
 
