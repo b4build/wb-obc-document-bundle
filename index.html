@@ -4,8 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>West Bengal OBC Documents Timeline</title>
-
-
+  <script>
+    // This page is deployed in two places:
+    //  - GitHub Pages, where obc_pdfs/, case_pdfs/ and obc_pdf_manifest.json
+    //    are served alongside this file, so relative links work as-is.
+    //  - Vercel (or any other host that only deploys this HTML file), where
+    //    those folders are not present. On those hosts, rewrite the relative
+    //    asset links to point at the raw GitHub copy instead.
+    // Edit GITHUB_RAW_BASE below if the repo/branch ever changes.
+    (function () {
+      var GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/b4build/wb-obc-document-bundle/main/';
+      var host = window.location.hostname;
+      var isGithubPages = /(^|\.)github\.io$/.test(host);
+      var isLocal = host === 'localhost' || host === '127.0.0.1' || host === '' || window.location.protocol === 'file:';
+      window.OBC_ASSET_BASE = (isGithubPages || isLocal) ? '' : GITHUB_RAW_BASE;
+    })();
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -4477,20 +4491,43 @@ function titleCase(value) {
   return String(value || '').replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
 }
 
+function resolveAssetPath(path) {
+  // Prepends the raw-GitHub base (set in <head>) to relative asset paths
+  // when this page isn't served from GitHub Pages or run locally.
+  if (!path || /^https?:\/\//.test(path)) return path;
+  return (window.OBC_ASSET_BASE || '') + path;
+}
+
 function githubBundleUrl(doc, fallbackPath = '') {
-  if (!doc) return fallbackPath;
+  if (!doc) return resolveAssetPath(fallbackPath);
   if (/^https?:\/\//.test(doc.local_pdf || '')) return doc.local_pdf;
   if (/^https?:\/\//.test(fallbackPath)) return fallbackPath;
 
   const filename = String(doc.filename || doc.local_pdf || fallbackPath || '').split(/[\\/]/).pop();
-  if (!filename) return fallbackPath;
+  if (!filename) return resolveAssetPath(fallbackPath);
 
   const repoBase = 'obc_pdfs/';
-  return `${repoBase}${encodeURI(filename)}`;
+  return resolveAssetPath(`${repoBase}${encodeURI(filename)}`);
 }
 
 function pdfHref(doc) {
   return githubBundleUrl(doc);
+}
+
+function rewriteStaticAssetLinks() {
+  // The markup that was rendered server-side (not through pdfHref/githubBundleUrl
+  // above) still has plain relative hrefs like "obc_pdfs/foo.pdf" or
+  // "case_pdfs/bar.pdf" or "obc_pdf_manifest.json". Rewrite those too when
+  // OBC_ASSET_BASE is set (i.e. we are not on GitHub Pages or local).
+  const base = window.OBC_ASSET_BASE;
+  if (!base) return;
+  document.querySelectorAll('a[href]').forEach(a => {
+    const href = a.getAttribute('href');
+    if (!href) return;
+    if (href.startsWith('obc_pdfs/') || href.startsWith('case_pdfs/') || href === 'obc_pdf_manifest.json') {
+      a.setAttribute('href', base + href);
+    }
+  });
 }
 
 function renderSupplementalDocs() {
@@ -4595,6 +4632,7 @@ function sortTimelineChronologically() {
 renderSupplementalDocs();
 renderSupplementalTimeline();
 sortTimelineChronologically();
+rewriteStaticAssetLinks();
 
 const docSearch = document.getElementById('doc-search');
 const docStatusFilter = document.getElementById('doc-status-filter');
