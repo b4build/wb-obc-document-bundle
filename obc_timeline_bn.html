@@ -4,6 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>পশ্চিমবঙ্গ ওবিসি নথি ও সময়রেখা (বাংলা)</title>
+  <script>
+    // Same asset-base logic as index.html: on GitHub Pages / locally, keep
+    // relative links to obc_pdfs/, case_pdfs/, obc_pdf_manifest.json. On any
+    // other host (e.g. Vercel) where those folders aren't deployed, point at
+    // the raw GitHub copy instead.
+    (function () {
+      var GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/b4build/wb-obc-document-bundle/main/';
+      var host = window.location.hostname;
+      var isGithubPages = /(^|\.)github\.io$/.test(host);
+      var isLocal = host === 'localhost' || host === '127.0.0.1' || host === '' || window.location.protocol === 'file:';
+      window.OBC_ASSET_BASE = (isGithubPages || isLocal) ? '' : GITHUB_RAW_BASE;
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -3954,6 +3967,22 @@ document.querySelectorAll('.nav-group-toggle').forEach(btn => {
 });
 
 syncTabFromHash();
+
+function rewriteStaticAssetLinks() {
+  // Rewrites relative hrefs to obc_pdfs/, case_pdfs/, and obc_pdf_manifest.json
+  // to point at the raw GitHub copy when OBC_ASSET_BASE is set (i.e. this page
+  // is not being served from GitHub Pages or locally). See <head> for the logic.
+  const base = window.OBC_ASSET_BASE;
+  if (!base) return;
+  document.querySelectorAll('a[href]').forEach(a => {
+    const href = a.getAttribute('href');
+    if (!href) return;
+    if (href.startsWith('obc_pdfs/') || href.startsWith('case_pdfs/') || href === 'obc_pdf_manifest.json') {
+      a.setAttribute('href', base + href);
+    }
+  });
+}
+rewriteStaticAssetLinks();
 </script>
 </body>
 </html>
