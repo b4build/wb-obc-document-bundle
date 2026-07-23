@@ -2002,7 +2002,7 @@ body { font-family: 'SolaimanLipi', 'Hind Siliguri', 'Noto Sans Bengali', Inter,
             <tr><td>লেখা-বের-করা PDF-এর মধ্যে অনুসন্ধান করতে চাই</td><td><a href="index.html#documents" target="_blank" rel="noreferrer">Corpus (ইংরেজি)</a></td><td>PDF লিঙ্ক ও পাঠ্য-প্রিভিউ বোতাম সহ ফিল্টারযোগ্য নথি সারণি।</td></tr>
             <tr><td>আদালতের রেকর্ড যোগ করতে চাই</td><td><a href="#cases">মামলা</a></td><td>মামলা ট্র্যাকার, বিষয়ভিত্তিক সারণি, পক্ষ/আদালতের তথ্য, আদেশ, প্রভাবিত বিজ্ঞপ্তি ও প্রমাণ-ঘাটতি।</td></tr>
             <tr><td>জনশুনানির নোটিস দেখতে চাই</td><td><a href="#evidence">প্রমাণ</a></td><td>শুনানির তারিখ, সময়, নামযুক্ত সম্প্রদায় ও স্থানীয় নোটিস PDF।</td></tr>
-            <tr><td>ফাইল যোগ বা অডিট করতে চাই</td><td><a href="contribute.html">উৎস জানান</a> / <a href="#entry-framework">কাঠামো</a></td><td>একটি নির্দেশিত রিপোর্টিং পথ, কাঠামোবদ্ধ ক্ষেত্র এবং স্থানীয় PDF তালিকা।</td></tr>
+            <tr><td>ফাইল যোগ বা অডিট করতে চাই</td><td><a href="contribute.html?lang=bn">উৎস জানান</a> / <a href="#entry-framework">কাঠামো</a></td><td>একটি নির্দেশিত রিপোর্টিং পথ, কাঠামোবদ্ধ ক্ষেত্র এবং স্থানীয় PDF তালিকা।</td></tr>
           </tbody>
         </table>
       </div>
@@ -3825,6 +3825,8 @@ tabLinks.forEach(link => {
     const hash = link.getAttribute('href');
     history.pushState(null, '', hash);
     showTab(link.dataset.tabTarget, hash);
+    const openGroupEl = link.closest('.nav-group.is-open');
+    if (openGroupEl) closeGroup(openGroupEl);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
@@ -3836,6 +3838,8 @@ sectionLinks.forEach(link => {
     event.preventDefault();
     history.pushState(null, '', hash);
     showTab(tabForHash(hash), hash);
+    const openGroupEl = link.closest('.nav-group.is-open');
+    if (openGroupEl) closeGroup(openGroupEl);
   });
 });
 
@@ -3949,21 +3953,108 @@ document.querySelectorAll('[data-lang-switch]').forEach(link => {
 });
 
 /* Nav toggle for mobile */
+const navGroups = Array.from(document.querySelectorAll('.nav-group'));
+const isMobileNav = () => window.matchMedia('(max-width: 820px)').matches;
+
+function closeGroup(group) {
+  group.classList.remove('is-open');
+  const toggle = group.querySelector('.nav-group-toggle');
+  if (toggle) toggle.setAttribute('aria-expanded', 'false');
+}
+
+function openGroup(group) {
+  navGroups.forEach(other => { if (other !== group) closeGroup(other); });
+  group.classList.add('is-open');
+  const toggle = group.querySelector('.nav-group-toggle');
+  if (toggle) toggle.setAttribute('aria-expanded', 'true');
+}
+
+navGroups.forEach(group => {
+  const toggle = group.querySelector('.nav-group-toggle');
+  let closeTimer = null;
+  const scheduleClose = () => {
+    clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => closeGroup(group), 200);
+  };
+
+  group.addEventListener('mouseenter', () => {
+    if (isMobileNav()) return;
+    clearTimeout(closeTimer);
+    openGroup(group);
+  });
+  group.addEventListener('mouseleave', () => {
+    if (isMobileNav()) return;
+    scheduleClose();
+  });
+
+  if (toggle) {
+    toggle.addEventListener('click', event => {
+      event.preventDefault();
+      if (group.classList.contains('is-open')) {
+        closeGroup(group);
+      } else {
+        openGroup(group);
+      }
+    });
+  }
+});
+
+document.addEventListener('click', event => {
+  navGroups.forEach(group => {
+    if (!group.contains(event.target)) closeGroup(group);
+  });
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') navGroups.forEach(closeGroup);
+});
+
+// Mobile off-canvas nav panel
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.getElementById('site-nav');
-if (navToggle && siteNav) {
+const navOverlay = document.querySelector('.nav-overlay');
+
+function openMobileNav() {
+  if (!siteNav) return;
+  siteNav.classList.add('is-open');
+  if (navOverlay) navOverlay.classList.add('is-visible');
+  if (navToggle) navToggle.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileNav() {
+  if (!siteNav) return;
+  siteNav.classList.remove('is-open');
+  if (navOverlay) navOverlay.classList.remove('is-visible');
+  if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+  navGroups.forEach(closeGroup);
+}
+
+if (navToggle) {
   navToggle.addEventListener('click', () => {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!expanded));
-    siteNav.classList.toggle('is-open');
+    if (siteNav && siteNav.classList.contains('is-open')) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
   });
 }
-document.querySelectorAll('.nav-group-toggle').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-    btn.parentElement.classList.toggle('is-open');
+
+if (navOverlay) navOverlay.addEventListener('click', closeMobileNav);
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeMobileNav();
+});
+
+if (siteNav) {
+  siteNav.addEventListener('click', event => {
+    if (event.target.closest('a')) closeMobileNav();
   });
+}
+
+window.addEventListener('resize', () => {
+  if (!isMobileNav()) closeMobileNav();
 });
 
 syncTabFromHash();
