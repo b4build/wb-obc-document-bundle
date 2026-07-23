@@ -8,12 +8,18 @@ This repository hosts a self-contained static research site and its source files
 - `obc_pdfs/` - locally bundled PDF source documents used by the timeline, corpus, reports, hearings, and inventory sections.
 - `case_pdfs/` - locally bundled litigation records; see its README for provenance and verification notes.
 - `case_manifest.json` - structured litigation-record index.
+- `case_events.json` - litigation timeline entries rendered by `index.html`.
 - `related_sources_catalog.json` - triage of additional local OBC-related material, including large court bundles deliberately not committed.
 - `obc_documents.json` - extracted text and structured summaries for the document corpus.
+- `obc_classes.json` - current 66-class list metadata plus historical/withdrawn class status rows.
+- `public_hearings.json` - displayed Jana Shunani/public-hearing dates, times, communities, and local notice PDFs.
+- `supplemental_documents.json` - supplemental BCW/framework document records; rows marked `show_on_timeline` are also rendered into the timeline.
+- `timeline_events.json` - notification/policy timeline entries rendered by `index.html`.
 - `obc_pdf_manifest.json` - PDF manifest for renamed local source files.
 - `obc_hearing_pdf_manifest.json` - hearing/public notice PDF manifest.
 - `evidence_file_inventory.csv` - local evidence file inventory.
 - `contribute.html` - public source/correction report page; it prepares a reviewable GitHub issue without collecting data itself.
+- `document_inventory.json` - display rows for the Document Inventory tab.
 - `obc_timeline_bn.html` - Bengali companion guide linking readers to the full English searchable corpus and source records.
 - `SURVEY_SETUP.md` - privacy-aware guidance for adding a Google Forms survey alongside the public GitHub reporting route.
 - `QUICK_REFERENCE.txt` and `README_WB_OBC_SITE.md` - supporting notes from the local bundle.
@@ -39,6 +45,26 @@ For GitHub Pages-style links, use:
 ```text
 https://<owner>.github.io/wb-obc-document-bundle/obc_pdfs/<file>.pdf
 ```
+
+Because the main timeline, litigation tracker, and document corpus now load JSON files, serve the folder over HTTP while editing:
+
+```sh
+npm run serve
+```
+
+Run the local data checks before publishing:
+
+```sh
+npm run validate:data
+```
+
+To create a double-clickable fallback copy with the JSON embedded into the HTML:
+
+```sh
+npm run build:standalone
+```
+
+This writes `index-standalone.html`; keep editing `index.html` and the JSON files as the source of truth.
 
 ## GitHub Pages
 
