@@ -7,6 +7,8 @@
   <meta name="theme-color" content="#1a3a5c">
   <title>West Bengal OBC Documents Timeline</title>
   <link rel="manifest" href="pwa-manifest.json">
+  <link rel="stylesheet" href="css/shared.css">
+  <script src="js/i18n.js" defer></script>
   <script>
     // This page is deployed in two places:
     //  - GitHub Pages, where obc_pdfs/, case_pdfs/ and obc_pdf_manifest.json
@@ -28,41 +30,41 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="site-header-inner">
-      <span class="site-logo">WB OBC Documentation</span>
+      <span class="site-logo" data-i18n="siteLogo">WB OBC Documentation</span>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Sections">
-        <a href="#home" class="active" data-tab-target="home">Home</a>
+        <a href="#home" class="active" data-tab-target="home" data-i18n="navHome">Home</a>
         <div class="nav-group">
-          <button type="button" class="nav-group-toggle" aria-expanded="false">Research <span class="nav-caret" aria-hidden="true">▾</span></button>
+          <button type="button" class="nav-group-toggle" aria-expanded="false" data-i18n="navResearch">Research <span class="nav-caret" aria-hidden="true">▾</span></button>
           <div class="nav-group-items">
-            <a href="#timeline" data-tab-target="timeline">Timeline</a>
-            <a href="#cases" data-tab-target="cases">Litigation</a>
-            <a href="#obc-list" data-tab-target="obc-list">OBC List</a>
-            <a href="#documents" data-tab-target="documents">Source PDFs</a>
-            <a href="#evidence" data-tab-target="evidence">Hearings &amp; Gaps</a>
-            <a href="#entry-framework" data-tab-target="entry-framework">Add Record Guide</a>
-            <a href="#inventory" data-tab-target="inventory">File Inventory</a>
+            <a href="#timeline" data-tab-target="timeline" data-i18n="navTimeline">Timeline</a>
+            <a href="#cases" data-tab-target="cases" data-i18n="navCases">Litigation</a>
+            <a href="#obc-list" data-tab-target="obc-list" data-i18n="navOBCList">OBC List</a>
+            <a href="#documents" data-tab-target="documents" data-i18n="navDocuments">Source PDFs</a>
+            <a href="#evidence" data-tab-target="evidence" data-i18n="navEvidence">Hearings &amp; Gaps</a>
+            <a href="#entry-framework" data-tab-target="entry-framework" data-i18n="navEntryFramework">Add Record Guide</a>
+            <a href="#inventory" data-tab-target="inventory" data-i18n="navInventory">File Inventory</a>
           </div>
         </div>
         <div class="nav-group">
-          <button type="button" class="nav-group-toggle" aria-expanded="false">Learn <span class="nav-caret" aria-hidden="true">▾</span></button>
+          <button type="button" class="nav-group-toggle" aria-expanded="false" data-i18n="navLearn">Learn <span class="nav-caret" aria-hidden="true">▾</span></button>
           <div class="nav-group-items">
-            <a href="#obc-basics" data-tab-target="obc-basics">OBC Basics</a>
-            <a href="#methods" data-tab-target="methods">Evidence Method</a>
-            <a href="#reports" data-tab-target="reports">Policy Reports</a>
+            <a href="#obc-basics" data-tab-target="obc-basics" data-i18n="navOBCBasics">OBC Basics</a>
+            <a href="#methods" data-tab-target="methods" data-i18n="navMethods">Evidence Method</a>
+            <a href="#reports" data-tab-target="reports" data-i18n="navReports">Policy Reports</a>
           </div>
         </div>
-        <a href="contribute.html">Contribute</a>
-        <a href="#about" data-tab-target="about">About</a>
+        <a href="contribute.html" data-i18n="navContribute">Contribute</a>
+        <a href="#about" data-tab-target="about" data-i18n="navAbout">About</a>
         <span class="language-switch" aria-label="Language">
           <span aria-current="true">EN</span>
-          <a href="obc_timeline_bn.html" lang="bn" data-lang-switch="bn">বাংলা</a>
+          <a href="#" lang="bn" data-lang-switch="bn">বাংলা</a>
         </span>
-        <a href="https://github.com/b4build/wb-obc-document-bundle" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/b4build/wb-obc-document-bundle" target="_blank" rel="noreferrer" data-i18n="navGitHub">GitHub</a>
       </nav>
       <div class="nav-overlay"></div>
     </div>
@@ -70,14 +72,14 @@
 
   <section class="hero">
     <div class="hero-inner wrap">
-      <p class="hero-eyebrow" id="hero-eyebrow">West Bengal · Backward Classes Welfare Department · 1993–2026</p>
-      <h1 id="hero-title">OBC Reservation and List Timeline</h1>
-      <p class="hero-sub" id="hero-sub">A consolidated view of the PDFs in <strong>OBC OLD</strong> and <strong>OBC 2025</strong>, starting with the 1993 Commission Act and continuing through the 2026 notification and litigation record.</p>
+      <p class="hero-eyebrow" id="hero-eyebrow" data-i18n="heroEyebrow">West Bengal · Backward Classes Welfare Department · 1993–2026</p>
+      <h1 id="hero-title" data-i18n="heroTitle">OBC Reservation and List Timeline</h1>
+      <p class="hero-sub" id="hero-sub" data-i18n="heroSub">A consolidated view of the PDFs in <strong>OBC OLD</strong> and <strong>OBC 2025</strong>, starting with the 1993 Commission Act and continuing through the 2026 notification and litigation record.</p>
       <div class="hero-stats">
-        <div class="hero-stat"><strong id="hero-stat-1-value">84</strong><span id="hero-stat-1-label">PDF sources bundled across notifications, hearings, reports, and court records.</span></div>
-        <div class="hero-stat"><strong id="hero-stat-2-value">66</strong><span id="hero-stat-2-label">Classes listed in Notification No. 945-BCW/MR-23/2026.</span></div>
-        <div class="hero-stat"><strong id="hero-stat-3-value">7%</strong><span id="hero-stat-3-label">Reservation position stated in the 18 May 2026 list notification.</span></div>
-        <div class="hero-stat"><strong id="hero-stat-4-value">5</strong><span id="hero-stat-4-label">Priority evidence gaps and follow-ups tracked in the audit.</span></div>
+        <div class="hero-stat"><strong id="hero-stat-1-value" data-i18n="heroStat1Value">84</strong><span id="hero-stat-1-label" data-i18n="heroStat1Label">PDF sources bundled across notifications, hearings, reports, and court records.</span></div>
+        <div class="hero-stat"><strong id="hero-stat-2-value" data-i18n="heroStat2Value">66</strong><span id="hero-stat-2-label" data-i18n="heroStat2Label">Classes listed in Notification No. 945-BCW/MR-23/2026.</span></div>
+        <div class="hero-stat"><strong id="hero-stat-3-value" data-i18n="heroStat3Value">7%</strong><span id="hero-stat-3-label" data-i18n="heroStat3Label">Reservation position stated in the 18 May 2026 list notification.</span></div>
+        <div class="hero-stat"><strong id="hero-stat-4-value" data-i18n="heroStat4Value">5</strong><span id="hero-stat-4-label" data-i18n="heroStat4Label">Priority evidence gaps and follow-ups tracked in the audit.</span></div>
       </div>
     </div>
   </section>
@@ -89,14 +91,14 @@
       <div class="popup-icon">
         <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20 20-8.954 20-20S35.046 4 24 4zm0 36c-8.837 0-16-7.163-16-16S15.163 8 24 8s16 7.163 16 16-7.163 16-16 16z" fill="currentColor"/><path d="M24 14c-1.105 0-2 .895-2 2v8c0 1.105.895 2 2 2s2-.895 2-2v-8c0-1.105-.895-2-2-2zm0 16c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2z" fill="currentColor"/></svg>
       </div>
-      <h2 id="popup-title">Help Improve This Resource</h2>
-      <p id="popup-desc">This is a <strong>public research archive</strong> maintained by volunteers. We welcome your contributions to make this resource more complete and accurate.</p>
+      <h2 id="popup-title" data-i18n="popupTitle">Help Improve This Resource</h2>
+      <p id="popup-desc" data-i18n="popupDesc">This is a <strong>public research archive</strong> maintained by volunteers. We welcome your contributions to make this resource more complete and accurate.</p>
       <div class="popup-actions">
-        <a href="contribute.html" class="popup-btn primary">Contribute Documents &amp; Corrections</a>
+        <a href="contribute.html" class="popup-btn primary" data-i18n="popupBtn">Contribute Documents &amp; Corrections</a>
       </div>
-      <p class="popup-note"><strong>No Donations:</strong> We are not accepting any money or donations. This is a free public resource. Only document submissions and corrections are requested.</p>
+      <p class="popup-note" data-i18n="popupNote"><strong>No Donations:</strong> We are not accepting any money or donations. This is a free public resource. Only document submissions and corrections are requested.</p>
       <div class="popup-footer">
-        <label><input type="checkbox" id="dont-show-again"> Don't show this message again</label>
+        <label><input type="checkbox" id="dont-show-again"> <span data-i18n="popupDontShow">Don't show this message again</span></label>
       </div>
     </div>
   </div>
@@ -106,95 +108,95 @@
 
     <section id="home" class="home-panel tab-panel" data-tab-panel="home" aria-label="Home dashboard">
       <div class="home-intro">
-        <p class="panel-kicker">Offline bundle</p>
-        <h2>Research Home</h2>
-        <p>Use this single HTML as a source-led research desk. It connects statutory background, notifications, certificate and roster records, hearing notices, policy reports, litigation, and the PDFs that support each claim.</p>
+        <p class="panel-kicker" data-i18n="homePanelKicker">Offline bundle</p>
+        <h2 data-i18n="homePanelTitle">Research Home</h2>
+        <p data-i18n="homePanelIntro">Use this single HTML as a source-led research desk. It connects statutory background, notifications, certificate and roster records, hearing notices, policy reports, litigation, and the PDFs that support each claim.</p>
       </div>
       <section class="home-brief" aria-label="How to use this site">
-        <article><strong>1. Start with the question</strong><span>Search a community, notification, case number, date, or legal term.</span></article>
-        <article><strong>2. Follow the record</strong><span>Use Timeline for policy changes and Litigation for court orders and procedural status.</span></article>
-        <article><strong>3. Open the source</strong><span>Every summary should lead to a bundled PDF or a clearly labelled original source link.</span></article>
+        <article><strong data-i18n="homeStep1Title">1. Start with the question</strong><span data-i18n="homeStep1Desc">Search a community, notification, case number, date, or legal term.</span></article>
+        <article><strong data-i18n="homeStep2Title">2. Follow the record</strong><span data-i18n="homeStep2Desc">Use Timeline for policy changes and Litigation for court orders and procedural status.</span></article>
+        <article><strong data-i18n="homeStep3Title">3. Open the source</strong><span data-i18n="homeStep3Desc">Every summary should lead to a bundled PDF or a clearly labelled original source link.</span></article>
       </section>
       <div class="source-status-grid">
-        <a class="source-status" href="#documents"><strong>84</strong><span>PDF sources bundled locally across notifications, hearings, reports, and litigation records</span></a>
-        <a class="source-status" href="#public-hearings"><strong>17</strong><span>hearing / public notice PDFs bundled locally</span></a>
-        <a class="source-status" href="#reports"><strong>6</strong><span>policy/process sources bundled for context</span></a>
-        <a class="source-status" href="#missing-records"><strong>5</strong><span>priority evidence gaps and follow-ups tracked</span></a>
-        <a class="source-status" href="obc_pdf_manifest.json"><strong>JSON</strong><span>renamed PDF manifest for local or cloud use</span></a>
-        <a class="source-status" href="https://github.com/b4build/wb-obc-document-bundle" target="_blank" rel="noreferrer"><strong>GitHub</strong><span>Repository for the OBC document bundle</span></a>
+        <a class="source-status" href="#documents"><strong data-i18n="homeStatus1Num">84</strong><span data-i18n="homeStatus1Desc">PDF sources bundled locally across notifications, hearings, reports, and litigation records</span></a>
+        <a class="source-status" href="#public-hearings"><strong data-i18n="homeStatus2Num">17</strong><span data-i18n="homeStatus2Desc">hearing / public notice PDFs bundled locally</span></a>
+        <a class="source-status" href="#reports"><strong data-i18n="homeStatus3Num">6</strong><span data-i18n="homeStatus3Desc">policy/process sources bundled for context</span></a>
+        <a class="source-status" href="#missing-records"><strong data-i18n="homeStatus4Num">5</strong><span data-i18n="homeStatus4Desc">priority evidence gaps and follow-ups tracked</span></a>
+        <a class="source-status" href="obc_pdf_manifest.json"><strong data-i18n="homeStatus5Num">JSON</strong><span data-i18n="homeStatus5Desc">renamed PDF manifest for local or cloud use</span></a>
+        <a class="source-status" href="https://github.com/b4build/wb-obc-document-bundle" target="_blank" rel="noreferrer"><strong data-i18n="homeStatus6Num">GitHub</strong><span data-i18n="homeStatus6Desc">Repository for the OBC document bundle</span></a>
       </div>
 
       <div id="query-hub" class="query-hub" aria-label="OBC query hub">
         <div class="search-intro">
-          <p class="panel-kicker">Bundle search</p>
-          <h2>Search the timeline, litigation, OBC list, and source PDFs together</h2>
-          <p>This searches connected indexes at once: timeline entries, litigation records, class-list rows, and extracted document text. Results are labelled by source area and open the matching tab.</p>
+          <p class="panel-kicker" data-i18n="searchHubKicker">Bundle search</p>
+          <h2 data-i18n="searchHubTitle">Search the timeline, litigation, OBC list, and source PDFs together</h2>
+          <p data-i18n="searchHubDesc">This searches connected indexes at once: timeline entries, litigation records, class-list rows, and extracted document text. Results are labelled by source area and open the matching tab.</p>
         </div>
         <div class="search-panel">
           <label class="visually-hidden" for="site-search">Search the research bundle</label>
-          <input id="site-search" class="search-input site-search" type="search" placeholder="Try: 945 BCW, 944 withdrawal, Aatmadeep, certificate, JEMAS" autocomplete="off" aria-controls="site-search-results">
+          <input id="site-search" class="search-input site-search" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Try: 945 BCW, 944 withdrawal, Aatmadeep, certificate, JEMAS" autocomplete="off" aria-controls="site-search-results">
           <div id="site-search-results" class="site-search-results" aria-live="polite"></div>
         </div>
         <div class="search-footer">
           <div class="search-scope" aria-label="Search coverage">
-            <span><strong>Timeline</strong> notification trail</span>
-            <span><strong>Litigation</strong> court orders and status notes</span>
-            <span><strong>OBC List</strong> current and historical class rows</span>
-            <span><strong>Source PDFs</strong> extracted document text</span>
+            <span><strong data-i18n="searchScopeTimeline">Timeline</strong> <span data-i18n="searchScopeTimelineDesc">notification trail</span></span>
+            <span><strong data-i18n="searchScopeLitigation">Litigation</strong> <span data-i18n="searchScopeLitigationDesc">court orders and status notes</span></span>
+            <span><strong data-i18n="searchScopeOBCList">OBC List</strong> <span data-i18n="searchScopeOBCListDesc">current and historical class rows</span></span>
+            <span><strong data-i18n="searchScopePDFs">Source PDFs</strong> <span data-i18n="searchScopePDFsDesc">extracted document text</span></span>
           </div>
           <div class="query-actions" aria-label="Quick navigation">
-            <a href="#timeline">Trace timeline</a>
-            <a href="#cases">Track litigation</a>
-            <a href="#obc-list">Check class status</a>
-            <a href="#documents">Search source PDFs</a>
-            <a href="#reports">Check policy basis</a>
-            <a href="#about">Read scope &amp; source care</a>
+            <a href="#timeline" data-i18n="queryAction1">Trace timeline</a>
+            <a href="#cases" data-i18n="queryAction2">Track litigation</a>
+            <a href="#obc-list" data-i18n="queryAction3">Check class status</a>
+            <a href="#documents" data-i18n="queryAction4">Search source PDFs</a>
+            <a href="#reports" data-i18n="queryAction5">Check policy basis</a>
+            <a href="#about" data-i18n="queryAction6">Read scope &amp; source care</a>
           </div>
         </div>
       </div>
 
       <div class="home-layout">
         <article class="home-card">
-          <h3>Documented position in this bundle</h3>
-          <p>Notification No. 944-BCW/MR-23/2026 withdraws the 2025 package. Notification No. 945-BCW/MR-23/2026 lists 66 classes and states the 7% reservation position. Litigation can affect implementation, so read the linked case record before relying on a summary.</p>
-          <p><a href="#evt-2026-944">Open withdrawal entry</a> · <a href="#evt-2026-945">Open current list entry</a></p>
+          <h3 data-i18n="homeCard1Title">Documented position in this bundle</h3>
+          <p data-i18n="homeCard1Desc">Notification No. 944-BCW/MR-23/2026 withdraws the 2025 package. Notification No. 945-BCW/MR-23/2026 lists 66 classes and states the 7% reservation position. Litigation can affect implementation, so read the linked case record before relying on a summary.</p>
+          <p><a href="#evt-2026-944" data-i18n="homeCard1Link1">Open withdrawal entry</a> · <a href="#evt-2026-945" data-i18n="homeCard1Link2">Open current list entry</a></p>
         </article>
         <article class="home-card">
-          <h3>Policy Basis</h3>
-          <p>Use the Mandal, Sachar, and West Bengal Muslim OBC reports to understand backwardness criteria, Muslim OBC context, and evidence requirements.</p>
-          <p><a href="#reports">Open reports</a> · <a href="https://raw.githubusercontent.com/b4build/wb-obc-document-bundle/main/muslim_obc_status.html" target="_blank" rel="noreferrer">Muslim OBC note</a></p>
+          <h3 data-i18n="homeCard2Title">Policy Basis</h3>
+          <p data-i18n="homeCard2Desc">Use the Mandal, Sachar, and West Bengal Muslim OBC reports to understand backwardness criteria, Muslim OBC context, and evidence requirements.</p>
+          <p><a href="#reports" data-i18n="homeCard2Link1">Open reports</a> · <a href="https://raw.githubusercontent.com/b4build/wb-obc-document-bundle/main/muslim_obc_status.html" target="_blank" rel="noreferrer" data-i18n="homeCard2Link2">Muslim OBC note</a></p>
         </article>
         <article class="home-card">
-          <h3>What remains to verify</h3>
-          <p>The strongest missing layer is the Commission record behind the 2025 hearing and survey process: class-wise advice, survey data, and benchmark memos.</p>
-          <p><a href="#missing-records">Open audit</a> · <a href="#public-hearings">Open hearing table</a></p>
+          <h3 data-i18n="homeCard3Title">What remains to verify</h3>
+          <p data-i18n="homeCard3Desc">The strongest missing layer is the Commission record behind the 2025 hearing and survey process: class-wise advice, survey data, and benchmark memos.</p>
+          <p><a href="#missing-records" data-i18n="homeCard3Link1">Open audit</a> · <a href="#public-hearings" data-i18n="homeCard3Link2">Open hearing table</a></p>
         </article>
       </div>
 
       <section class="forms-section" aria-label="Public data collection forms">
-        <h3>Public data collection forms</h3>
-        <p class="forms-intro">Use these forms to share OBC-related evidence, observations, or feedback.</p>
+        <h3 data-i18n="formsSectionTitle">Public data collection forms</h3>
+        <p class="forms-intro" data-i18n="formsSectionIntro">Use these forms to share OBC-related evidence, observations, or feedback.</p>
         <div class="form-grid">
           <article class="form-card">
             <a class="form-card-icon" href="https://forms.gle/A9jJxPrRt83aBRLB8" target="_blank" rel="noreferrer" aria-label="Open office or certificate problem form">
               <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="4" width="32" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="15" y1="14" x2="33" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="15" y1="22" x2="33" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="15" y1="30" x2="26" y2="30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M29 33l3 3 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <h4><a href="https://forms.gle/A9jJxPrRt83aBRLB8" target="_blank" rel="noreferrer">Report office or certificate problems</a></h4>
-            <p>Share procedural issues at BDO/SDO offices so repeated problems can be identified.</p>
+            <h4><a href="https://forms.gle/A9jJxPrRt83aBRLB8" target="_blank" rel="noreferrer" data-i18n="form1Title">Report office or certificate problems</a></h4>
+            <p data-i18n="form1Desc">Share procedural issues at BDO/SDO offices so repeated problems can be identified.</p>
           </article>
           <article class="form-card">
             <a class="form-card-icon" href="https://forms.gle/tJFuB4Fie61mAHk76" target="_blank" rel="noreferrer" aria-label="Open court case update or legal record form">
               <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 4h14l8 8v28a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M28 4v8h8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><line x1="17" y1="24" x2="31" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="17" y1="31" x2="31" y2="31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="17" y1="38" x2="25" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
             </a>
-            <h4><a href="https://forms.gle/tJFuB4Fie61mAHk76" target="_blank" rel="noreferrer">Submit court case updates or legal records</a></h4>
-            <p>Submit verifiable orders or judgments. Public-domain records only, not private or confidential files.</p>
+            <h4><a href="https://forms.gle/tJFuB4Fie61mAHk76" target="_blank" rel="noreferrer" data-i18n="form2Title">Submit court case updates or legal records</a></h4>
+            <p data-i18n="form2Desc">Submit verifiable orders or judgments. Public-domain records only, not private or confidential files.</p>
           </article>
           <article class="form-card">
             <a class="form-card-icon" href="https://forms.gle/885nfjh7fev8sxtV6" target="_blank" rel="noreferrer" aria-label="Open government document or media report form">
               <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="16" cy="20" r="3.2" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M6 33l10-9 8 6 8-7 10 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
             </a>
-            <h4><a href="https://forms.gle/885nfjh7fev8sxtV6" target="_blank" rel="noreferrer">Submit government documents, records, or media reports</a></h4>
-            <p>Help improve the research record by submitting relevant documents or corrections.</p>
+            <h4><a href="https://forms.gle/885nfjh7fev8sxtV6" target="_blank" rel="noreferrer" data-i18n="form3Title">Submit government documents, records, or media reports</a></h4>
+            <p data-i18n="form3Desc">Help improve the research record by submitting relevant documents or corrections.</p>
           </article>
         </div>
       </section>
@@ -249,7 +251,7 @@
       <div class="obc-list-toolbar" aria-label="OBC class table filters">
         <label>
           <span>Search class or note</span>
-          <input id="obc-class-search" class="search-input" type="search" placeholder="Try: Kapali, Nashya, withdrawn, 1994, 1057-BCW">
+          <input id="obc-class-search" class="search-input" type="search" data-i18n-placeholder="placeholder.searchObcClass" placeholder="Try: Kapali, Nashya, withdrawn, 1994, 1057-BCW">
         </label>
         <label>
           <span>Status</span>
@@ -273,7 +275,7 @@
         </label>
         <label>
           <span>Source trail</span>
-          <input id="obc-source-filter" class="search-input" type="search" placeholder="Notification no., e.g. 944-BCW">
+          <input id="obc-source-filter" class="search-input" type="search" data-i18n-placeholder="placeholder.obcSourceFilter" placeholder="Notification no., e.g. 944-BCW">
         </label>
         <p id="obc-class-count" class="filter-count" aria-live="polite"></p>
       </div>
@@ -561,7 +563,7 @@
 
     <section class="tab-panel" data-tab-panel="timeline" aria-label="Timeline controls" hidden>
       <div class="toolbar">
-        <input id="tl-search" class="search-input" type="search" placeholder="Search timeline by notification, date, community, or file name">
+        <input id="tl-search" class="search-input" type="search" data-i18n-placeholder="placeholder.timelineSearch" placeholder="Search timeline by notification, date, community, or file name">
         <div class="filter-btns" role="group" aria-label="Timeline filters">
           <button class="filter-btn active" type="button" data-filter="all">All</button>
           <button class="filter-btn" type="button" data-filter="current">Current</button>
@@ -569,7 +571,7 @@
           <button class="filter-btn" type="button" data-filter="legacy">Legacy</button>
         </div>
       </div>
-      <p class="note">Reading note: green items reflect the latest position found in the local documents. Red items were expressly withdrawn by Notification No. 944-BCW/MR-23/2026. Amber items are scanned PDFs; where a scanned item is described, the detail is limited to what is text-extracted from the source PDF.</p>
+      <p class="note" data-i18n="timelineNote">Reading note: green items reflect the latest position found in the local documents. Red items were expressly withdrawn by Notification No. 944-BCW/MR-23/2026. Amber items are scanned PDFs; where a scanned item is described, the detail is limited to what is text-extracted from the source PDF.</p>
     </section>
 
     <ol class="timeline tab-panel" id="timeline" data-tab-panel="timeline" hidden>
@@ -578,9 +580,9 @@
 
 
     <section id="cases" class="research cases-section tab-panel" data-tab-panel="cases" hidden>
-      <p class="panel-kicker">Litigation tracker · curated record</p>
+      <p class="panel-kicker" data-i18n="casesPanelKicker">Litigation tracker · curated record</p>
       <h2 class="section-heading">West Bengal OBC Litigation Timeline</h2>
-      <p class="section-sub">This tracker separates what an order actually records from later policy action. It is a research index, not legal advice; case status must be checked with the relevant court before reliance.</p>
+      <p class="section-sub" data-i18n="casesSectionSub">This tracker separates what an order actually records from later policy action. It is a research index, not legal advice; case status must be checked with the relevant court before reliance.</p>
 
       <div class="case-summary-grid">
         <article><strong>22 May 2024</strong><span>Calcutta High Court judgment in the connected OBC matters</span></article>
@@ -595,9 +597,9 @@
       </ol>
 
       <section id="employee-protection-note" class="litigation-note" aria-labelledby="employee-protection-title">
-        <p class="panel-kicker">Litigation support note · not an official order</p>
+        <p class="panel-kicker" data-i18n="employeeProtectionKicker">Litigation support note · not an official order</p>
         <h3 id="employee-protection-title">Legal principles for existing OBC-certificate appointees</h3>
-        <p class="section-sub">A user-supplied bilingual note argues that bona fide employees appointed on government-issued and verified OBC certificates should not face blanket termination merely because a reservation policy or class-list process is later invalidated. Treat this as an argument map: verify every citation against the actual judgment before using it.</p>
+        <p class="section-sub" data-i18n="employeeProtectionSub">A user-supplied bilingual note argues that bona fide employees appointed on government-issued and verified OBC certificates should not face blanket termination merely because a reservation policy or class-list process is later invalidated. Treat this as an argument map: verify every citation against the actual judgment before using it.</p>
 
         <div class="report-grid">
           <article class="report-card">
@@ -620,7 +622,7 @@
         <div class="table-wrap legal-note-table">
           <table>
             <thead>
-              <tr><th>Ground from the note</th><th>Short argument preserved from the DOCX</th><th>Legal hook cited in the note</th></tr>
+              <tr><th data-i18n="tableGroundFromNote">Ground from the note</th><th data-i18n="tableShortArgument">Short argument preserved from the DOCX</th><th data-i18n="tableLegalHook">Legal hook cited in the note</th></tr>
             </thead>
             <tbody>
               <tr><td>No fraud or misrepresentation</td><td>Employees did not secure appointment by deception; the certificates were government-issued and were relied on in good faith.</td><td>Article 14; doctrine of good faith; rule of law</td></tr>
@@ -640,7 +642,7 @@
         <div class="table-wrap legal-note-table">
           <table>
             <thead>
-              <tr><th>Theme</th><th>How the note uses it</th><th>Cited authorities to verify</th></tr>
+              <tr><th data-i18n="tableTheme">Theme</th><th data-i18n="tableHowNoteUses">How the note uses it</th><th data-i18n="tableCitedAuthorities">Cited authorities to verify</th></tr>
             </thead>
             <tbody>
               <tr><td>Bona fide appointment protection</td><td>Invalidation of caste status or policy should not automatically undo completed appointments where there is no fraud.</td><td><a href="https://indiankanoon.org/doc/678652/" target="_blank" rel="noreferrer"><em>State of Maharashtra v. Milind</em></a> (2001) 1 SCC 4; <a href="https://indiankanoon.org/doc/44390798/" target="_blank" rel="noreferrer"><em>Kavita Solunke v. State of Maharashtra</em></a> (2012) 8 SCC 430</td></tr>
@@ -655,7 +657,7 @@
         <div class="table-wrap legal-note-table">
           <table>
             <thead>
-              <tr><th>Constitutional / doctrinal label</th><th>Use in the note</th></tr>
+              <tr><th data-i18n="tableConstitutionalLabel">Constitutional / doctrinal label</th><th data-i18n="tableUseInNote">Use in the note</th></tr>
             </thead>
             <tbody>
               <tr><td>Article 14</td><td>Opposes arbitrary cancellation and demands fairness by the State.</td></tr>
@@ -674,7 +676,7 @@
       </section>
 
       <div class="table-wrap case-matrix">
-        <table><thead><tr><th>Record</th><th>Forum</th><th>Issue tracked</th><th>Local evidence</th><th>Status discipline</th></tr></thead><tbody>
+        <table><thead><tr><th data-i18n="tableRecord">Record</th><th data-i18n="tableForum">Forum</th><th data-i18n="tableIssueTracked">Issue tracked</th><th data-i18n="tableLocalEvidence">Local evidence</th><th data-i18n="tableStatusDiscipline">Status discipline</th></tr></thead><tbody>
           <tr><td>WPO 60/2011 and connected matters</td><td>Calcutta High Court</td><td>Validity/process of OBC-list and reservation actions</td><td>Bundled judgment copy</td><td>Read the operative portion; verify with court record.</td></tr>
           <tr><td>SLP(C) 17751–17755/2024</td><td>Supreme Court of India</td><td>Appeal from the 22 May 2024 High Court judgment</td><td>Bundled official 22 Nov 2024 order</td><td>Check latest case status before describing as pending or decided.</td></tr>
           <tr><td>Connected 2024 SLPs/diaries</td><td>Supreme Court of India</td><td>Related appeals and interventions arising from the 22 May 2024 judgment</td><td>Bundled official 7 Jan 2025 record; official 5 May 2026 cause list</td><td>Listed for final hearing; this audit found no final merits disposal order.</td></tr>
@@ -692,11 +694,11 @@
 
     <section id="entry-framework" class="research framework-section tab-panel" data-tab-panel="entry-framework" hidden>
       <h2 class="section-heading">Framework for New & Missing Entries</h2>
-      <p class="section-sub">Use this structure whenever a new PDF, court order, hearing notice, report, or missing source is added. The goal is to keep every entry searchable, source-linked, and auditable.</p>
+      <p class="section-sub" data-i18n="frameworkSectionSub">Use this structure whenever a new PDF, court order, hearing notice, report, or missing source is added. The goal is to keep every entry searchable, source-linked, and auditable.</p>
 
       <div class="framework-grid">
         <article class="framework-card">
-          <h3>1. Minimum fields for every document</h3>
+          <h3 data-i18n="frameworkCard1Title">1. Minimum fields for every document</h3>
           <ul class="content-list">
             <li><strong>Date:</strong> ISO format, for example <code>2025-06-03</code>.</li>
             <li><strong>Document number:</strong> notification/order/memo/case number exactly as printed.</li>
@@ -708,7 +710,7 @@
         </article>
 
         <article class="framework-card">
-          <h3>2. Evidence checks before marking complete</h3>
+          <h3 data-i18n="frameworkCard2Title">2. Evidence checks before marking complete</h3>
           <ul class="content-list">
             <li>Does the PDF text match the notification number, date, and printed title?</li>
             <li>Does it add, amend, withdraw, classify, or merely implement another document?</li>
@@ -719,7 +721,7 @@
         </article>
 
         <article class="framework-card">
-          <h3>3. Missing-entry statuses</h3>
+          <h3 data-i18n="frameworkCard3Title">3. Missing-entry statuses</h3>
           <ul class="content-list">
             <li><strong>Missing locally:</strong> known source exists, file not yet added.</li>
             <li><strong>Source not found:</strong> cited in another record, original PDF not located.</li>
@@ -778,15 +780,15 @@
 
       <div class="research-grid">
         <div class="research-card found">
-          <h3>Found online from original sources</h3>
+          <h3 data-i18n="evidenceFoundOnline">Found online from original sources</h3>
           <p>Official BCW order indexes, official WBCBC public-hearing notice list, and the official 2025 notification-wise OBC list.</p>
         </div>
         <div class="research-card gap">
-          <h3>Partly found</h3>
+          <h3 data-i18n="evidencePartlyFound">Partly found</h3>
           <p>Benchmark-survey memos are quoted or mirrored online, but the original Commission PDF locations still need recovery or download from the department/Commission if available.</p>
         </div>
         <div class="research-card missing">
-          <h3>Still missing locally</h3>
+          <h3 data-i18n="evidenceStillMissing">Still missing locally</h3>
           <p>Class-wise Commission advice/survey reports, the benchmark-survey memo trail, complete court filings/orders after the 2025 survey challenge, and original source pages for any hearing notices that are present only as local scanned files.</p>
         </div>
       </div>
@@ -970,7 +972,7 @@
       <p class="section-sub">Full extracted text from the OBC list corpus plus supplemental BCW legal, certificate, roster, Commission, RTPS, digitisation, and EWS records — searchable and reusable for documentation.</p>
 
       <div class="doc-toolbar">
-        <input id="doc-search" type="search" class="search-input" placeholder="Search documents (notification number, community name, year, keyword…)">
+        <input id="doc-search" type="search" class="search-input" data-i18n-placeholder="placeholder.docSearch" placeholder="Search documents (notification number, community name, year, keyword…)">
         <select id="doc-status-filter" class="doc-status-filter">
           <option value="all">All statuses</option>
           <option value="current">Current</option>
@@ -1022,7 +1024,7 @@
             <pre id="modal-text" class="modal-text"></pre>
           </div>
           <div id="modal-related" class="modal-related"></div>
-          <p class="modal-footer">Source file: <code id="modal-filename"></code></p>
+          <p class="modal-footer"><span data-i18n="modalFooterSource">Source file:</span> <code id="modal-filename"></code></p>
         </div>
       </div>
     </section>
