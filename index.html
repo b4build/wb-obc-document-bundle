@@ -3344,6 +3344,23 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSyst
   align-items: center;
   justify-content: center;
   padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.contribute-popup-overlay:not([hidden]) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contribute-popup-overlay[hidden] {
+  display: flex !important;
+  pointer-events: none;
+}
+
+.contribute-popup-overlay:not([hidden]) {
+  pointer-events: auto;
 }
 
 .contribute-popup {
@@ -4611,6 +4628,8 @@ window.addEventListener('resize', () => {
     // Show popup after a short delay
     setTimeout(() => {
       popup.hidden = false;
+      // Force reflow to trigger transition
+      void popup.offsetWidth;
       document.body.style.overflow = 'hidden';
       closeBtn.focus();
     }, 1500);
@@ -4624,7 +4643,10 @@ window.addEventListener('resize', () => {
   
   // Close button
   if (closeBtn) {
-    closeBtn.addEventListener('click', hidePopup);
+    closeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hidePopup();
+    });
   }
   
   // Click on overlay to close
