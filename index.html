@@ -61,8 +61,9 @@
         <a href="contribute.html" data-i18n="navContribute">Contribute</a>
         <a href="#about" data-tab-target="about" data-i18n="navAbout">About</a>
         <span class="language-switch" aria-label="Language">
-          <span aria-current="true">EN</span>
-          <a href="#" lang="bn" data-lang-switch="bn">বাংলা</a>
+          <button type="button" id="lang-en" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+          <span class="lang-separator">|</span>
+          <button type="button" id="lang-bn" class="lang-btn" data-lang="bn" aria-pressed="false">বাংলা</button>
         </span>
         <a href="https://github.com/b4build/wb-obc-document-bundle" target="_blank" rel="noreferrer" data-i18n="navGitHub">GitHub</a>
       </nav>
@@ -565,36 +566,82 @@
       <div class="toolbar">
         <input id="tl-search" class="search-input" type="search" data-i18n-placeholder="placeholder.timelineSearch" placeholder="Search timeline by notification, date, community, or file name">
         <div class="filter-btns" role="group" aria-label="Timeline filters">
-          <button class="filter-btn active" type="button" data-filter="all">All</button>
-          <button class="filter-btn" type="button" data-filter="current">Current</button>
-          <button class="filter-btn" type="button" data-filter="withdrawn">Withdrawn</button>
-          <button class="filter-btn" type="button" data-filter="legacy">Legacy</button>
+          <button class="filter-btn active" type="button" data-filter="all" data-i18n="timeline.filter.all">All</button>
+          <button class="filter-btn" type="button" data-filter="current" data-i18n="timeline.filter.current">Current</button>
+          <button class="filter-btn" type="button" data-filter="withdrawn" data-i18n="timeline.filter.withdrawn">Withdrawn</button>
+          <button class="filter-btn" type="button" data-filter="legacy" data-i18n="timeline.filter.legacy">Legacy</button>
         </div>
       </div>
       <p class="note" data-i18n="timelineNote">Reading note: green items reflect the latest position found in the local documents. Red items were expressly withdrawn by Notification No. 944-BCW/MR-23/2026. Amber items are scanned PDFs; where a scanned item is described, the detail is limited to what is text-extracted from the source PDF.</p>
+      
+      <!-- Loading Skeleton -->
+      <div id="timeline-loader" class="skeleton-container hidden">
+        <div class="skeleton-item"></div>
+        <div class="skeleton-item"></div>
+        <div class="skeleton-item"></div>
+        <div class="skeleton-item"></div>
+        <div class="skeleton-item"></div>
+      </div>
     </section>
 
     <ol class="timeline tab-panel" id="timeline" data-tab-panel="timeline" hidden>
       <!-- Timeline events are rendered from timeline_events.json. -->
     </ol>
+    
+    <div id="timeline-empty" class="empty-state hidden" data-i18n="timeline.noResults">
+      No timeline events found matching your filter.
+    </div>
 
 
     <section id="cases" class="research cases-section tab-panel" data-tab-panel="cases" hidden>
       <p class="panel-kicker" data-i18n="casesPanelKicker">Litigation tracker · curated record</p>
-      <h2 class="section-heading">West Bengal OBC Litigation Timeline</h2>
+      <h2 class="section-heading" data-i18n="cases.title">West Bengal OBC Litigation Timeline</h2>
       <p class="section-sub" data-i18n="casesSectionSub">This tracker separates what an order actually records from later policy action. It is a research index, not legal advice; case status must be checked with the relevant court before reliance.</p>
 
-      <div class="case-summary-grid">
-        <article><strong>22 May 2024</strong><span>Calcutta High Court judgment in the connected OBC matters</span></article>
-        <article><strong>2024–25</strong><span>Supreme Court SLP proceedings, including the 28 July 2025 stay order</span></article>
-        <article><strong>2026</strong><span>Recruitment-related OBC classification challenges added to the tracker</span></article>
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number" id="total-cases">0</span>
+          <span class="stat-label" data-i18n="litigation.stat.total">Total Cases</span>
+        </div>
+        <div class="stat-card warning">
+          <span class="stat-number" id="pending-cases">0</span>
+          <span class="stat-label" data-i18n="litigation.stat.pending">Pending</span>
+        </div>
+        <div class="stat-card success">
+          <span class="stat-number" id="resolved-cases">0</span>
+          <span class="stat-label" data-i18n="litigation.stat.resolved">Resolved</span>
+        </div>
       </div>
 
-      <div class="callout litigation-note-jump"><strong>Employee-protection argument note:</strong> user-supplied grounds and precedent links for bona fide employees appointed on government-issued OBC certificates are included after the timeline. <a href="#employee-protection-note">Open the legal-principles note</a>.</div>
+      <div class="case-summary-grid">
+        <article><strong>22 May 2024</strong><span data-i18n="cases.summary.may2024">Calcutta High Court judgment in the connected OBC matters</span></article>
+        <article><strong>2024–25</strong><span data-i18n="cases.summary.slp">Supreme Court SLP proceedings, including the 28 July 2025 stay order</span></article>
+        <article><strong>2026</strong><span data-i18n="cases.summary.recruitment">Recruitment-related OBC classification challenges added to the tracker</span></article>
+      </div>
+
+      <div class="callout litigation-note-jump"><strong data-i18n="cases.employeeProtectionCallout">Employee-protection argument note:</strong> <span data-i18n="cases.employeeProtectionDesc">user-supplied grounds and precedent links for bona fide employees appointed on government-issued OBC certificates are included after the timeline.</span> <a href="#employee-protection-note" data-i18n="cases.openLegalNote">Open the legal-principles note</a>.</div>
+
+      <!-- Search -->
+      <div class="search-box">
+        <input type="text" id="case-search" data-i18n-placeholder="litigation.searchPlaceholder" placeholder="Search by case name, number, or judge...">
+        <span class="search-icon">🔍</span>
+      </div>
+
+      <!-- Loading Skeleton -->
+      <div id="litigation-loader" class="skeleton-container hidden">
+        <div class="skeleton-item tall"></div>
+        <div class="skeleton-item tall"></div>
+        <div class="skeleton-item tall"></div>
+      </div>
 
       <ol class="case-timeline">
         <!-- Case events are rendered from case_events.json. -->
       </ol>
+
+      <div id="cases-empty" class="empty-state hidden" data-i18n="litigation.noResults">
+        No cases found matching your search.
+      </div>
 
       <section id="employee-protection-note" class="litigation-note" aria-labelledby="employee-protection-title">
         <p class="panel-kicker" data-i18n="employeeProtectionKicker">Litigation support note · not an official order</p>
@@ -1203,26 +1250,38 @@ a {
   border-radius: 999px;
 }
 
-.language-switch a,
-.language-switch span {
+.lang-btn {
   display: inline-flex;
   align-items: center;
   min-height: 28px;
   padding: 5px 8px;
+  border: none;
   border-radius: 999px;
+  background: transparent;
   color: #c8c0b0;
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: .04em;
   line-height: 1;
-  text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.language-switch span[aria-current="true"] {
+.lang-btn:hover {
+  background: rgba(255,255,255,.1);
+  color: #fff;
+}
+
+.lang-btn.active {
   background: rgba(255,255,255,.14);
   color: #fff;
+}
+
+.lang-separator {
+  color: rgba(255,255,255,.3);
+  font-size: 10px;
 }
 
 .nav-toggle {
@@ -4302,6 +4361,30 @@ document.querySelectorAll('[data-lang-switch]').forEach(link => {
     const url = new URL(link.getAttribute('href'), window.location.href);
     if (hash && hash !== '#home') url.hash = hash;
     link.href = `${url.pathname.split('/').pop()}${url.search}${url.hash}`;
+  });
+});
+
+// Language toggle functionality
+const langButtons = document.querySelectorAll('.lang-btn');
+langButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.getAttribute('data-lang');
+    if (window.WBOBCI18n) {
+      window.WBOBCI18n.switchLanguage(lang);
+    }
+    
+    // Update button states
+    langButtons.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
+    
+    // Update URL without reload
+    const url = new URL(window.location);
+    url.searchParams.set('lang', lang);
+    window.history.pushState({}, '', url);
   });
 });
 
