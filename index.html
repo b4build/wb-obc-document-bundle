@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="West Bengal OBC Documents Timeline - A consolidated view of notifications, court orders, and policy documents from 1993-2026">
+  <meta name="theme-color" content="#1a3a5c">
   <title>West Bengal OBC Documents Timeline</title>
+  <link rel="manifest" href="pwa-manifest.json">
   <script>
     // This page is deployed in two places:
     //  - GitHub Pages, where obc_pdfs/, case_pdfs/ and obc_pdf_manifest.json
@@ -78,6 +81,25 @@
       </div>
     </div>
   </section>
+
+  <!-- Contribution Popup Modal -->
+  <div id="contribute-popup" class="contribute-popup-overlay" hidden>
+    <div class="contribute-popup" role="dialog" aria-labelledby="popup-title" aria-describedby="popup-desc">
+      <button type="button" class="popup-close" aria-label="Close popup">&times;</button>
+      <div class="popup-icon">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20 20-8.954 20-20S35.046 4 24 4zm0 36c-8.837 0-16-7.163-16-16S15.163 8 24 8s16 7.163 16 16-7.163 16-16 16z" fill="currentColor"/><path d="M24 14c-1.105 0-2 .895-2 2v8c0 1.105.895 2 2 2s2-.895 2-2v-8c0-1.105-.895-2-2-2zm0 16c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2z" fill="currentColor"/></svg>
+      </div>
+      <h2 id="popup-title">Help Improve This Resource</h2>
+      <p id="popup-desc">This is a <strong>public research archive</strong> maintained by volunteers. We welcome your contributions to make this resource more complete and accurate.</p>
+      <div class="popup-actions">
+        <a href="contribute.html" class="popup-btn primary">Contribute Documents &amp; Corrections</a>
+      </div>
+      <p class="popup-note"><strong>No Donations:</strong> We are not accepting any money or donations. This is a free public resource. Only document submissions and corrections are requested.</p>
+      <div class="popup-footer">
+        <label><input type="checkbox" id="dont-show-again"> Don't show this message again</label>
+      </div>
+    </div>
+  </div>
 
   <main id="main-content" class="wrap" tabindex="-1">
     <div id="data-load-warning" class="data-load-warning" hidden role="status"></div>
@@ -1035,6 +1057,55 @@
   --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --serif: var(--sans);
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --bn-font: "Noto Sans Bengali", "Hind Siliguri", "Nirmala UI", "Vrinda", var(--sans);
+}
+
+/* Bengali language support */
+html[lang="bn"] body, body.lang-bn {
+  font-family: var(--bn-font);
+  line-height: 1.8;
+}
+
+html[lang="bn"] h1, html[lang="bn"] h2, html[lang="bn"] h3,
+body.lang-bn h1, body.lang-bn h2, body.lang-bn h3 {
+  font-weight: 700;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  :root {
+    --ink: #000;
+    --ink-light: #1a1a1a;
+    --muted: #333;
+    --paper: #fff;
+    --panel: #fff;
+    --border: #000;
+    --line: #000;
+    --gold: #000;
+    --blue: #000;
+  }
+  
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+  
+  button, .btn {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 *, *::before, *::after {
@@ -3262,6 +3333,152 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSyst
     transform: none;
   }
 }
+
+/* Contribution Popup Styles */
+.contribute-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 37, 63, 0.75);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.contribute-popup {
+  background: #fff;
+  border-radius: 18px;
+  max-width: 520px;
+  width: 100%;
+  padding: 32px 28px 28px;
+  position: relative;
+  box-shadow: 0 12px 48px rgba(17, 37, 63, 0.25);
+  border: 1px solid #d5e0e8;
+}
+
+.popup-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: #536a7d;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.popup-close:hover {
+  background: #edf2f5;
+  color: #11253f;
+}
+
+.popup-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  background: #fff7df;
+  border-radius: 50%;
+  color: #d59f27;
+}
+
+.popup-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.contribute-popup h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+  color: #11253f;
+}
+
+.contribute-popup > p {
+  margin: 0 0 20px;
+  color: #3d4c5d;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.popup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.popup-btn.primary {
+  background: #1b5d7d;
+  color: #fff;
+}
+
+.popup-btn.primary:hover {
+  background: #124760;
+  transform: translateY(-1px);
+}
+
+.popup-note {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: #fff7df;
+  border-left: 4px solid #d59f27;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #3d4c5d;
+  line-height: 1.5;
+}
+
+.popup-footer {
+  text-align: center;
+  padding-top: 12px;
+  border-top: 1px solid #d5e0e8;
+}
+
+.popup-footer label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #536a7d;
+  cursor: pointer;
+}
+
+.popup-footer input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #1b5d7d;
+}
+
+@media (max-width: 600px) {
+  .contribute-popup {
+    padding: 24px 18px 20px;
+    max-width: calc(100% - 24px);
+  }
+  
+  .contribute-popup h2 {
+    font-size: 20px;
+  }
+}
 </style>
 
 
@@ -4377,6 +4594,80 @@ if (siteNav) {
 window.addEventListener('resize', () => {
   if (!isMobileNav()) closeMobileNav();
 });
+
+// Contribution Popup Logic
+(function() {
+  const popup = document.getElementById('contribute-popup');
+  const closeBtn = popup ? popup.querySelector('.popup-close') : null;
+  const dontShowAgain = popup ? popup.querySelector('#dont-show-again') : null;
+  
+  function showPopup() {
+    if (!popup) return;
+    
+    // Check if user opted out
+    const suppressed = localStorage.getItem('contributePopupSuppressed');
+    if (suppressed === 'true') return;
+    
+    // Show popup after a short delay
+    setTimeout(() => {
+      popup.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }, 1500);
+  }
+  
+  function hidePopup() {
+    if (!popup) return;
+    popup.hidden = true;
+    document.body.style.overflow = '';
+  }
+  
+  // Close button
+  if (closeBtn) {
+    closeBtn.addEventListener('click', hidePopup);
+  }
+  
+  // Click on overlay to close
+  if (popup) {
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) hidePopup();
+    });
+  }
+  
+  // Don't show again checkbox
+  if (dontShowAgain) {
+    dontShowAgain.addEventListener('change', () => {
+      if (dontShowAgain.checked) {
+        localStorage.setItem('contributePopupSuppressed', 'true');
+      } else {
+        localStorage.removeItem('contributePopupSuppressed');
+      }
+    });
+  }
+  
+  // Escape key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup && !popup.hidden) {
+      hidePopup();
+    }
+  });
+  
+  // Show popup on page load
+  showPopup();
+})();
+
+// Service Worker Registration for PWA support
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then((registration) => {
+        console.log('[PWA] Service Worker registered:', registration.scope);
+      })
+      .catch((error) => {
+        console.log('[PWA] Service Worker registration failed:', error);
+      });
+  });
+}
 </script>
 
 
