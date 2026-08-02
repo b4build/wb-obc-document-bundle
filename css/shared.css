@@ -393,6 +393,34 @@ tr:hover td { background: var(--card-bg); }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* Skeleton loader for timeline and litigation */
+.skeleton-container {
+  position: relative;
+}
+.skeleton-container::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, var(--bg) 0%, var(--card-bg) 50%, var(--bg) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  pointer-events: none;
+  opacity: 0.5;
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Fade in animation for loaded content */
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Data load warning */
 .data-load-warning {
   padding: 1rem; background: #fef3c7; border: 1px solid #f59e0b;
