@@ -3574,27 +3574,60 @@ function showDataLoadWarning() {
 
 function renderTimelineEvents(events) {
   const timeline = document.getElementById('timeline');
-  if (!timeline || !Array.isArray(events) || !events.length) return;
-  timeline.innerHTML = events.map(event => {
-    const attrs = [
-      event.id ? `id="${escapeAttr(event.id)}"` : '',
-      'class="event"',
-      event.type ? `data-type="${escapeAttr(event.type)}"` : '',
-      event.confidence ? `data-confidence="${escapeAttr(event.confidence)}"` : '',
-      event.date && /^\d{4}-\d{2}-\d{2}$/.test(event.date) ? `data-date="${escapeAttr(event.date)}"` : '',
-      event.search ? `data-search="${escapeAttr(event.search)}"` : ''
-    ].filter(Boolean).join(' ');
-    return `<li ${attrs}>${event.html || ''}</li>`;
-  }).join('');
+  const loader = document.getElementById('timeline-loader');
+  
+  // Show loader, hide timeline during load
+  if (loader) loader.hidden = false;
+  if (timeline) timeline.innerHTML = '';
+  
+  // Simulate loading delay for animation effect
+  setTimeout(() => {
+    if (!timeline || !Array.isArray(events) || !events.length) {
+      if (loader) loader.hidden = true;
+      return;
+    }
+    
+    timeline.innerHTML = events.map((event, index) => {
+      const attrs = [
+        event.id ? `id="${escapeAttr(event.id)}"` : '',
+        'class="event fade-in"',
+        `style="animation-delay: ${index * 0.05}s"`,
+        event.type ? `data-type="${escapeAttr(event.type)}"` : '',
+        event.confidence ? `data-confidence="${escapeAttr(event.confidence)}"` : '',
+        event.date && /^\d{4}-\d{2}-\d{2}$/.test(event.date) ? `data-date="${escapeAttr(event.date)}"` : '',
+        event.search ? `data-search="${escapeAttr(event.search)}"` : ''
+      ].filter(Boolean).join(' ');
+      return `<li ${attrs}>${event.html || ''}</li>`;
+    }).join('');
+    
+    // Hide loader after content is rendered
+    if (loader) loader.hidden = true;
+  }, 300);
 }
 
 function renderCaseEvents(events) {
   const timeline = document.querySelector('#cases .case-timeline');
-  if (!timeline || !Array.isArray(events) || !events.length) return;
-  timeline.innerHTML = events.map(event => {
-    const id = event.id ? ` id="${escapeAttr(event.id)}"` : '';
-    return `<li${id} class="case-event">${event.html || ''}</li>`;
-  }).join('');
+  const loader = document.getElementById('litigation-loader');
+  
+  // Show loader, hide timeline during load
+  if (loader) loader.hidden = false;
+  if (timeline) timeline.innerHTML = '';
+  
+  // Simulate loading delay for animation effect
+  setTimeout(() => {
+    if (!timeline || !Array.isArray(events) || !events.length) {
+      if (loader) loader.hidden = true;
+      return;
+    }
+    
+    timeline.innerHTML = events.map((event, index) => {
+      const id = event.id ? ` id="${escapeAttr(event.id)}"` : '';
+      return `<li${id} class="case-event fade-in" style="animation-delay: ${index * 0.05}s">${event.html || ''}</li>`;
+    }).join('');
+    
+    // Hide loader after content is rendered
+    if (loader) loader.hidden = true;
+  }, 300);
 }
 
 const TIMELINE_EVENTS = loadJsonSync('timeline_events.json');
