@@ -228,54 +228,54 @@
     </section>
 
     <section id="obc-list" class="research tab-panel" data-tab-panel="obc-list" hidden>
-      <h2 class="section-heading">West Bengal OBC Class Status List</h2>
-      <p class="section-sub">A consolidated lookup for classes found in the bundled OBC record. It includes the current 66 classes in <a href="obc_pdfs/2026-05-18_945-BCW-MR-23-2026_current_list.pdf" target="_blank" rel="noreferrer">Notification No. 945-BCW/MR-23/2026</a>, older post-2010 entries affected by the 22 May 2024 judgment record, and the 2025 additions withdrawn by <a href="obc_pdfs/2026-05-18_944-BCW-MR-23-2026_withdrawal.pdf" target="_blank" rel="noreferrer">Notification No. 944-BCW/MR-23/2026</a>.</p>
+      <h2 class="section-heading" data-i18n="obcList.title">West Bengal OBC Class Status List</h2>
+      <p class="section-sub" data-i18n="obcList.sub">A consolidated lookup for classes found in the bundled OBC record. It includes the current 66 classes in <a href="obc_pdfs/2026-05-18_945-BCW-MR-23-2026_current_list.pdf" target="_blank" rel="noreferrer">Notification No. 945-BCW/MR-23/2026</a>, older post-2010 entries affected by the 22 May 2024 judgment record, and the 2025 additions withdrawn by <a href="obc_pdfs/2026-05-18_944-BCW-MR-23-2026_withdrawal.pdf" target="_blank" rel="noreferrer">Notification No. 944-BCW/MR-23/2026</a>.</p>
 
       <div class="report-grid">
         <article class="report-card">
-          <div class="report-meta">Current</div>
-          <h3>66 classes in 945-BCW</h3>
-          <p>These rows are marked current because they appear in the 18 May 2026 list notification.</p>
+          <div class="report-meta" data-i18n="obcList.card1.meta">Current</div>
+          <h3 data-i18n="obcList.card1.title">66 classes in 945-BCW</h3>
+          <p data-i18n="obcList.card1.desc">These rows are marked current because they appear in the 18 May 2026 list notification.</p>
         </article>
         <article class="report-card">
-          <div class="report-meta">Historical / affected</div>
-          <h3>Post-2010 entries</h3>
-          <p>Rows not present in <a href="obc_pdfs/2026-05-18_945-BCW-MR-23-2026_current_list.pdf" target="_blank" rel="noreferrer">945-BCW</a> are labelled from the bundled judgment and notification trail, with source-care notes.</p>
+          <div class="report-meta" data-i18n="obcList.card2.meta">Historical / affected</div>
+          <h3 data-i18n="obcList.card2.title">Post-2010 entries</h3>
+          <p data-i18n="obcList.card2.desc">Rows not present in <a href="obc_pdfs/2026-05-18_945-BCW-MR-23-2026_current_list.pdf" target="_blank" rel="noreferrer">945-BCW</a> are labelled from the bundled judgment and notification trail, with source-care notes.</p>
         </article>
         <article class="report-card">
-          <div class="report-meta">Withdrawn</div>
-          <h3>2025 package</h3>
-          <p>Classes added by <a href="obc_pdfs/2025-05-27_1057-BCW-MR-38-2025_inclusion.pdf" target="_blank" rel="noreferrer">1057-BCW</a> and <a href="obc_pdfs/2025-06-03_1107-BCW-MR-38-2025_inclusion.pdf" target="_blank" rel="noreferrer">1107-BCW</a> are shown as withdrawn on 18 May 2026 by <a href="obc_pdfs/2026-05-18_944-BCW-MR-23-2026_withdrawal.pdf" target="_blank" rel="noreferrer">944-BCW</a>. <a href="obc_pdfs/2026-05-18_945-BCW-MR-23-2026_current_list.pdf" target="_blank" rel="noreferrer">Open current list</a></p>
+          <div class="report-meta" data-i18n="obcList.card3.meta">Withdrawn</div>
+          <h3 data-i18n="obcList.card3.title">2025 package</h3>
+          <p data-i18n="obcList.card3.desc">Classes added by <a href="obc_pdfs/2025-05-27_1057-BCW-MR-38-2025_inclusion.pdf" target="_blank" rel="noreferrer">1057-BCW</a> and <a href="obc_pdfs/2025-06-03_1107-BCW-MR-38-2025_inclusion.pdf" target="_blank" rel="noreferrer">1107-BCW</a> are shown as withdrawn on 18 May 2026 by <a href="obc_pdfs/2026-05-18_944-BCW-MR-23-2026_withdrawal.pdf" target="_blank" rel="noreferrer">944-BCW</a>. <a href="obc_pdfs/2026-05-18_945-BCW-MR-23-2026_current_list.pdf" target="_blank" rel="noreferrer" data-i18n="obcList.openCurrentList">Open current list</a></p>
         </article>
       </div>
 
       <div class="obc-list-toolbar" aria-label="OBC class table filters">
         <label>
-          <span>Search class or note</span>
+          <span data-i18n="obcList.label.search">Search class or note</span>
           <input id="obc-class-search" class="search-input" type="search" data-i18n-placeholder="placeholder.searchObcClass" placeholder="Try: Kapali, Nashya, withdrawn, 1994, 1057-BCW">
         </label>
         <label>
-          <span>Status</span>
+          <span data-i18n="obcList.label.status">Status</span>
           <select id="obc-status-filter" class="doc-status-filter">
-            <option value="all">All statuses</option>
-            <option value="current">Current</option>
-            <option value="withdrawn">Withdrawn</option>
-            <option value="historical">Historical / affected</option>
+            <option value="all" data-i18n="obcList.filter.all">All statuses</option>
+            <option value="current" data-i18n="obcList.filter.current">Current</option>
+            <option value="withdrawn" data-i18n="obcList.filter.withdrawn">Withdrawn</option>
+            <option value="historical" data-i18n="obcList.filter.historical">Historical / affected</option>
           </select>
         </label>
         <label>
-          <span>First included</span>
+          <span data-i18n="obcList.label.period">First included</span>
           <select id="obc-period-filter" class="doc-status-filter">
-            <option value="all">Any date</option>
-            <option value="1994">1994 founding / first extension</option>
-            <option value="1995-2001">1995-2001 additions</option>
-            <option value="2010">2010 categorisation record</option>
-            <option value="2012-2024">2012-2024 affected entries</option>
-            <option value="2025-2026">2025-2026 reset</option>
+            <option value="all" data-i18n="obcList.period.any">Any date</option>
+            <option value="1994" data-i18n="obcList.period.1994">1994 founding / first extension</option>
+            <option value="1995-2001" data-i18n="obcList.period.1995_2001">1995-2001 additions</option>
+            <option value="2010" data-i18n="obcList.period.2010">2010 categorisation record</option>
+            <option value="2012-2024" data-i18n="obcList.period.2012_2024">2012-2024 affected entries</option>
+            <option value="2025-2026" data-i18n="obcList.period.2025_2026">2025-2026 reset</option>
           </select>
         </label>
         <label>
-          <span>Source trail</span>
+          <span data-i18n="obcList.label.source">Source trail</span>
           <input id="obc-source-filter" class="search-input" type="search" data-i18n-placeholder="placeholder.obcSourceFilter" placeholder="Notification no., e.g. 944-BCW">
         </label>
         <p id="obc-class-count" class="filter-count" aria-live="polite"></p>
@@ -285,11 +285,11 @@
         <table id="obc-class-table">
           <thead>
             <tr>
-              <th>OBC class</th>
-              <th>First bundled inclusion</th>
-              <th>Exclusion / withdrawal date</th>
-              <th>Current status</th>
-              <th>Source trail</th>
+              <th data-i18n="obcList.table.class">OBC class</th>
+              <th data-i18n="obcList.table.firstIncluded">First bundled inclusion</th>
+              <th data-i18n="obcList.table.exclusion">Exclusion / withdrawal date</th>
+              <th data-i18n="obcList.table.status">Current status</th>
+              <th data-i18n="obcList.table.source">Source trail</th>
             </tr>
           </thead>
           <tbody id="obc-class-list"></tbody>
@@ -592,7 +592,6 @@
       No timeline events found matching your filter.
     </div>
 
-
     <section id="cases" class="research cases-section tab-panel" data-tab-panel="cases" hidden>
       <p class="panel-kicker" data-i18n="casesPanelKicker">Litigation tracker · curated record</p>
       <h2 class="section-heading" data-i18n="cases.title">West Bengal OBC Litigation Timeline</h2>
@@ -615,9 +614,9 @@
       </div>
 
       <div class="case-summary-grid">
-        <article><strong>22 May 2024</strong><span data-i18n="cases.summary.may2024">Calcutta High Court judgment in the connected OBC matters</span></article>
-        <article><strong>2024–25</strong><span data-i18n="cases.summary.slp">Supreme Court SLP proceedings, including the 28 July 2025 stay order</span></article>
-        <article><strong>2026</strong><span data-i18n="cases.summary.recruitment">Recruitment-related OBC classification challenges added to the tracker</span></article>
+        <article><strong data-i18n="cases.summary.date1">22 May 2024</strong><span data-i18n="cases.summary.may2024">Calcutta High Court judgment in the connected OBC matters</span></article>
+        <article><strong data-i18n="cases.summary.date2">2024–25</strong><span data-i18n="cases.summary.slp">Supreme Court SLP proceedings, including the 28 July 2025 stay order</span></article>
+        <article><strong data-i18n="cases.summary.date3">2026</strong><span data-i18n="cases.summary.recruitment">Recruitment-related OBC classification challenges added to the tracker</span></article>
       </div>
 
       <div class="callout litigation-note-jump"><strong data-i18n="cases.employeeProtectionCallout">Employee-protection argument note:</strong> <span data-i18n="cases.employeeProtectionDesc">user-supplied grounds and precedent links for bona fide employees appointed on government-issued OBC certificates are included after the timeline.</span> <a href="#employee-protection-note" data-i18n="cases.openLegalNote">Open the legal-principles note</a>.</div>
@@ -645,7 +644,7 @@
 
       <section id="employee-protection-note" class="litigation-note" aria-labelledby="employee-protection-title">
         <p class="panel-kicker" data-i18n="employeeProtectionKicker">Litigation support note · not an official order</p>
-        <h3 id="employee-protection-title">Legal principles for existing OBC-certificate appointees</h3>
+        <h3 id="employee-protection-title" data-i18n="employeeProtectionTitle">Legal principles for existing OBC-certificate appointees</h3>
         <p class="section-sub" data-i18n="employeeProtectionSub">A user-supplied bilingual note argues that bona fide employees appointed on government-issued and verified OBC certificates should not face blanket termination merely because a reservation policy or class-list process is later invalidated. Treat this as an argument map: verify every citation against the actual judgment before using it.</p>
 
         <div class="report-grid">
