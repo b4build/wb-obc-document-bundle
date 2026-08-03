@@ -1446,7 +1446,8 @@ a {
   pointer-events: none;
 }
 
-.nav-group.is-open .nav-group-items {
+.nav-group.is-open .nav-group-items,
+.nav-group-toggle[aria-expanded="true"] + .nav-group-items {
   display: flex;
   opacity: 1;
   transform: translateX(-50%) translateY(0);
@@ -4141,7 +4142,7 @@ const DATA_LOAD_ERRORS = [];
 const INLINE_JSON_DATA = window.OBC_INLINE_JSON || {};
 const OBC_DOCS = loadJsonSync('obc_documents.json');
 const SUPPLEMENTAL_DOCS = loadJsonSync('supplemental_documents.json');
-const PRIVATE_DOCS = loadOptionalJsonSync('private_documents.json');
+const PRIVATE_DOCS = loadOptionalJsonSync('private_documents.json', []);
 const SUPPLEMENTAL_TIMELINE = SUPPLEMENTAL_DOCS.filter(doc => doc.show_on_timeline);
 const OBC_CLASS_DATA = loadJsonSync('obc_classes.json', { current_classes_2026: [], first_inclusion: {}, class_changes: [] });
 const OBC_CLASSES_2026 = OBC_CLASS_DATA.current_classes_2026 || [];
@@ -4149,7 +4150,7 @@ const OBC_CLASS_FIRST_INCLUSION = OBC_CLASS_DATA.first_inclusion || {};
 const OBC_CLASS_CHANGES = OBC_CLASS_DATA.class_changes || [];
 const PUBLIC_HEARINGS = loadJsonSync('public_hearings.json');
 const DOCUMENT_INVENTORY = loadJsonSync('document_inventory.json');
-const PRIVATE_DOCUMENT_INVENTORY = loadOptionalJsonSync('private_document_inventory.json');
+const PRIVATE_DOCUMENT_INVENTORY = loadOptionalJsonSync('private_document_inventory.json', []);
 
 function escapeHtml(value) {
   return String(value || '').replace(/[&<>\"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;', "'": '&#39;' }[char]));
@@ -4192,6 +4193,11 @@ function loadJsonSync(path, fallback = []) {
     if ((request.status >= 200 && request.status < 300) || (request.status === 0 && request.responseText)) {
       return JSON.parse(request.responseText);
     }
+    // If status is 404, return fallback without warning
+    if (request.status === 404) {
+      recordDataLoadError(path);
+      return fallback;
+    }
   } catch (error) {
     console.warn('Could not load ' + path, error);
   }
@@ -4208,8 +4214,10 @@ function loadOptionalJsonSync(path, fallback = []) {
     if ((request.status >= 200 && request.status < 300) || (request.status === 0 && request.responseText)) {
       return JSON.parse(request.responseText);
     }
+    // If status is 404 or other error, return fallback without logging
+    return fallback;
   } catch (error) {
-    console.info('Optional local data not loaded: ' + path);
+    // Silently return fallback for optional files
   }
   return fallback;
 }
@@ -4318,7 +4326,7 @@ restoreStateFromURL();
 renderTimelineEvents(TIMELINE_EVENTS);
 renderCaseEvents(CASE_EVENTS);
 updateCaseStats(CASE_EVENTS);
-renderOBCList();
+renderObcClassList();
 applyGlossaryTooltips();
 showSkeletonLoader(false);
 document.getElementById('case-search')?.addEventListener('input', applyCaseSearch);
