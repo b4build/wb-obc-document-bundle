@@ -285,7 +285,14 @@
     "cases.summary.date1": "22 May 2024",
     "cases.summary.date2": "2024–25",
     "cases.summary.date3": "2026",
-    "employeeProtectionTitle": "Legal principles for existing OBC-certificate appointees"
+    "employeeProtectionTitle": "Legal principles for existing OBC-certificate appointees",
+    "titlePlaceholder": "Example: WPA 1234 of 2025 or Notification No. ...",
+    "detailsPlaceholder": "Briefly describe the record, its court/authority, why it matters, and any date or status information.",
+    "provenancePlaceholder": "Official download, gazette, court record, newspaper notice, public mirror, etc.",
+    "homeTableHeaderNeed": "Need",
+    "homeTableHeaderBestTab": "Best tab",
+    "homeTableHeaderWhatYouFind": "What you will find",
+    "formReportSource": "Report a source"
   },
   "bn": {
     "siteTitle": "পশ্চিমবঙ্গ ওবিসি আর্কাইভ",
@@ -573,6 +580,13 @@
     "cases.summary.date1": "২২ মে ২০২৪",
     "cases.summary.date2": "২০২৪–২৫",
     "cases.summary.date3": "২০২৬",
-    "employeeProtectionTitle": "বিদ্যমান OBC-সার্টিফিকেট নিয়োগপ্রাপ্তদের জন্য আইনি নীতিমালা"
+    "employeeProtectionTitle": "বিদ্যমান OBC-সার্টিফিকেট নিয়োগপ্রাপ্তদের জন্য আইনি নীতিমালা",
+    "titlePlaceholder": "যেমন: WPA 1234 of 2025 বা Notification No. ...",
+    "detailsPlaceholder": "রেকর্ড, আদালত/কর্তৃপক্ষ, কেন গুরুত্বপূর্ণ, এবং তারিখ বা অবস্থার তথ্য সংক্ষেপে লিখুন।",
+    "provenancePlaceholder": "সরকারি ডাউনলোড, গেজেট, আদালত রেকর্ড, সংবাদপত্র নোটিস, পাবলিক মিরর ইত্যাদি।",
+    "homeTableHeaderNeed": "প্রয়োজন",
+    "homeTableHeaderBestTab": "সেরা ট্যাব",
+    "homeTableHeaderWhatYouFind": "আপনি যা খুঁজে পাবেন",
+    "formReportSource": "উৎস রিপোর্ট করুন"
   }
 }
