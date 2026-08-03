@@ -61,9 +61,9 @@
         <a href="contribute.html" data-i18n="navContribute">Contribute</a>
         <a href="#about" data-tab-target="about" data-i18n="navAbout">About</a>
         <span class="language-switch" aria-label="Language">
-          <button type="button" id="lang-en" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" id="lang-en" class="lang-btn active" data-lang="en" data-lang-switch="en" aria-pressed="true">EN</button>
           <span class="lang-separator">|</span>
-          <button type="button" id="lang-bn" class="lang-btn" data-lang="bn" aria-pressed="false">বাংলা</button>
+          <button type="button" id="lang-bn" class="lang-btn" data-lang="bn" data-lang-switch="bn" aria-pressed="false">বাংলা</button>
         </span>
         <a href="https://github.com/b4build/wb-obc-document-bundle" target="_blank" rel="noreferrer" data-i18n="navGitHub">GitHub</a>
       </nav>
@@ -100,6 +100,12 @@
       <p class="popup-note" data-i18n="popupNote"><strong>No Donations:</strong> We are not accepting any money or donations. This is a free public resource. Only document submissions and corrections are requested.</p>
       <div class="popup-footer">
         <label><input type="checkbox" id="dont-show-again"> <span data-i18n="popupDontShow">Don't show this message again</span></label>
+      </div>
+      <div class="popup-lang-switch" style="margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:0.5rem;">
+        <span style="font-size:0.875rem;color:var(--muted);" data-i18n="popupLanguage">Language:</span>
+        <button type="button" class="lang-btn-small" data-lang-switch="en" aria-pressed="false">EN</button>
+        <span style="color:var(--muted);">|</span>
+        <button type="button" class="lang-btn-small" data-lang-switch="bn" aria-pressed="false">বাংলা</button>
       </div>
     </div>
   </div>
@@ -1124,6 +1130,16 @@ body.lang-bn h1, body.lang-bn h2, body.lang-bn h3 {
   font-weight: 700;
 }
 
+/* Language switching animation */
+body.lang-switching {
+  opacity: 0.95;
+  transition: opacity 0.15s ease;
+}
+
+body.lang-switching * {
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease !important;
+}
+
 /* High contrast mode support */
 @media (prefers-contrast: more) {
   :root {
@@ -1281,6 +1297,36 @@ a {
 .lang-btn.active {
   background: rgba(255,255,255,.14);
   color: #fff;
+}
+
+.lang-btn-small {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 7px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-btn-small:hover {
+  background: rgba(16,37,63,.08);
+  color: var(--text);
+}
+
+.lang-btn-small.active {
+  background: rgba(16,37,63,.12);
+  color: var(--text);
+  font-weight: 800;
 }
 
 .lang-separator {
@@ -2418,19 +2464,22 @@ table {
 
 th,
 td {
-  padding: 10px 12px;
+  padding: 12px 14px;
   border-bottom: 1px solid #edf0f2;
   text-align: left;
   vertical-align: top;
   font-size: 14px;
+  color: var(--ink);
 }
 
 th {
-  background: #eef3f1;
-  color: #25313a;
+  background: linear-gradient(135deg, #e8f0ee, #f0f5f3);
+  color: #1a3a2e;
   font-size: 12px;
-  letter-spacing: .05em;
+  font-weight: 700;
+  letter-spacing: .06em;
   text-transform: uppercase;
+  border-bottom: 2px solid #c5d5cf;
 }
 
 tr:last-child td {
@@ -2849,7 +2898,10 @@ tr:last-child td {
 }
 .litigation-note {
   margin: 28px 0;
-  padding-top: 4px;
+  padding: 24px;
+  background: var(--blue-light);
+  border-radius: 12px;
+  border-left: 4px solid var(--blue);
 }
 .litigation-note > h3 {
   margin: 0 0 8px;
@@ -3765,7 +3817,7 @@ th {
   padding: 20px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .contribute-popup-overlay:not([hidden]) {
@@ -3787,10 +3839,20 @@ th {
   border-radius: 18px;
   max-width: 520px;
   width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
   padding: 32px 28px 28px;
   position: relative;
   box-shadow: 0 12px 48px rgba(17, 37, 63, 0.25);
   border: 1px solid #d5e0e8;
+  transform: translateY(-20px) scale(0.95);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+}
+
+.contribute-popup-overlay:not([hidden]) .contribute-popup {
+  transform: translateY(0) scale(1);
+  opacity: 1;
 }
 
 .popup-close {
@@ -3807,11 +3869,13 @@ th {
   border-radius: 6px;
   z-index: 10;
   pointer-events: auto;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 .popup-close:hover {
   background: #edf2f5;
   color: #11253f;
+  transform: scale(1.1);
 }
 
 .popup-icon {
@@ -4005,7 +4069,7 @@ function showDataLoadWarning() {
   warning.innerHTML = `<strong>Some data files did not load.</strong> Missing: ${DATA_LOAD_ERRORS.map(escapeHtml).join(', ')}. If you opened this page directly as a file, run <code>npm run serve</code> and open <code>http://127.0.0.1:8123/index.html</code>.`;
 }
 
-function renderTimelineEvents(events) {
+function renderTimelineEvents(events, forceLang) {
   const timeline = document.getElementById('timeline');
   const loader = document.getElementById('timeline-loader');
 
@@ -4016,7 +4080,7 @@ function renderTimelineEvents(events) {
     return;
   }
 
-  const lang = getActiveLang();
+  const lang = forceLang || getActiveLang();
   timeline.innerHTML = '<ul class="stagger-list">' + events.map(event => {
     const attrs = [
       event.id ? `id="${escapeAttr(event.id)}"` : '',
@@ -4034,7 +4098,7 @@ function renderTimelineEvents(events) {
   initScrollAnimations();
 }
 
-function renderCaseEvents(events) {
+function renderCaseEvents(events, forceLang) {
   const timeline = document.querySelector('#cases .case-timeline');
   const loader = document.getElementById('litigation-loader');
 
@@ -4045,7 +4109,7 @@ function renderCaseEvents(events) {
     return;
   }
 
-  const lang = getActiveLang();
+  const lang = forceLang || getActiveLang();
   timeline.innerHTML = '<ul class="stagger-list">' + events.map(event => {
     const id = event.id ? ` id="${escapeAttr(event.id)}"` : '';
     const body = (lang === 'bn' && event.html_bn) ? event.html_bn : (event.html || '');
@@ -4799,10 +4863,19 @@ document.querySelectorAll('[data-lang-switch]').forEach(link => {
 
 // Language toggle functionality
 const langButtons = document.querySelectorAll('.lang-btn');
+const popupLangButtons = document.querySelectorAll('.lang-btn-small');
 
 function syncLanguageButtons(lang = getActiveLang()) {
+  // Sync main navigation language buttons
   langButtons.forEach(button => {
     const isActive = button.getAttribute('data-lang') === lang;
+    button.classList.toggle('active', isActive);
+    button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  });
+  
+  // Sync popup language buttons
+  popupLangButtons.forEach(button => {
+    const isActive = button.getAttribute('data-lang-switch') === lang;
     button.classList.toggle('active', isActive);
     button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
   });
@@ -4811,6 +4884,23 @@ function syncLanguageButtons(lang = getActiveLang()) {
 langButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const lang = btn.getAttribute('data-lang');
+    if (window.WBOBCI18n) {
+      window.WBOBCI18n.switchLanguage(lang);
+    }
+    
+    syncLanguageButtons(lang);
+    
+    // Update URL without reload
+    const url = new URL(window.location);
+    url.searchParams.set('lang', lang);
+    window.history.pushState({}, '', url);
+  });
+});
+
+// Popup language buttons
+popupLangButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.getAttribute('data-lang-switch');
     if (window.WBOBCI18n) {
       window.WBOBCI18n.switchLanguage(lang);
     }
