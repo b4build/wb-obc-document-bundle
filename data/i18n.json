@@ -319,7 +319,10 @@
     "aboutCalloutStrong": "Source principle:",
     "aboutCalloutText": "where this site summarizes a record, open the linked document and treat the primary source as controlling. The project does not endorse any political position or make findings about any community.",
     "whoMaintainsTitle": "Who maintains this?",
-    "whoMaintainsText": "A group of volunteers created and maintains this project lazily in their free time. There are many things to add. We plan to add all aspects of OBC reservation. Currently we have only added notifications and a few litigation related to WB OBC. We plan to add all. It runs on free vercel plan. We expect more people to come join us. Contribute us by providing old and new information that we may have missed."
+    "whoMaintainsText": "A group of volunteers created and maintains this project lazily in their free time. There are many things to add. We plan to add all aspects of OBC reservation. Currently we have only added notifications and a few litigation related to WB OBC. We plan to add all. It runs on free vercel plan. We expect more people to come join us. Contribute us by providing old and new information that we may have missed.",
+    "documents.title": "Document Text Corpus",
+    "documents.subtitle": "Full extracted text from the OBC list corpus plus supplemental BCW legal, certificate, roster, Commission, RTPS, digitisation, and EWS records — searchable and reusable for documentation.",
+    "inventory.title": "Document Inventory"
   },
   "bn": {
     "siteTitle": "পশ্চিমবঙ্গ ওবিসি আর্কাইভ",
@@ -641,6 +644,9 @@
     "aboutCalloutStrong": "উৎস নীতি:",
     "aboutCalloutText": "যেখানে এই সাইটটি একটি রেকর্ড সারাংশ দেয়, লিঙ্ক করা নথি খুলুন এবং প্রাথমিক উৎসকে নিয়ন্ত্রণকারী হিসাবে বিবেচনা করুন। প্রকল্পটি কোনো রাজনৈতিক অবস্থান সমর্থন করে না বা কোনো সম্প্রদায় সম্পর্কে সিদ্ধান্ত নেয় না।",
     "whoMaintainsTitle": "কে এটি রক্ষণাবেক্ষণ করে?",
-    "whoMaintainsText": "একটি স্বেচ্ছাসেবীদল এই প্রকল্পটি তৈরি করেছেন এবং তাদের মুক্ত সময়ে এটি পরিচালনা করছেন। যোগ করার জন্য অসংখ্য জিনিস রয়েছে। আমরা ওবিসি সংরক্ষণের সমস্ত দিক যোগ করার পরিকল্পনা করছি। বর্তমানে আমরা শুধুমাত্র নোটিফিকেশন এবং কয়েকটি মামলা যোগ করেছি যা পশ্চিমবঙ্গ ওবিসি সংক্রান্ত। আমরা সব যোগ করার পরিকল্পনা করছি। এটি বিনামূল্যে ভার্সেল পরিকল্পনায় চলছে। আমরা আশা করছি আরও বেশি মানুষ এসে আমাদের সাথে যোগ দেবে। আপনারা সকলে আমাদের পুরানো এবং নতুন তথ্য সরবরাহ করে সহায়তা করুন যা আমরা মিস করে থাকতে পারি।"
+    "whoMaintainsText": "একটি স্বেচ্ছাসেবীদল এই প্রকল্পটি তৈরি করেছেন এবং তাদের মুক্ত সময়ে এটি পরিচালনা করছেন। যোগ করার জন্য অসংখ্য জিনিস রয়েছে। আমরা ওবিসি সংরক্ষণের সমস্ত দিক যোগ করার পরিকল্পনা করছি। বর্তমানে আমরা শুধুমাত্র নোটিফিকেশন এবং কয়েকটি মামলা যোগ করেছি যা পশ্চিমবঙ্গ ওবিসি সংক্রান্ত। আমরা সব যোগ করার পরিকল্পনা করছি। এটি বিনামূল্যে ভার্সেল পরিকল্পনায় চলছে। আমরা আশা করছি আরও বেশি মানুষ এসে আমাদের সাথে যোগ দেবে। আপনারা সকলে আমাদের পুরানো এবং নতুন তথ্য সরবরাহ করে সহায়তা করুন যা আমরা মিস করে থাকতে পারি।",
+    "documents.title": "নথি টেক্সট কর্পাস",
+    "documents.subtitle": "ওবিসি তালিকা কর্পাস থেকে সম্পূর্ণ নিষ্কাশিত পাঠ্য এবং পরিপূরক বিসিডব্লিউ আইনি, শংসাপত্র, রোস্টার, কমিশন, আরটিপিএস, ডিজিটাইজেশন এবং ইডব্লিউএস রেকর্ড - নথিভুক্ত করার জন্য অনুসন্ধানযোগ্য এবং পুনর্ব্যবহারযোগ্য।",
+    "inventory.title": "নথি ইনভেন্টরি"
   }
 }
