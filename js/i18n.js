@@ -67,6 +67,11 @@
     currentLang = lang;
     updatePageContent();
     
+    // Update hero section (header) to match new language
+    if (typeof updateHero === 'function') {
+      updateHero();
+    }
+    
     // Dispatch event for components to re-render
     document.dispatchEvent(new CustomEvent('wbobc:langchange', { detail: { lang } }));
     
