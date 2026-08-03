@@ -3981,6 +3981,158 @@ th {
     font-size: 20px;
   }
 }
+
+/* ===========================
+   UX IMPROVEMENTS CSS
+   =========================== */
+
+/* Glossary Tooltips */
+.glossary-term {
+  border-bottom: 1px dotted #1b5d7d;
+  cursor: help;
+  position: relative;
+  color: #1b5d7d;
+  font-weight: 500;
+}
+
+.glossary-term:hover,
+.glossary-term:focus {
+  background-color: rgba(27, 93, 125, 0.1);
+  outline: none;
+}
+
+.glossary-term::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: #1b5d7d;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: normal;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 300px;
+  text-wrap: balance;
+}
+
+.glossary-term:hover::after,
+.glossary-term:focus::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+@media (max-width: 600px) {
+  .glossary-term::after {
+    left: 0;
+    transform: translateY(-4px);
+    white-space: normal;
+    width: 200px;
+  }
+}
+
+/* Skeleton Loading States */
+.skeleton-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-item {
+  height: 80px;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-pulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.dark-mode .skeleton-item {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+}
+
+/* Export Button */
+.export-csv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #1b5d7d 0%, #2d7da3 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(27, 93, 125, 0.2);
+  margin-top: 16px;
+}
+
+.export-csv-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(27, 93, 125, 0.3);
+}
+
+.export-csv-btn:active {
+  transform: translateY(0);
+}
+
+/* Highlight for search results */
+mark.search-highlight {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.dark-mode mark.search-highlight {
+  background-color: #856404;
+  color: #fff3cd;
+}
+
+/* Filter chip animations */
+.filter-chip {
+  transition: all 0.2s ease;
+}
+
+.filter-chip.active {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(27, 93, 125, 0.3);
+}
+
+/* Pagination improvements */
+.pagination-btn {
+  transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Date input styling */
+input[type="date"] {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="date"]:focus {
+  border-color: #1b5d7d;
+  box-shadow: 0 0 0 3px rgba(27, 93, 125, 0.1);
+}
 </style>
 
 
@@ -4149,9 +4301,26 @@ function applyCaseSearch() {
 
 const TIMELINE_EVENTS = loadJsonSync('timeline_events.json');
 const CASE_EVENTS = loadJsonSync('case_events.json');
+
+// Glossary Data for tooltips
+const GLOSSARY_TERMS = {
+  'writ petition': { en: 'A formal written order issued by a court.', bn: 'আদালত কর্তৃক জারি করা একটি আনুষ্ঠানিক লিখিত আদেশ।' },
+  'public interest litigation': { en: 'Litigation undertaken for the protection of public interest.', bn: 'জনস্বার্থ রক্ষার জন্য করা মামলা।' },
+  'reservation': { en: 'Affirmative action policy for backward classes.', bn: 'পশ্চাৎপদ শ্রেণীর জন্য ইতিবাচক বৈষম্য নীতি।' },
+  'notification': { en: 'Official public announcement by the government.', bn: 'সরকার কর্তৃক জারি করা সরকারি বিজ্ঞপ্তি।' },
+  'commission': { en: 'An official group appointed to investigate or manage a specific area.', bn: 'নির্দিষ্ট বিষয় তদন্ত বা পরিচালনার জন্য নিযুক্ত সরকারি সংস্থা।' },
+  'petitioner': { en: 'Person who files a petition in court.', bn: 'যে ব্যক্তি আদালতে আবেদন দায়ের করেন।' },
+  'respondent': { en: 'Person against whom a petition is filed.', bn: 'যার বিরুদ্ধে আদালতে আবেদন দায়ের করা হয়েছে।' }
+};
+
+// Initialize with state restoration from URL
+restoreStateFromURL();
 renderTimelineEvents(TIMELINE_EVENTS);
 renderCaseEvents(CASE_EVENTS);
 updateCaseStats(CASE_EVENTS);
+renderOBCList();
+applyGlossaryTooltips();
+showSkeletonLoader(false);
 document.getElementById('case-search')?.addEventListener('input', applyCaseSearch);
 applyCaseSearch();
 showDataLoadWarning();
@@ -4939,8 +5108,202 @@ popupLangButtons.forEach(btn => {
 
 document.addEventListener('wbobc:langchange', event => {
   syncLanguageButtons(event.detail?.lang);
+  // Re-apply glossary tooltips after language change
+  applyGlossaryTooltips();
 });
 syncLanguageButtons();
+
+// ===========================
+// DEEP LINKING & STATE PERSISTENCE
+// ===========================
+function restoreStateFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const search = params.get('search');
+  const filters = params.get('filters');
+  const page = params.get('page');
+  const dateFrom = params.get('dateFrom');
+  const dateTo = params.get('dateTo');
+  
+  if (search) {
+    const searchInput = document.getElementById('timeline-search') || document.getElementById('case-search');
+    if (searchInput) searchInput.value = search;
+  }
+  
+  if (filters) {
+    activeFilters.clear();
+    filters.split(',').forEach(f => activeFilters.add(f));
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+      const filterType = chip.dataset.filter;
+      if (filterType && activeFilters.has(filterType)) {
+        chip.classList.add('active');
+      } else {
+        chip.classList.remove('active');
+      }
+    });
+  }
+  
+  if (page) {
+    currentPage = parseInt(page, 10) || 1;
+  }
+  
+  if (dateFrom) {
+    const fromInput = document.getElementById('date-from');
+    if (fromInput) fromInput.value = dateFrom;
+    currentDateRange.from = dateFrom;
+  }
+  
+  if (dateTo) {
+    const toInput = document.getElementById('date-to');
+    if (toInput) toInput.value = dateTo;
+    currentDateRange.to = dateTo;
+  }
+}
+
+function updateURLState() {
+  const url = new URL(window.location);
+  const searchInput = document.getElementById('timeline-search') || document.getElementById('case-search');
+  const searchTerm = searchInput?.value || '';
+  const filtersStr = Array.from(activeFilters).join(',');
+  
+  if (searchTerm) url.searchParams.set('search', searchTerm);
+  else url.searchParams.delete('search');
+  
+  if (filtersStr) url.searchParams.set('filters', filtersStr);
+  else url.searchParams.delete('filters');
+  
+  if (currentPage > 1) url.searchParams.set('page', String(currentPage));
+  else url.searchParams.delete('page');
+  
+  if (currentDateRange.from) url.searchParams.set('dateFrom', currentDateRange.from);
+  else url.searchParams.delete('dateFrom');
+  
+  if (currentDateRange.to) url.searchParams.set('dateTo', currentDateRange.to);
+  else url.searchParams.delete('dateTo');
+  
+  window.history.pushState({}, '', url);
+}
+
+// ===========================
+// FUZZY SEARCH
+// ===========================
+function fuzzyMatch(text, pattern) {
+  if (!pattern) return true;
+  text = String(text || '').toLowerCase();
+  pattern = String(pattern || '').toLowerCase();
+  
+  // Exact match first
+  if (text.includes(pattern)) return true;
+  
+  // Fuzzy match - allow character skips
+  let textIdx = 0;
+  let patternIdx = 0;
+  let matches = 0;
+  
+  while (textIdx < text.length && patternIdx < pattern.length) {
+    if (text[textIdx] === pattern[patternIdx]) {
+      matches++;
+      patternIdx++;
+    }
+    textIdx++;
+  }
+  
+  // Return true if we matched at least 70% of pattern characters
+  return patternIdx === pattern.length || (matches / pattern.length) >= 0.7;
+}
+
+// ===========================
+// EXPORT TO CSV
+// ===========================
+function exportToCSV(data, filename) {
+  if (!data || !data.length) return;
+  
+  const headers = Object.keys(data[0]);
+  const csvContent = [
+    headers.join(','),
+    ...data.map(row => 
+      headers.map(header => {
+        const value = String(row[header] || '').replace(/"/g, '""');
+        return `"${value}"`;
+      }).join(',')
+    )
+  ].join('\n');
+  
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = `${filename}_${new Date().toISOString().split('T')[0]}.csv`;
+  link.click();
+}
+
+function addExportButton(containerId, dataGetter, filenameBase) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  
+  const existingBtn = container.querySelector('.export-csv-btn');
+  if (existingBtn) return;
+  
+  const btn = document.createElement('button');
+  btn.className = 'export-csv-btn';
+  btn.innerHTML = '📥 Export CSV';
+  btn.setAttribute('aria-label', 'Export current view to CSV file');
+  btn.onclick = () => {
+    const data = dataGetter();
+    exportToCSV(data, filenameBase);
+  };
+  container.appendChild(btn);
+}
+
+// ===========================
+// GLOSSARY TOOLTIPS
+// ===========================
+function applyGlossaryTooltips() {
+  const lang = getActiveLang();
+  
+  // Remove existing tooltips first
+  document.querySelectorAll('.glossary-term').forEach(el => {
+    const parent = el.parentNode;
+    if (parent) {
+      parent.replaceChild(document.createTextNode(el.textContent), el);
+    }
+  });
+  
+  // Apply new tooltips
+  Object.keys(GLOSSARY_TERMS).forEach(term => {
+    const regex = new RegExp(`\\b(${term})\\b`, 'gi');
+    
+    document.querySelectorAll('.event, .case-event, .doc-row, td').forEach(el => {
+      if (el.querySelector('.glossary-term')) return; // Skip if already processed
+      
+      const html = el.innerHTML;
+      if (regex.test(html)) {
+        const newHtml = html.replace(regex, (match) => {
+          const definition = GLOSSARY_TERMS[term.toLowerCase()][lang] || GLOSSARY_TERMS[term.toLowerCase()].en;
+          return `<span class="glossary-term" tabindex="0" aria-label="${definition}" title="${definition}">${match}</span>`;
+        });
+        el.innerHTML = newHtml;
+      }
+    });
+  });
+}
+
+// ===========================
+// SKELETON LOADING STATES
+// ===========================
+function showSkeletonLoader(show) {
+  const containers = ['#timeline', '#cases .case-timeline'];
+  
+  containers.forEach(selector => {
+    const container = document.querySelector(selector);
+    if (!container) return;
+    
+    if (show) {
+      container.classList.add('skeleton-loading');
+      container.innerHTML = '<div class="skeleton-item"></div><div class="skeleton-item"></div><div class="skeleton-item"></div>';
+    } else {
+      container.classList.remove('skeleton-loading');
+    }
+  });
+}
 
 function tabForHash(hash) {
   const id = String(hash || '').replace(/^#/, '');
