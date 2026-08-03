@@ -574,6 +574,11 @@ tr:hover td { background: var(--card-bg); }
   transform: translateY(0);
 }
 
+/* Smooth transition for language switching on lists */
+.stagger-list {
+  transition: opacity 0.2s ease-out;
+}
+
 /* Staggered animation for list items */
 .stagger-list > li {
   opacity: 0;
