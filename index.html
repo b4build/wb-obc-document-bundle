@@ -5591,6 +5591,7 @@ navGroups.forEach(group => {
   if (toggle) {
     toggle.addEventListener('click', event => {
       event.preventDefault();
+      event.stopPropagation(); // Prevent immediate closing
       if (group.classList.contains('is-open')) {
         closeGroup(group);
       } else {
