@@ -57,11 +57,17 @@
     localStorage.setItem('wb-obc-lang', currentLang);
   }
 
-  // Switch language
+  // Switch language with smooth animation
   function switchLanguage(lang) {
     if (lang !== 'en' && lang !== 'bn') return;
+    
+    // Add fade-out effect
+    document.body.classList.add('lang-switching');
+    
     currentLang = lang;
     updatePageContent();
+    
+    // Dispatch event for components to re-render
     document.dispatchEvent(new CustomEvent('wbobc:langchange', { detail: { lang } }));
     
     // Update language switcher UI
@@ -76,6 +82,11 @@
     if (activeSpan && activeSpan.textContent === (lang === 'en' ? 'EN' : 'বাংলা')) {
       // Keep the span as is, it shows current language
     }
+    
+    // Remove fade-out effect after short delay
+    setTimeout(() => {
+      document.body.classList.remove('lang-switching');
+    }, 300);
   }
 
   // Initialize
@@ -86,17 +97,20 @@
       return;
     }
 
-    // Check saved preference or URL parameter
+    // Check saved preference or URL parameter - default to English
     const urlParams = new URLSearchParams(window.location.search);
     const savedLang = localStorage.getItem('wb-obc-lang');
     const urlLang = urlParams.get('lang');
     
+    // Default to English unless explicitly set to Bengali
     if (urlLang === 'bn' || (!urlLang && savedLang === 'bn')) {
       currentLang = 'bn';
+    } else {
+      currentLang = 'en';
     }
 
-    // Set up language switcher click handlers
-    document.querySelectorAll('.language-switch a[data-lang-switch]').forEach(link => {
+    // Set up language switcher click handlers for both links and buttons
+    document.querySelectorAll('.language-switch a[data-lang-switch], .language-switch button[data-lang-switch]').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const lang = link.getAttribute('data-lang-switch');

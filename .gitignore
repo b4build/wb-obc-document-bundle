@@ -1,60 +1,36 @@
 ```
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Environment
+.env
+.env.local
+.env.*
+
+# Editors
+.vscode/
+.idea/
+
 # Dependencies
 node_modules/
+venv/
+.venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
 
 # Build artifacts
 dist/
 build/
 target/
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.py.class
-*.py.obj
-.Python
-env/
-venv/
-.venv/
-.eggs/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Logs
-*.log
-
-# Environment variables
-.env
-.env.local
-.env.*
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+# OS generated files
 .DS_Store
 Thumbs.db
 
-# Coverage
-.coverage
-coverage/
-htmlcov/
-.nyc_output/
-
-# MyPy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# PyTest
-.pytest_cache/
-
-# Compressed files
+# Compression files
 *.zip
 *.gz
 *.tar
@@ -77,4 +53,7 @@ dmypy.json
 *.tar.bz2
 *.tar.xz
 *.tar.zst
+
+# Original rules preserved
+*.log
 ```
