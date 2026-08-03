@@ -1006,7 +1006,7 @@
     </section>
 
     <section class="inventory tab-panel" id="inventory" data-tab-panel="inventory" hidden>
-      <h2 class="section-heading">Document Inventory</h2>
+      <h2 class="section-heading" data-i18n="inventory.title">Document Inventory</h2>
       <div class="table-wrap">
         <table>
           <thead>
@@ -1025,8 +1025,8 @@
     </section>
 
     <section id="documents" class="research documents-section tab-panel" data-tab-panel="documents" hidden>
-      <h2 class="section-heading">Document Text Corpus</h2>
-      <p class="section-sub">Full extracted text from the OBC list corpus plus supplemental BCW legal, certificate, roster, Commission, RTPS, digitisation, and EWS records — searchable and reusable for documentation.</p>
+      <h2 class="section-heading" data-i18n="documents.title">Document Text Corpus</h2>
+      <p class="section-sub" data-i18n="documents.subtitle">Full extracted text from the OBC list corpus plus supplemental BCW legal, certificate, roster, Commission, RTPS, digitisation, and EWS records — searchable and reusable for documentation.</p>
 
       <div class="doc-toolbar">
         <input id="doc-search" type="search" class="search-input" data-i18n-placeholder="placeholder.docSearch" placeholder="Search documents (notification number, community name, year, keyword…)">
@@ -4191,6 +4191,13 @@ function initScrollAnimations() {
     observer.observe(el);
   });
 }
+
+// Re-initialize scroll animations after language switch
+document.addEventListener('wbobc:langchange', () => {
+  setTimeout(() => {
+    initScrollAnimations();
+  }, 100);
+});
 
 function titleCase(value) {
   return String(value || '').replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
