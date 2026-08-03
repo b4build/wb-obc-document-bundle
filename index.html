@@ -4159,10 +4159,26 @@ showDataLoadWarning();
 // Re-render language-sensitive lists when the site language changes
 document.addEventListener('wbobc:langchange', (event) => {
   const lang = event.detail?.lang || 'en';
-  renderTimelineEvents(TIMELINE_EVENTS, lang);
-  renderCaseEvents(CASE_EVENTS, lang);
-  if (typeof applyFilters === 'function') applyFilters();
-  applyCaseSearch();
+  
+  // Add a subtle fade-out effect before re-rendering
+  const timelineList = document.querySelector('#timeline .stagger-list');
+  const caseList = document.querySelector('#cases .stagger-list');
+  
+  if (timelineList) timelineList.style.opacity = '0';
+  if (caseList) caseList.style.opacity = '0';
+  
+  setTimeout(() => {
+    renderTimelineEvents(TIMELINE_EVENTS, lang);
+    renderCaseEvents(CASE_EVENTS, lang);
+    if (typeof applyFilters === 'function') applyFilters();
+    applyCaseSearch();
+    
+    // Fade back in after rendering
+    setTimeout(() => {
+      if (timelineList) timelineList.style.opacity = '1';
+      if (caseList) caseList.style.opacity = '1';
+    }, 50);
+  }, 150);
 });
 
 // Scroll-triggered animation for timeline and litigation entries
