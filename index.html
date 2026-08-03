@@ -330,7 +330,7 @@
     </section>
 
     <section id="obc-basics" class="research report-section tab-panel" data-tab-panel="obc-basics" hidden>
-      <h2 class="section-heading">What OBC Means</h2>
+      <h2 class="section-heading" data-i18n="obcBasicsHeading">What OBC Means</h2>
       <p class="section-sub">OBC is a constitutional-administrative category for socially and educationally backward classes. It is not a religion quota, and it is not limited to Hindu caste names.</p>
 
       <div class="report-grid">
@@ -355,7 +355,7 @@
     </section>
 
     <section id="methods" class="research report-section tab-panel" data-tab-panel="methods" hidden>
-      <h2 class="section-heading">Scientific Methods for Determining Backwardness</h2>
+      <h2 class="section-heading" data-i18n="methodsHeading">Scientific Methods for Determining Backwardness</h2>
       <p class="section-sub">A fair OBC decision should be evidence-led: define the class, measure social and educational disadvantage, test representation in public institutions, publish the data trail, and periodically review whether the benefit is reaching the intended class.</p>
 
       <div class="report-grid">
@@ -423,7 +423,7 @@
         </table>
       </div>
 
-      <h2 class="section-heading">Why Caste Census and Departmental Data Matter</h2>
+      <h2 class="section-heading" data-i18n="censusDataHeading">Why Caste Census and Departmental Data Matter</h2>
       <p class="section-sub">A caste or class census is not useful because identity labels are magic. It is useful because policy needs denominators. Representation data is the numerator. Together they let the public ask whether reservation is proportionate, under-inclusive, over-inclusive, or captured.</p>
 
       <div class="framework-grid">
@@ -478,7 +478,7 @@
         </table>
       </div>
 
-      <h2 class="section-heading">Good Uses and Misuses of OBC Reservation</h2>
+      <h2 class="section-heading" data-i18n="goodUsesHeading">Good Uses and Misuses of OBC Reservation</h2>
       <div class="report-grid">
         <article class="report-card">
           <div class="report-meta">Good side</div>
@@ -505,7 +505,7 @@
     </section>
 
     <section id="reports" class="research report-section tab-panel" data-tab-panel="reports" hidden>
-      <h2 class="section-heading">Policy Reports & Backwardness Criteria</h2>
+      <h2 class="section-heading" data-i18n="reportsHeading">Policy Reports & Backwardness Criteria</h2>
       <p class="section-sub">These are not West Bengal notification files, but they explain the policy architecture used to understand OBC identification, Muslim OBCs, affirmative action, and evidence requirements.</p>
 
       <div class="report-grid">
@@ -750,7 +750,7 @@
     </section>
 
     <section id="entry-framework" class="research framework-section tab-panel" data-tab-panel="entry-framework" hidden>
-      <h2 class="section-heading">Framework for New & Missing Entries</h2>
+      <h2 class="section-heading" data-i18n="frameworkHeading">Framework for New & Missing Entries</h2>
       <p class="section-sub" data-i18n="frameworkSectionSub">Use this structure whenever a new PDF, court order, hearing notice, report, or missing source is added. The goal is to keep every entry searchable, source-linked, and auditable.</p>
 
       <div class="framework-grid">
@@ -832,7 +832,7 @@
 
 
     <section id="evidence" class="research tab-panel" data-tab-panel="evidence" hidden>
-      <h2 id="missing-records" class="section-heading">Completeness Audit</h2>
+      <h2 id="missing-records" class="section-heading" data-i18n="completenessAuditHeading">Completeness Audit</h2>
       <p class="section-sub">The local folders contain the core 2010, 2025, and 2026 notifications and a substantial public-hearing notice set. The remaining procedural gap is the West Bengal Commission for Backward Classes record behind the notices: benchmark-survey memos, class-wise advice reports, survey data, and later court records around the 2025 survey challenge.</p>
 
       <div class="research-grid">
@@ -850,7 +850,7 @@
         </div>
       </div>
 
-      <h2 id="public-hearings" class="section-heading">Public Hearings / Jana Shunani</h2>
+      <h2 id="public-hearings" class="section-heading" data-i18n="publicHearingsHeading">Public Hearings / Jana Shunani</h2>
       <p class="section-sub">The local PUBLIC HEARING folder now supplies a fuller Jana Shunani run from 29 April through 24 May 2025. The notices use Adivasi Bhavan, Premises No. 2221, Action Area 3A, Rajarhat, New Town, Kolkata-700160 as venue; visually read notices and text-extracted Bengali advertisements are listed below with source links.</p>
       <div class="table-wrap">
         <table>
@@ -868,7 +868,7 @@
         </table>
       </div>
 
-      <h2 class="section-heading">New Local Sources Checked</h2>
+      <h2 class="section-heading" data-i18n="newSourcesHeading">New Local Sources Checked</h2>
       <div class="table-wrap">
         <table>
           <thead>
@@ -4614,8 +4614,8 @@ let previousBodyOverflow = '';
 const HERO_CONTENT = {
   home: {
     eyebrow: 'West Bengal · Backward Classes Welfare Department · 1993–2026',
-    title: 'OBC Research Dashboard',
-    sub: 'A source-led record from the 1993 Commission Act through the 2026 notification and litigation record: timeline, OBC class status, extracted PDF text, hearings, policy reports, audit gaps, and local source links.',
+    titleKey: 'heroTitle',
+    subKey: 'heroSub',
     stats: [
       ['84', 'PDF sources bundled locally across notifications, hearings, reports, and litigation records.'],
       ['OBC List', 'Current 66-class list plus searchable source records.'],
@@ -4625,8 +4625,8 @@ const HERO_CONTENT = {
   },
   about: {
     eyebrow: 'About · Scope, method, and source care',
-    title: 'About the OBC Research Bundle',
-    sub: 'A source-led research desk for West Bengal OBC policy and litigation records. It is designed to make documents easier to find, compare, and verify.',
+    titleKey: 'aboutTitle',
+    subKey: 'aboutSub',
     stats: [
       ['Local', 'Relative document links work from a downloaded folder or GitHub Pages.'],
       ['Primary', 'Original notifications and court records should control over summaries.'],
@@ -4636,8 +4636,8 @@ const HERO_CONTENT = {
   },
   'obc-basics': {
     eyebrow: 'Concept · Class-specific backwardness',
-    title: 'What OBC Means',
-    sub: 'OBC is a constitutional-administrative category for socially and educationally backward classes. It is not a blanket religious label and it is not proved by a slogan.',
+    titleKey: 'obcBasicsHeading',
+    subKey: 'obcBasicsSub',
     stats: [
       ['Class', 'The relevant unit is a caste, sub-caste, occupation, or socially known backward class.'],
       ['Evidence', 'Backwardness requires social, educational, economic, and representation indicators.'],
@@ -4647,8 +4647,8 @@ const HERO_CONTENT = {
   },
   methods: {
     eyebrow: 'Method · Data, census, representation',
-    title: 'Scientific Backwardness Assessment',
-    sub: 'A data-based method tests population, social disadvantage, educational lag, economic vulnerability, inadequate representation, public hearing records, and outcome audits.',
+    titleKey: 'methodsHeading',
+    subKey: 'methodsSub',
     stats: [
       ['3', 'Core indicator groups: social, educational, and economic conditions.'],
       ['1', 'Representation test: whether the class is inadequately present in public institutions.'],
@@ -4658,8 +4658,8 @@ const HERO_CONTENT = {
   },
   reports: {
     eyebrow: 'Reports · Mandal, Sachar, West Bengal',
-    title: 'Policy Reports and Criteria',
-    sub: 'Context reports explain backwardness indicators, Muslim OBC evidence, affirmative action, and how state notifications should be read against broader data.',
+    titleKey: 'reportsHeading',
+    subKey: 'reportsSub',
     stats: [
       ['1980', 'Mandal Commission criteria and weighted indicators.'],
       ['2006', 'Sachar Committee evidence on Muslim socio-economic and educational conditions.'],
@@ -4669,8 +4669,8 @@ const HERO_CONTENT = {
   },
   timeline: {
     eyebrow: 'Timeline · Notifications and changes',
-    title: 'OBC Reservation and List Timeline',
-    sub: 'Trace the record from the 1993 Commission Act and founding notifications through the 2025 expansion attempt and the 18 May 2026 withdrawal/list reset.',
+    titleKey: 'timelineTitle',
+    subKey: 'timelineSub',
     stats: [
       ['1993', 'Commission Act and Rules establish the statutory foundation in the local bundle.'],
       ['2025', 'Expansion and sub-categorisation package later withdrawn.'],
@@ -4680,8 +4680,8 @@ const HERO_CONTENT = {
   },
   documents: {
     eyebrow: 'Source PDFs · Search extracted text',
-    title: 'Source PDF Text',
-    sub: 'Search notification numbers, dates, community names, statuses, summaries, and extracted text from the bundled PDF set.',
+    titleKey: 'documents.title',
+    subKey: 'documents.subtitle',
     stats: [
       ['56', 'PDF texts embedded with summaries.'],
       ['Text', 'Open preview modals without leaving the HTML file.'],
@@ -4691,8 +4691,8 @@ const HERO_CONTENT = {
   },
   evidence: {
     eyebrow: 'Hearings & gaps · Public notices and audit',
-    title: 'Public Hearings and Completeness Audit',
-    sub: 'Review the Jana Shunani notice table, missing records, original-source links, and procedural gaps behind the notification trail.',
+    titleKey: 'completenessAuditHeading',
+    subKey: 'evidenceSub',
     stats: [
       ['17', 'Hearing/public-notice PDFs bundled locally.'],
       ['29 Apr', 'Earliest 2025 hearing notice in the table.'],
@@ -4702,8 +4702,8 @@ const HERO_CONTENT = {
   },
   cases: {
     eyebrow: 'Litigation · Orders and procedural record',
-    title: 'West Bengal OBC Litigation Tracker',
-    sub: 'Follow the principal court records alongside the notification timeline. Each entry distinguishes a bundled primary record, a mirror, and a record that still needs an official copy.',
+    titleKey: 'cases.title',
+    subKey: 'casesSectionSub',
     stats: [
       ['2024', 'Calcutta High Court judgment bundled as a research copy.'],
       ['Local', 'Court records and court-text mirror prints are bundled with provenance labels.'],
@@ -4713,8 +4713,8 @@ const HERO_CONTENT = {
   },
   'obc-list': {
     eyebrow: 'OBC List · Notification 945-BCW',
-    title: 'OBC Class Status List',
-    sub: 'A dedicated lookup table for current, historical, affected, and withdrawn classes found in the bundled West Bengal OBC record.',
+    titleKey: 'obcList.title',
+    subKey: 'obcListSub',
     stats: [
       ['66', 'Classes listed in the current notification.'],
       ['7%', 'Reservation position stated for services and posts.'],
@@ -4724,8 +4724,8 @@ const HERO_CONTENT = {
   },
   'entry-framework': {
     eyebrow: 'Add record guide · Add and audit records',
-    title: 'New Record Guide',
-    sub: 'Use structured fields, evidence checks, status labels, and cross-links when adding new PDFs, orders, hearings, court records, reports, or missing sources.',
+    titleKey: 'frameworkHeading',
+    subKey: 'frameworkSub',
     stats: [
       ['Date', 'Use ISO dates and exact document numbers.'],
       ['Status', 'Track current, withdrawn, superseded, legacy, missing, and verification-needed.'],
@@ -4735,8 +4735,8 @@ const HERO_CONTENT = {
   },
   inventory: {
     eyebrow: 'Files · Local bundle inventory',
-    title: 'Document Inventory and Bundle Files',
-    sub: 'A file-by-file table of local PDFs, pages, timeline roles, manifests, and supporting bundle assets.',
+    titleKey: 'inventory.title',
+    subKey: 'inventorySub',
     stats: [
       ['PDF', 'Local source files are linked directly.'],
       ['JSON', 'Manifest files support migration or cloud replacement.'],
@@ -4962,8 +4962,17 @@ function tabForHash(hash) {
 function updateHero(tabName) {
   const content = HERO_CONTENT[tabName] || HERO_CONTENT.home;
   if (heroEyebrow) heroEyebrow.textContent = content.eyebrow;
-  if (heroTitle) heroTitle.textContent = content.title;
-  if (heroSub) heroSub.textContent = content.sub;
+  
+  // Use translation keys for title and subtitle to support language switching
+  if (heroTitle && content.titleKey) {
+    heroTitle.textContent = window.WBOBCI18n ? window.WBOBCI18n.t(content.titleKey) : content.titleKey;
+    heroTitle.setAttribute('data-i18n', content.titleKey);
+  }
+  if (heroSub && content.subKey) {
+    heroSub.textContent = window.WBOBCI18n ? window.WBOBCI18n.t(content.subKey) : content.subKey;
+    heroSub.setAttribute('data-i18n', content.subKey);
+  }
+  
   heroStatEls.forEach((item, index) => {
     const stat = content.stats[index] || ['', ''];
     if (item.value) item.value.textContent = stat[0];
