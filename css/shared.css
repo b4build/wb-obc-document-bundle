@@ -643,6 +643,241 @@ tr:hover td { background: var(--card-bg); }
   .lift:hover, .lift:focus-visible { transform: none; }
 }
 
+/* Responsive Tables - Card View on Mobile */
+@media (max-width: 768px) {
+  /* Timeline & Litigation Tables -> Cards */
+  .table-wrap table,
+  .table-wrap thead,
+  .table-wrap tbody,
+  .table-wrap th,
+  .table-wrap td,
+  .table-wrap tr {
+    display: block;
+  }
+  
+  .table-wrap thead {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  
+  .table-wrap tr {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .table-wrap td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    text-align: right;
+    min-height: 48px;
+  }
+  
+  .table-wrap td:last-child {
+    border-bottom: none;
+  }
+  
+  .table-wrap td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
+  
+  /* OBC List - Horizontal Scroll with Sticky First Column */
+  .obc-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+  
+  .obc-table-wrap::after {
+    content: '← Scroll →';
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    background: var(--primary);
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.75rem;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+  
+  .obc-table-wrap table {
+    min-width: 100%;
+  }
+  
+  .obc-table-wrap th:first-child,
+  .obc-table-wrap td:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--card-bg);
+    z-index: 10;
+    min-width: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Touch-friendly buttons and inputs */
+  button,
+  input[type="text"],
+  input[type="search"],
+  select,
+  a.btn {
+    min-height: 48px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Larger tap targets for nav */
+  .site-nav a,
+  .nav-group-toggle,
+  .language-switch a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Smart Sticky Header - Hide on scroll down, show on scroll up */
+.site-header {
+  transition: transform 0.3s ease;
+}
+
+.site-header.header-hidden {
+  transform: translateY(-100%);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background: var(--primary-light);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* Mobile Drawer Navigation Improvements */
+@media (max-width: 900px) {
+  .site-nav {
+    background: var(--bg);
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+  }
+  
+  .site-nav.open {
+    right: 0;
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from { right: -100%; }
+    to { right: 0; }
+  }
+  
+  .nav-overlay.open {
+    backdrop-filter: blur(4px);
+  }
+  
+  /* Better spacing in mobile nav */
+  .site-nav > * {
+    margin-bottom: 0.5rem;
+  }
+  
+  .nav-group-items {
+    margin-left: 1rem;
+    border-left: 2px solid var(--border);
+    padding-left: 1rem;
+  }
+}
+
+/* Popup Mobile Optimization */
+@media (max-width: 600px) {
+  .contribute-popup {
+    max-width: 95vw;
+    padding: 1.5rem;
+    max-height: 85vh;
+  }
+  
+  .contribute-popup h2 {
+    font-size: 1.25rem;
+  }
+  
+  .popup-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
+    transition: none;
+  }
+  
+  .scroll-to-top {
+    transition: opacity 0.2s, visibility 0.2s;
+  }
+  
+  .stagger-in > * {
+    opacity: 1;
+    animation: none;
+  }
+  
+  .lift:hover,
+  .lift:focus-visible {
+    transform: none;
+  }
+}
+
 /* Data load warning */
 .data-load-warning {
   padding: 1rem; background: #fef3c7; border: 1px solid #f59e0b;
