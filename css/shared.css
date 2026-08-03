@@ -296,11 +296,19 @@ body.lang-bn {
 .table-wrap {
   overflow-x: auto; margin: 2rem 0;
   border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 table { width: 100%; border-collapse: collapse; min-width: 700px; }
 th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
-th { background: var(--card-bg); font-weight: 600; font-size: 0.875rem; }
-td { font-size: 0.9375rem; }
+th { 
+  background: var(--card-bg); 
+  font-weight: 600; 
+  font-size: 0.875rem;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+td { font-size: 0.9375rem; color: var(--text); }
 tr:last-child td { border-bottom: none; }
 tr:hover td { background: var(--card-bg); }
 
@@ -330,7 +338,7 @@ tr:hover td { background: var(--card-bg); }
 .contribute-popup-overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.6);
   z-index: 9999; display: flex; align-items: center; justify-content: center;
-  padding: 1.5rem; opacity: 0; animation: fadeInOverlay 0.3s forwards;
+  padding: 1.5rem; opacity: 0; animation: fadeInOverlay 0.3s ease-out forwards;
 }
 @keyframes fadeInOverlay { to { opacity: 1; } }
 
@@ -338,17 +346,20 @@ tr:hover td { background: var(--card-bg); }
   background: var(--bg); max-width: 480px; width: 100%;
   border-radius: var(--radius-lg); padding: 2rem;
   position: relative; box-shadow: var(--shadow-lg);
-  transform: scale(0.9); animation: fadeInPopup 0.3s 0.1s forwards;
+  transform: scale(0.9) translateY(10px); 
+  animation: fadeInPopup 0.3s ease-out 0.1s forwards;
+  max-height: 90vh;
+  overflow-y: auto;
 }
-@keyframes fadeInPopup { to { transform: scale(1); } }
+@keyframes fadeInPopup { to { transform: scale(1) translateY(0); } }
 
 .popup-close {
   position: absolute; top: 1rem; right: 1rem;
   background: none; border: none; font-size: 1.5rem;
   color: var(--muted); cursor: pointer; padding: 0.25rem;
-  line-height: 1; transition: color 0.2s;
+  line-height: 1; transition: color 0.2s, transform 0.2s;
 }
-.popup-close:hover { color: var(--text); }
+.popup-close:hover { color: var(--text); transform: scale(1.1); }
 
 .popup-icon {
   width: 64px; height: 64px; margin: 0 auto 1.5rem;
@@ -524,16 +535,22 @@ tr:hover td { background: var(--card-bg); }
   color: var(--muted);
 }
 
+/* Data load warning */
+.data-load-warning {
+  padding: 1rem; background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); margin-bottom: 1.5rem; color: var(--text);
+}
+
 /* Litigation note jump callout */
 .litigation-note-jump {
-  background: #eff6ff;
-  border-left: 4px solid #3b82f6;
+  background: var(--card-bg);
+  border-left: 4px solid var(--primary);
   padding: 1rem;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
   margin: 1.5rem 0;
 }
 .litigation-note-jump a {
-  color: #2563eb;
+  color: var(--primary);
   text-decoration: underline;
 }
 
@@ -543,6 +560,38 @@ tr:hover td { background: var(--card-bg); }
 }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll-triggered fade-in for timeline and litigation entries */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation for list items */
+.stagger-list > li {
+  opacity: 0;
+  animation: fadeInList 0.4s ease-out forwards;
+}
+.stagger-list > li:nth-child(1) { animation-delay: 0.05s; }
+.stagger-list > li:nth-child(2) { animation-delay: 0.1s; }
+.stagger-list > li:nth-child(3) { animation-delay: 0.15s; }
+.stagger-list > li:nth-child(4) { animation-delay: 0.2s; }
+.stagger-list > li:nth-child(5) { animation-delay: 0.25s; }
+.stagger-list > li:nth-child(6) { animation-delay: 0.3s; }
+.stagger-list > li:nth-child(7) { animation-delay: 0.35s; }
+.stagger-list > li:nth-child(8) { animation-delay: 0.4s; }
+.stagger-list > li:nth-child(9) { animation-delay: 0.45s; }
+.stagger-list > li:nth-child(10) { animation-delay: 0.5s; }
+
+@keyframes fadeInList {
+  from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
