@@ -297,25 +297,30 @@
       </div>
     </section>
 
-    <section id="about" class="research about-section tab-panel" data-tab-panel="about" hidden>
-      <p class="panel-kicker">About this project</p>
-      <h2 class="section-heading">A source-led record of West Bengal OBC policy</h2>
-      <p class="section-sub">This independent research bundle brings together publicly available notifications, statutes, public-hearing notices, policy reports, and selected court records concerning Other Backward Classes (OBCs) in West Bengal.</p>
+<section id="about" class="research about-section tab-panel" data-tab-panel="about" hidden>
+      <p class="panel-kicker" data-i18n="aboutPanelKicker">About this project</p>
+      <h2 class="section-heading" data-i18n="aboutTitle">A source-led record of West Bengal OBC policy</h2>
+      <p class="section-sub" data-i18n="aboutSub">This independent research bundle brings together publicly available notifications, statutes, public-hearing notices, policy reports, and selected court records concerning Other Backward Classes (OBCs) in West Bengal.</p>
 
       <div class="report-grid">
-        <article class="report-card"><div class="report-meta">Purpose</div><h3>Make the record easier to examine</h3><p>The project is designed as a chronological research desk. It helps readers trace a claim from a timeline entry to a notification, a hearing notice, a policy source, or a court record without treating summaries as a substitute for the original document.</p></article>
-        <article class="report-card"><div class="report-meta">Scope</div><h3>Policy, process, and litigation</h3><p>The bundle covers the statutory framework, State OBC-list changes, reservation and roster records, the 2025–26 notification sequence, public hearings, and a growing litigation tracker. It does not claim to be a complete government archive.</p></article>
-        <article class="report-card"><div class="report-meta">Use with care</div><h3>Research aid, not legal advice</h3><p>Some records are text-extracted or copied from publicly accessible mirrors. Court status, operative directions, and notification validity should always be confirmed from the issuing authority or the relevant court.</p></article>
+        <article class="report-card"><div class="report-meta" data-i18n="aboutCard1Meta">Purpose</div><h3 data-i18n="aboutCard1Title">Make the record easier to examine</h3><p data-i18n="aboutCard1Desc">The project is designed as a chronological research desk. It helps readers trace a claim from a timeline entry to a notification, a hearing notice, a policy source, or a court record without treating summaries as a substitute for the original document.</p></article>
+        <article class="report-card"><div class="report-meta" data-i18n="aboutCard2Meta">Scope</div><h3 data-i18n="aboutCard2Title">Policy, process, and litigation</h3><p data-i18n="aboutCard2Desc">The bundle covers the statutory framework, State OBC-list changes, reservation and roster records, the 2025–26 notification sequence, public hearings, and a growing litigation tracker. It does not claim to be a complete government archive.</p></article>
+        <article class="report-card"><div class="report-meta" data-i18n="aboutCard3Meta">Use with care</div><h3 data-i18n="aboutCard3Title">Research aid, not legal advice</h3><p data-i18n="aboutCard3Desc">Some records are text-extracted or copied from publicly accessible mirrors. Court status, operative directions, and notification validity should always be confirmed from the issuing authority or the relevant court.</p></article>
       </div>
 
-      <div class="table-wrap about-table"><table><thead><tr><th>How records are handled</th><th>What this means</th></tr></thead><tbody>
-        <tr><td>Local source files</td><td>Relative links keep the site usable from a downloaded folder or GitHub Pages.</td></tr>
-        <tr><td>Source labels</td><td>Entries distinguish official downloads, scanned/text-extracted records, and mirror copies that need verification.</td></tr>
-        <tr><td>Large case bundles</td><td>Very large filings are catalogued but not added by default; this keeps Git history and page delivery practical.</td></tr>
-        <tr><td>Corrections and additions</td><td>Use the Framework tab’s fields to record date, authority, status, source URL, local file, and affected notification/case.</td></tr>
+      <div class="table-wrap about-table"><table><thead><tr><th data-i18n="aboutTableHeader1">How records are handled</th><th data-i18n="aboutTableHeader2">What this means</th></tr></thead><tbody>
+        <tr><td data-i18n="aboutTableRow1Cell1">Local source files</td><td data-i18n="aboutTableRow1Cell2">Relative links keep the site usable from a downloaded folder or GitHub Pages.</td></tr>
+        <tr><td data-i18n="aboutTableRow2Cell1">Source labels</td><td data-i18n="aboutTableRow2Cell2">Entries distinguish official downloads, scanned/text-extracted records, and mirror copies that need verification.</td></tr>
+        <tr><td data-i18n="aboutTableRow3Cell1">Large case bundles</td><td data-i18n="aboutTableRow3Cell2">Very large filings are catalogued but not added by default; this keeps Git history and page delivery practical.</td></tr>
+        <tr><td data-i18n="aboutTableRow4Cell1">Corrections and additions</td><td data-i18n="aboutTableRow4Cell2">Use the Framework tab's fields to record date, authority, status, source URL, local file, and affected notification/case.</td></tr>
       </tbody></table></div>
 
-      <div class="callout"><strong>Source principle:</strong> where this site summarizes a record, open the linked document and treat the primary source as controlling. The project does not endorse any political position or make findings about any community.</div>
+      <div class="callout"><strong data-i18n="aboutCalloutStrong">Source principle:</strong> <span data-i18n="aboutCalloutText">where this site summarizes a record, open the linked document and treat the primary source as controlling. The project does not endorse any political position or make findings about any community.</span></div>
+
+      <div class="maintainer-section" style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);">
+        <h3 data-i18n="whoMaintainsTitle">Who maintains this?</h3>
+        <p data-i18n="whoMaintainsText">A group of volunteers created and maintains this project lazily in their free time. There are many things to add. We plan to add all aspects of OBC reservation. Currently we have only added notifications and a few litigation related to WB OBC. We plan to add all. It runs on free vercel plan. We expect more people to come join us. Contribute us by providing old and new information that we may have missed.</p>
+      </div>
     </section>
 
     <section id="obc-basics" class="research report-section tab-panel" data-tab-panel="obc-basics" hidden>
@@ -4012,10 +4017,10 @@ function renderTimelineEvents(events) {
   }
 
   const lang = getActiveLang();
-  timeline.innerHTML = events.map(event => {
+  timeline.innerHTML = '<ul class="stagger-list">' + events.map(event => {
     const attrs = [
       event.id ? `id="${escapeAttr(event.id)}"` : '',
-      'class="event fade-in"',
+      'class="event scroll-fade-in"',
       event.type ? `data-type="${escapeAttr(event.type)}"` : '',
       event.confidence ? `data-confidence="${escapeAttr(event.confidence)}"` : '',
       event.date && /^\d{4}-\d{2}-\d{2}$/.test(event.date) ? `data-date="${escapeAttr(event.date)}"` : '',
@@ -4023,7 +4028,10 @@ function renderTimelineEvents(events) {
     ].filter(Boolean).join(' ');
     const body = (lang === 'bn' && event.html_bn) ? event.html_bn : (event.html || '');
     return `<li ${attrs}>${body}</li>`;
-  }).join('');
+  }).join('') + '</ul>';
+  
+  // Initialize scroll animations
+  initScrollAnimations();
 }
 
 function renderCaseEvents(events) {
@@ -4038,11 +4046,14 @@ function renderCaseEvents(events) {
   }
 
   const lang = getActiveLang();
-  timeline.innerHTML = events.map(event => {
+  timeline.innerHTML = '<ul class="stagger-list">' + events.map(event => {
     const id = event.id ? ` id="${escapeAttr(event.id)}"` : '';
     const body = (lang === 'bn' && event.html_bn) ? event.html_bn : (event.html || '');
-    return `<li${id} class="case-event fade-in">${body}</li>`;
-  }).join('');
+    return `<li${id} class="case-event scroll-fade-in">${body}</li>`;
+  }).join('') + '</ul>';
+  
+  // Initialize scroll animations
+  initScrollAnimations();
 }
 
 function updateCaseStats(events) {
@@ -4082,12 +4093,40 @@ applyCaseSearch();
 showDataLoadWarning();
 
 // Re-render language-sensitive lists when the site language changes
-document.addEventListener('wbobc:langchange', () => {
-  renderTimelineEvents(TIMELINE_EVENTS);
-  renderCaseEvents(CASE_EVENTS);
+document.addEventListener('wbobc:langchange', (event) => {
+  const lang = event.detail?.lang || 'en';
+  renderTimelineEvents(TIMELINE_EVENTS, lang);
+  renderCaseEvents(CASE_EVENTS, lang);
   if (typeof applyFilters === 'function') applyFilters();
   applyCaseSearch();
 });
+
+// Scroll-triggered animation for timeline and litigation entries
+function initScrollAnimations() {
+  if (typeof IntersectionObserver === 'undefined') {
+    // Fallback: show all items immediately
+    document.querySelectorAll('.scroll-fade-in').forEach(el => {
+      el.classList.add('visible');
+    });
+    return;
+  }
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  document.querySelectorAll('.scroll-fade-in:not(.visible)').forEach(el => {
+    observer.observe(el);
+  });
+}
 
 function titleCase(value) {
   return String(value || '').replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
