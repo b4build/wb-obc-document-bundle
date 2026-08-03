@@ -1,4 +1,4 @@
-// i18n - Internationalization module for WB OBC Documentation
+// i18n - Internationalization module for WB OBC Archive
 (function() {
   'use strict';
 
@@ -56,6 +56,7 @@
     if (lang !== 'en' && lang !== 'bn') return;
     currentLang = lang;
     updatePageContent();
+    document.dispatchEvent(new CustomEvent('wbobc:langchange', { detail: { lang } }));
     
     // Update language switcher UI
     document.querySelectorAll('.language-switch [aria-current]').forEach(el => {
@@ -104,6 +105,7 @@
 
     // Initial render
     updatePageContent();
+    document.dispatchEvent(new CustomEvent('wbobc:langchange', { detail: { lang: currentLang } }));
   }
 
   // Expose globally

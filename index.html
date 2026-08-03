@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="West Bengal OBC Documents Timeline - A consolidated view of notifications, court orders, and policy documents from 1993-2026">
-  <meta name="theme-color" content="#1a3a5c">
-  <title>West Bengal OBC Documents Timeline</title>
+  <meta name="description" content="WB OBC Archive - A consolidated archive of West Bengal OBC notifications, court orders, hearings, source PDFs, and policy documents from 1993-2026">
+  <meta name="theme-color" content="#10253f">
+  <title>WB OBC Archive</title>
   <link rel="manifest" href="pwa-manifest.json">
   <link rel="stylesheet" href="css/shared.css">
   <script src="js/i18n.js" defer></script>
@@ -30,7 +30,7 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="site-header-inner">
-      <span class="site-logo" data-i18n="siteLogo">WB OBC Documentation</span>
+      <span class="site-logo" data-i18n="siteLogo">WB OBC Archive</span>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -76,11 +76,11 @@
       <p class="hero-eyebrow" id="hero-eyebrow" data-i18n="heroEyebrow">West Bengal · Backward Classes Welfare Department · 1993–2026</p>
       <h1 id="hero-title" data-i18n="heroTitle">OBC Reservation and List Timeline</h1>
       <p class="hero-sub" id="hero-sub" data-i18n="heroSub">A consolidated view of the PDFs in <strong>OBC OLD</strong> and <strong>OBC 2025</strong>, starting with the 1993 Commission Act and continuing through the 2026 notification and litigation record.</p>
-      <div class="hero-stats">
-        <div class="hero-stat"><strong id="hero-stat-1-value" data-i18n="heroStat1Value">84</strong><span id="hero-stat-1-label" data-i18n="heroStat1Label">PDF sources bundled across notifications, hearings, reports, and court records.</span></div>
-        <div class="hero-stat"><strong id="hero-stat-2-value" data-i18n="heroStat2Value">66</strong><span id="hero-stat-2-label" data-i18n="heroStat2Label">Classes listed in Notification No. 945-BCW/MR-23/2026.</span></div>
-        <div class="hero-stat"><strong id="hero-stat-3-value" data-i18n="heroStat3Value">7%</strong><span id="hero-stat-3-label" data-i18n="heroStat3Label">Reservation position stated in the 18 May 2026 list notification.</span></div>
-        <div class="hero-stat"><strong id="hero-stat-4-value" data-i18n="heroStat4Value">5</strong><span id="hero-stat-4-label" data-i18n="heroStat4Label">Priority evidence gaps and follow-ups tracked in the audit.</span></div>
+      <div class="hero-stats stagger-in">
+        <div class="hero-stat lift"><strong id="hero-stat-1-value" data-i18n="heroStat1Value">84</strong><span id="hero-stat-1-label" data-i18n="heroStat1Label">PDF sources bundled across notifications, hearings, reports, and court records.</span></div>
+        <div class="hero-stat lift"><strong id="hero-stat-2-value" data-i18n="heroStat2Value">66</strong><span id="hero-stat-2-label" data-i18n="heroStat2Label">Classes listed in Notification No. 945-BCW/MR-23/2026.</span></div>
+        <div class="hero-stat lift"><strong id="hero-stat-3-value" data-i18n="heroStat3Value">7%</strong><span id="hero-stat-3-label" data-i18n="heroStat3Label">Reservation position stated in the 18 May 2026 list notification.</span></div>
+        <div class="hero-stat lift"><strong id="hero-stat-4-value" data-i18n="heroStat4Value">5</strong><span id="hero-stat-4-label" data-i18n="heroStat4Label">Priority evidence gaps and follow-ups tracked in the audit.</span></div>
       </div>
     </div>
   </section>
@@ -113,18 +113,18 @@
         <h2 data-i18n="homePanelTitle">Research Home</h2>
         <p data-i18n="homePanelIntro">Use this single HTML as a source-led research desk. It connects statutory background, notifications, certificate and roster records, hearing notices, policy reports, litigation, and the PDFs that support each claim.</p>
       </div>
-      <section class="home-brief" aria-label="How to use this site">
+      <section class="home-brief stagger-in" aria-label="How to use this site">
         <article><strong data-i18n="homeStep1Title">1. Start with the question</strong><span data-i18n="homeStep1Desc">Search a community, notification, case number, date, or legal term.</span></article>
         <article><strong data-i18n="homeStep2Title">2. Follow the record</strong><span data-i18n="homeStep2Desc">Use Timeline for policy changes and Litigation for court orders and procedural status.</span></article>
         <article><strong data-i18n="homeStep3Title">3. Open the source</strong><span data-i18n="homeStep3Desc">Every summary should lead to a bundled PDF or a clearly labelled original source link.</span></article>
       </section>
-      <div class="source-status-grid">
-        <a class="source-status" href="#documents"><strong data-i18n="homeStatus1Num">84</strong><span data-i18n="homeStatus1Desc">PDF sources bundled locally across notifications, hearings, reports, and litigation records</span></a>
-        <a class="source-status" href="#public-hearings"><strong data-i18n="homeStatus2Num">17</strong><span data-i18n="homeStatus2Desc">hearing / public notice PDFs bundled locally</span></a>
-        <a class="source-status" href="#reports"><strong data-i18n="homeStatus3Num">6</strong><span data-i18n="homeStatus3Desc">policy/process sources bundled for context</span></a>
-        <a class="source-status" href="#missing-records"><strong data-i18n="homeStatus4Num">5</strong><span data-i18n="homeStatus4Desc">priority evidence gaps and follow-ups tracked</span></a>
-        <a class="source-status" href="obc_pdf_manifest.json"><strong data-i18n="homeStatus5Num">JSON</strong><span data-i18n="homeStatus5Desc">renamed PDF manifest for local or cloud use</span></a>
-        <a class="source-status" href="https://github.com/b4build/wb-obc-document-bundle" target="_blank" rel="noreferrer"><strong data-i18n="homeStatus6Num">GitHub</strong><span data-i18n="homeStatus6Desc">Repository for the OBC document bundle</span></a>
+      <div class="source-status-grid stagger-in">
+        <a class="source-status lift" href="#documents"><strong data-i18n="homeStatus1Num">84</strong><span data-i18n="homeStatus1Desc">PDF sources bundled locally across notifications, hearings, reports, and litigation records</span></a>
+        <a class="source-status lift" href="#public-hearings"><strong data-i18n="homeStatus2Num">17</strong><span data-i18n="homeStatus2Desc">hearing / public notice PDFs bundled locally</span></a>
+        <a class="source-status lift" href="#reports"><strong data-i18n="homeStatus3Num">6</strong><span data-i18n="homeStatus3Desc">policy/process sources bundled for context</span></a>
+        <a class="source-status lift" href="#missing-records"><strong data-i18n="homeStatus4Num">5</strong><span data-i18n="homeStatus4Desc">priority evidence gaps and follow-ups tracked</span></a>
+        <a class="source-status lift" href="obc_pdf_manifest.json"><strong data-i18n="homeStatus5Num">JSON</strong><span data-i18n="homeStatus5Desc">renamed PDF manifest for local or cloud use</span></a>
+        <a class="source-status lift" href="https://github.com/b4build/wb-obc-document-bundle" target="_blank" rel="noreferrer"><strong data-i18n="homeStatus6Num">GitHub</strong><span data-i18n="homeStatus6Desc">Repository for the OBC document bundle</span></a>
       </div>
 
       <div id="query-hub" class="query-hub" aria-label="OBC query hub">
@@ -156,18 +156,18 @@
         </div>
       </div>
 
-      <div class="home-layout">
-        <article class="home-card">
+      <div class="home-layout stagger-in">
+        <article class="home-card lift accent-blue">
           <h3 data-i18n="homeCard1Title">Documented position in this bundle</h3>
           <p data-i18n="homeCard1Desc">Notification No. 944-BCW/MR-23/2026 withdraws the 2025 package. Notification No. 945-BCW/MR-23/2026 lists 66 classes and states the 7% reservation position. Litigation can affect implementation, so read the linked case record before relying on a summary.</p>
           <p><a href="#evt-2026-944" data-i18n="homeCard1Link1">Open withdrawal entry</a> · <a href="#evt-2026-945" data-i18n="homeCard1Link2">Open current list entry</a></p>
         </article>
-        <article class="home-card">
+        <article class="home-card lift accent-gold">
           <h3 data-i18n="homeCard2Title">Policy Basis</h3>
           <p data-i18n="homeCard2Desc">Use the Mandal, Sachar, and West Bengal Muslim OBC reports to understand backwardness criteria, Muslim OBC context, and evidence requirements.</p>
           <p><a href="#reports" data-i18n="homeCard2Link1">Open reports</a> · <a href="https://raw.githubusercontent.com/b4build/wb-obc-document-bundle/main/muslim_obc_status.html" target="_blank" rel="noreferrer" data-i18n="homeCard2Link2">Muslim OBC note</a></p>
         </article>
-        <article class="home-card">
+        <article class="home-card lift accent-green">
           <h3 data-i18n="homeCard3Title">What remains to verify</h3>
           <p data-i18n="homeCard3Desc">The strongest missing layer is the Commission record behind the 2025 hearing and survey process: class-wise advice, survey data, and benchmark memos.</p>
           <p><a href="#missing-records" data-i18n="homeCard3Link1">Open audit</a> · <a href="#public-hearings" data-i18n="homeCard3Link2">Open hearing table</a></p>
@@ -2112,7 +2112,7 @@ main {
 
 .timeline {
   position: relative;
-  margin: 0;
+  margin: -4px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -2132,7 +2132,11 @@ main {
   grid-template-columns: 94px 1fr;
   gap: 44px;
   position: relative;
-  margin: 0 0 16px;
+  margin: 0 0 14px;
+}
+
+.timeline .event:first-child .card {
+  margin-top: 0;
 }
 
 .date {
@@ -2915,8 +2919,8 @@ tr:last-child td {
   body:not([data-active-tab="home"]) .hero {
     padding: 24px 0 26px;
     background:
-      radial-gradient(circle at 92% 12%, rgba(33,130,91,.55) 0, transparent 30%),
-      linear-gradient(135deg, #102441 0%, #123a5b 52%, #0a6b7b 100%);
+      radial-gradient(circle at 92% 12%, rgba(225, 181, 88, .2) 0, transparent 30%),
+      linear-gradient(135deg, #10243e 0%, #143957 62%, #0f6269 100%);
   }
 
   body:not([data-active-tab="home"]) .hero-eyebrow {
@@ -2946,7 +2950,7 @@ tr:last-child td {
     padding: 12px 12px 11px;
     border-color: rgba(255,255,255,.2);
     border-left-color: #ffc857;
-    background: linear-gradient(145deg, rgba(10,32,55,.76), rgba(8,86,104,.62));
+    background: rgba(13, 43, 68, .78);
     box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 10px 22px rgba(6,20,35,.18);
   }
 
@@ -2988,7 +2992,7 @@ tr:last-child td {
   .obc-list-toolbar,
   .doc-toolbar {
     padding: 14px;
-    background: linear-gradient(145deg, #ffffff, #e8f3f1);
+    background: #ffffff;
     border: 1px solid #c6dbe1;
     border-radius: 14px;
     box-shadow: 0 12px 28px rgba(17,37,63,.08);
@@ -2998,8 +3002,7 @@ tr:last-child td {
   .framework-card,
   .research-card,
   .corpus-overview article {
-    background:
-      linear-gradient(135deg, rgba(255,248,232,.94), rgba(242,250,248,.96));
+    background: #ffffff;
     border-color: #c7d9df;
     box-shadow: 0 10px 24px rgba(17,37,63,.09);
   }
@@ -3008,8 +3011,7 @@ tr:last-child td {
   .framework-card:nth-child(2n),
   .research-card:nth-child(2n),
   .corpus-overview article:nth-child(2n) {
-    background:
-      linear-gradient(135deg, rgba(234,246,252,.96), rgba(255,251,239,.94));
+    background: #f8fbfc;
   }
 
   .obc-list-toolbar label span {
@@ -3064,9 +3066,7 @@ tr:last-child td {
     position: relative;
     overflow: hidden;
     padding: 0;
-    background:
-      linear-gradient(180deg, rgba(255,255,255,.96), rgba(248,252,251,.96)),
-      linear-gradient(90deg, #ffd166, #2a9d8f);
+    background: #ffffff;
     border: 1px solid #c7d9e0;
     border-radius: 15px;
     box-shadow: 0 10px 24px rgba(17,37,63,.11);
@@ -3077,7 +3077,7 @@ tr:last-child td {
     position: absolute;
     inset: 0 auto 0 0;
     width: 5px;
-    background: linear-gradient(180deg, #ffc857, #2a9d8f);
+    background: #c4912e;
   }
 
   .table-wrap td {
@@ -3093,7 +3093,7 @@ tr:last-child td {
   }
 
   .table-wrap td:nth-child(odd) {
-    background: rgba(232,244,243,.46);
+    background: #f8fbfc;
   }
 
   .table-wrap td:last-child {
@@ -3112,7 +3112,7 @@ tr:last-child td {
   }
 
   .table-wrap td:first-child {
-    background: linear-gradient(90deg, rgba(255,244,219,.88), rgba(255,255,255,.18));
+    background: #fffaf0;
     color: #071f3b;
     font-weight: 760;
   }
@@ -3394,6 +3394,360 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSyst
   }
 }
 
+/* Shared visual motion and surface system. Content remains data-driven; these
+   rules style the existing reusable components across every tab. */
+:root {
+  --surface-gradient: linear-gradient(145deg, #ffffff 0%, #f7fafb 100%);
+  --surface-gradient-cool: linear-gradient(145deg, #f8fbfc 0%, #eef6f5 100%);
+  --accent-gradient: linear-gradient(120deg, #b24c35 0%, #c18b32 52%, #147a73 100%);
+  --blue-gradient: linear-gradient(135deg, #10253f 0%, #173f5f 58%, #126b70 100%);
+  --table-head: #f6f9fb;
+  --table-head-accent: #dfeaf0;
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255, 201, 98, .16), transparent 22rem),
+    radial-gradient(circle at 92% 42%, rgba(27, 134, 125, .11), transparent 26rem),
+    var(--paper);
+}
+
+.site-header {
+  background: rgba(12, 29, 49, .96);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  backdrop-filter: blur(18px);
+}
+
+.site-logo {
+  color: #f2d38b;
+  font-size: 13px;
+  letter-spacing: .05em;
+}
+
+.hero {
+  background: var(--blue-gradient);
+  background-size: 180% 180%;
+  animation: gradient-drift 18s ease-in-out infinite alternate;
+}
+
+.hero::before {
+  opacity: .7;
+  background:
+    radial-gradient(circle at 76% 15%, rgba(255, 207, 105, .18), transparent 17rem),
+    repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255,255,255,.025) 40px, rgba(255,255,255,.025) 41px);
+}
+
+.hero-eyebrow { color: #ffda83; }
+.hero h1 { text-shadow: 0 8px 28px rgba(4, 16, 30, .24); }
+.hero-sub { color: #d9e8eb; }
+
+.hero-stat,
+.home-intro,
+.home-brief article,
+.source-status,
+.home-card,
+.form-card,
+.query-hub,
+.report-card,
+.framework-card,
+.research-card,
+.template-box,
+.card,
+.case-event > div,
+.corpus-overview article,
+.table-wrap,
+.preview-link,
+.metric {
+  background: var(--surface-gradient);
+  border-color: rgba(119, 157, 174, .42);
+  box-shadow: 0 12px 30px rgba(17, 37, 63, .075), inset 0 1px 0 rgba(255,255,255,.82);
+}
+
+.hero-stat {
+  background: linear-gradient(145deg, rgba(10, 35, 57, .9), rgba(19, 104, 112, .72));
+  border-color: rgba(255,255,255,.2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 12px 28px rgba(3, 19, 35, .18);
+}
+
+.hero-stat strong { color: #ffdda0; }
+.hero-stat span { color: #d9e8eb; }
+
+.home-intro,
+.query-hub,
+.table-wrap,
+.research,
+.inventory {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-intro::before,
+.query-hub::before,
+.research::before,
+.inventory::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: var(--accent-gradient);
+  background-size: 180% 100%;
+  animation: gradient-drift 12s ease-in-out infinite alternate;
+}
+
+.lift {
+  transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease, border-color .28s ease;
+}
+
+.lift:hover,
+.form-card:hover,
+.report-card:hover,
+.framework-card:hover,
+.research-card:hover,
+.home-brief article:hover,
+.source-status:hover {
+  transform: translateY(-5px);
+  border-color: rgba(31, 123, 124, .62);
+  box-shadow: 0 18px 36px rgba(17, 37, 63, .14), inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.hero-stat:hover {
+  transform: translateY(-4px) scale(1.015);
+  border-color: rgba(255, 216, 126, .65);
+  background: linear-gradient(145deg, rgba(19, 62, 86, .88), rgba(18, 124, 119, .64));
+}
+
+.source-status strong,
+.report-meta,
+.panel-kicker,
+.home-card h3,
+.form-card h4 a {
+  background: var(--accent-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.tab-link,
+.query-actions a,
+.jump-nav a,
+.filter-btn,
+button,
+.doc-actions a,
+.doc-actions button,
+.pdf-link {
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.tab-link:hover,
+.tab-link.active,
+.query-actions a:hover,
+.jump-nav a:hover,
+.filter-btn:hover,
+button:hover,
+.doc-actions a:hover,
+.doc-actions button:hover,
+.pdf-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(17, 37, 63, .13);
+}
+
+.tab-link.active,
+.filter-btn.active,
+button.active {
+  background: var(--blue-gradient);
+  border-color: transparent;
+}
+
+.search-input:focus,
+.doc-status-filter:focus {
+  border-color: #1b817b;
+  box-shadow: 0 0 0 4px rgba(27, 129, 123, .14), 0 8px 20px rgba(17,37,63,.08);
+  outline: none;
+}
+
+th {
+  background: var(--table-head);
+  border-bottom: 1px solid var(--table-head-accent);
+  color: #16304a;
+}
+
+.table-wrap tbody tr {
+  transition: background .2s ease, box-shadow .2s ease;
+}
+
+.table-wrap tbody tr:hover td {
+  background: #f8fbfc;
+}
+
+.timeline::before {
+  background: linear-gradient(180deg, #f0bd56, #2b958a, #bc6352);
+  background-size: 100% 180%;
+  animation: line-flow 9s ease-in-out infinite;
+}
+
+.event .card { animation: reveal-up .55s both; }
+.event:nth-child(2) .card { animation-delay: .04s; }
+.event:nth-child(3) .card { animation-delay: .08s; }
+.event:nth-child(4) .card { animation-delay: .12s; }
+
+.stagger-in > * { animation: reveal-up .55s both; }
+.stagger-in > *:nth-child(2) { animation-delay: .06s; }
+.stagger-in > *:nth-child(3) { animation-delay: .12s; }
+.stagger-in > *:nth-child(4) { animation-delay: .18s; }
+.stagger-in > *:nth-child(5) { animation-delay: .24s; }
+.stagger-in > *:nth-child(6) { animation-delay: .3s; }
+
+@keyframes gradient-drift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes line-flow {
+  0%, 100% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll-led motion: elements are made observable by the small script below,
+   so content remains fully available even when JavaScript is unavailable. */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .65s ease, transform .65s cubic-bezier(.2,.75,.2,1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* The page-load stagger is intentionally quiet; scrolling provides the rhythm. */
+.stagger-in > *,
+.event .card {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+.home-brief {
+  counter-reset: workflow;
+  gap: 12px;
+}
+
+.home-brief article {
+  position: relative;
+  min-height: 126px;
+  padding: 22px 20px 18px 66px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f7fbfc, #eaf3f5);
+}
+
+.home-brief article::before {
+  counter-increment: workflow;
+  content: "0" counter(workflow);
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  color: #c56b2d;
+  font: 800 22px/1 var(--mono);
+}
+
+.home-brief article::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #e8b54c, #19847d);
+}
+
+.home-brief article:nth-child(2) { background: linear-gradient(145deg, #eef7fb, #e7f2ed); }
+.home-brief article:nth-child(3) { background: linear-gradient(145deg, #fff8e9, #f7f1e7); }
+
+.source-status-grid {
+  gap: 12px;
+}
+
+.source-status {
+  position: relative;
+  min-height: 108px;
+  padding: 18px 16px 16px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #fffdf8, #f0f6f7);
+}
+
+.source-status::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: #2a8b81;
+}
+
+.source-status:nth-child(2)::before,
+.source-status:nth-child(5)::before { background: #d99b2b; }
+.source-status:nth-child(3)::before,
+.source-status:nth-child(6)::before { background: #b8574a; }
+.source-status strong { font-size: 26px; }
+
+.query-hub {
+  color: #e8f2f2;
+  background: linear-gradient(135deg, #102844 0%, #174b68 56%, #177b76 100%);
+  border-color: rgba(255,255,255,.18);
+  box-shadow: 0 18px 38px rgba(14, 38, 62, .18);
+  overflow: visible;
+}
+
+.query-hub h2,
+.query-hub p { color: inherit; }
+.query-hub .panel-kicker { color: #ffda83 !important; }
+.query-hub .site-search { border-color: rgba(255,255,255,.36); background: rgba(255,255,255,.97); }
+.query-hub .search-scope span,
+.query-hub .query-actions a { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); color: #e8f2f2; }
+.query-hub .search-scope strong { color: #ffda83; }
+.query-hub .query-actions a:hover { background: rgba(255,255,255,.2); color: #fff; }
+.query-hub .site-search-results { position: static; max-height: min(52vh, 520px); overflow-y: auto; }
+.query-hub .search-result { color: var(--ink); background: #fff; }
+.query-hub .search-result strong { color: var(--ink); }
+.query-hub .search-result span { color: var(--ink-light); }
+.query-hub .search-result-status { color: #dcebed; }
+
+.home-layout .home-card {
+  position: relative;
+  overflow: hidden;
+  border-top: 0;
+}
+
+.home-layout .home-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: #2a8b81;
+}
+.home-layout .home-card.accent-gold::before { background: #d99b2b; }
+.home-layout .home-card.accent-green::before { background: #b8574a; }
+
+.forms-section {
+  padding-top: 10px;
+  border-top: 1px solid rgba(119,157,174,.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Contribution Popup Styles */
 .contribute-popup-overlay {
   position: fixed;
@@ -3584,6 +3938,22 @@ function escapeAttr(value) {
   return escapeHtml(value).replace(/`/g, '&#96;');
 }
 
+function getActiveLang() {
+  const urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang === 'bn' || urlLang === 'en') return urlLang;
+  if (window.WBOBCI18n && window.WBOBCI18n.getCurrentLang) {
+    const moduleLang = window.WBOBCI18n.getCurrentLang();
+    if (moduleLang === 'bn' || moduleLang === 'en') return moduleLang;
+  }
+  try {
+    const savedLang = localStorage.getItem('wb-obc-lang');
+    if (savedLang === 'bn' || savedLang === 'en') return savedLang;
+  } catch (error) {
+    // localStorage can be unavailable in some file:// or privacy contexts.
+  }
+  return document.documentElement.lang === 'bn' || document.body.classList.contains('lang-bn') ? 'bn' : 'en';
+}
+
 function localJsonPath(path) {
   return resolveAssetPath(path);
 }
@@ -3633,66 +4003,91 @@ function showDataLoadWarning() {
 function renderTimelineEvents(events) {
   const timeline = document.getElementById('timeline');
   const loader = document.getElementById('timeline-loader');
-  
-  // Show loader, hide timeline during load
-  if (loader) loader.hidden = false;
-  if (timeline) timeline.innerHTML = '';
-  
-  // Simulate loading delay for animation effect
-  setTimeout(() => {
-    if (!timeline || !Array.isArray(events) || !events.length) {
-      if (loader) loader.hidden = true;
-      return;
-    }
-    
-    timeline.innerHTML = events.map((event, index) => {
-      const attrs = [
-        event.id ? `id="${escapeAttr(event.id)}"` : '',
-        'class="event fade-in"',
-        `style="animation-delay: ${index * 0.05}s"`,
-        event.type ? `data-type="${escapeAttr(event.type)}"` : '',
-        event.confidence ? `data-confidence="${escapeAttr(event.confidence)}"` : '',
-        event.date && /^\d{4}-\d{2}-\d{2}$/.test(event.date) ? `data-date="${escapeAttr(event.date)}"` : '',
-        event.search ? `data-search="${escapeAttr(event.search)}"` : ''
-      ].filter(Boolean).join(' ');
-      return `<li ${attrs}>${event.html || ''}</li>`;
-    }).join('');
-    
-    // Hide loader after content is rendered
-    if (loader) loader.hidden = true;
-  }, 300);
+
+  if (loader) loader.hidden = !Array.isArray(events) || !events.length;
+  if (!timeline) return;
+  if (!Array.isArray(events) || !events.length) {
+    timeline.innerHTML = '';
+    return;
+  }
+
+  const lang = getActiveLang();
+  timeline.innerHTML = events.map(event => {
+    const attrs = [
+      event.id ? `id="${escapeAttr(event.id)}"` : '',
+      'class="event fade-in"',
+      event.type ? `data-type="${escapeAttr(event.type)}"` : '',
+      event.confidence ? `data-confidence="${escapeAttr(event.confidence)}"` : '',
+      event.date && /^\d{4}-\d{2}-\d{2}$/.test(event.date) ? `data-date="${escapeAttr(event.date)}"` : '',
+      event.search ? `data-search="${escapeAttr(event.search)}"` : ''
+    ].filter(Boolean).join(' ');
+    const body = (lang === 'bn' && event.html_bn) ? event.html_bn : (event.html || '');
+    return `<li ${attrs}>${body}</li>`;
+  }).join('');
 }
 
 function renderCaseEvents(events) {
   const timeline = document.querySelector('#cases .case-timeline');
   const loader = document.getElementById('litigation-loader');
-  
-  // Show loader, hide timeline during load
-  if (loader) loader.hidden = false;
-  if (timeline) timeline.innerHTML = '';
-  
-  // Simulate loading delay for animation effect
-  setTimeout(() => {
-    if (!timeline || !Array.isArray(events) || !events.length) {
-      if (loader) loader.hidden = true;
-      return;
-    }
-    
-    timeline.innerHTML = events.map((event, index) => {
-      const id = event.id ? ` id="${escapeAttr(event.id)}"` : '';
-      return `<li${id} class="case-event fade-in" style="animation-delay: ${index * 0.05}s">${event.html || ''}</li>`;
-    }).join('');
-    
-    // Hide loader after content is rendered
-    if (loader) loader.hidden = true;
-  }, 300);
+
+  if (loader) loader.hidden = !Array.isArray(events) || !events.length;
+  if (!timeline) return;
+  if (!Array.isArray(events) || !events.length) {
+    timeline.innerHTML = '';
+    return;
+  }
+
+  const lang = getActiveLang();
+  timeline.innerHTML = events.map(event => {
+    const id = event.id ? ` id="${escapeAttr(event.id)}"` : '';
+    const body = (lang === 'bn' && event.html_bn) ? event.html_bn : (event.html || '');
+    return `<li${id} class="case-event fade-in">${body}</li>`;
+  }).join('');
+}
+
+function updateCaseStats(events) {
+  const total = Array.isArray(events) ? events.length : 0;
+  const resolved = Array.isArray(events)
+    ? events.filter(event => /\b(disposed|dismissed|withdrawn|settled)\b/i.test(`${event.title || ''} ${event.html || ''}`)).length
+    : 0;
+  const totalEl = document.getElementById('total-cases');
+  const pendingEl = document.getElementById('pending-cases');
+  const resolvedEl = document.getElementById('resolved-cases');
+  if (totalEl) totalEl.textContent = String(total);
+  if (pendingEl) pendingEl.textContent = String(Math.max(0, total - resolved));
+  if (resolvedEl) resolvedEl.textContent = String(resolved);
+}
+
+function applyCaseSearch() {
+  const input = document.getElementById('case-search');
+  const empty = document.getElementById('cases-empty');
+  const term = normalise(input?.value || '');
+  const rows = Array.from(document.querySelectorAll('#cases .case-event'));
+  let visible = 0;
+  rows.forEach(row => {
+    const show = !term || normalise(row.textContent).includes(term);
+    row.hidden = !show;
+    if (show) visible += 1;
+  });
+  if (empty) empty.classList.toggle('hidden', visible !== 0 || !rows.length);
 }
 
 const TIMELINE_EVENTS = loadJsonSync('timeline_events.json');
 const CASE_EVENTS = loadJsonSync('case_events.json');
 renderTimelineEvents(TIMELINE_EVENTS);
 renderCaseEvents(CASE_EVENTS);
+updateCaseStats(CASE_EVENTS);
+document.getElementById('case-search')?.addEventListener('input', applyCaseSearch);
+applyCaseSearch();
 showDataLoadWarning();
+
+// Re-render language-sensitive lists when the site language changes
+document.addEventListener('wbobc:langchange', () => {
+  renderTimelineEvents(TIMELINE_EVENTS);
+  renderCaseEvents(CASE_EVENTS);
+  if (typeof applyFilters === 'function') applyFilters();
+  applyCaseSearch();
+});
 
 function titleCase(value) {
   return String(value || '').replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
@@ -4365,6 +4760,15 @@ document.querySelectorAll('[data-lang-switch]').forEach(link => {
 
 // Language toggle functionality
 const langButtons = document.querySelectorAll('.lang-btn');
+
+function syncLanguageButtons(lang = getActiveLang()) {
+  langButtons.forEach(button => {
+    const isActive = button.getAttribute('data-lang') === lang;
+    button.classList.toggle('active', isActive);
+    button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  });
+}
+
 langButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const lang = btn.getAttribute('data-lang');
@@ -4372,13 +4776,7 @@ langButtons.forEach(btn => {
       window.WBOBCI18n.switchLanguage(lang);
     }
     
-    // Update button states
-    langButtons.forEach(b => {
-      b.classList.remove('active');
-      b.setAttribute('aria-pressed', 'false');
-    });
-    btn.classList.add('active');
-    btn.setAttribute('aria-pressed', 'true');
+    syncLanguageButtons(lang);
     
     // Update URL without reload
     const url = new URL(window.location);
@@ -4386,6 +4784,11 @@ langButtons.forEach(btn => {
     window.history.pushState({}, '', url);
   });
 });
+
+document.addEventListener('wbobc:langchange', event => {
+  syncLanguageButtons(event.detail?.lang);
+});
+syncLanguageButtons();
 
 function tabForHash(hash) {
   const id = String(hash || '').replace(/^#/, '');
@@ -4429,12 +4832,14 @@ function showTab(tabName, targetHash) {
   });
 
   const hash = targetHash || `#${tabName}`;
+  const target = hash && document.getElementById(hash.replace(/^#/, ''));
+  const revealTarget = target?.closest('.scroll-reveal');
+  if (revealTarget) revealTarget.classList.add('is-visible');
   sectionLinks.forEach(link => {
     const linkedTab = tabForHash(link.getAttribute('href'));
     link.classList.toggle('active', linkedTab === tabName && link.getAttribute('href') === hash);
   });
 
-  const target = hash && document.getElementById(hash.replace(/^#/, ''));
   const isTopLevelTab = hash === `#${tabName}` || (target && target.dataset && target.dataset.tabPanel === tabName);
   if (target && !isTopLevelTab && hash !== '#guide' && hash !== '#query-hub' && hash !== '#home') {
     requestAnimationFrame(() => {
@@ -4593,7 +4998,6 @@ document.addEventListener('keydown', event => {
 
 const search = document.querySelector('#tl-search');
 const buttons = Array.from(document.querySelectorAll('.filter-btn'));
-const events = Array.from(document.querySelectorAll('.event, .tl-event'));
 let activeFilter = 'all';
 
 function matchesFilter(event) {
@@ -4604,6 +5008,7 @@ function matchesFilter(event) {
 
 function applyFilters() {
   const term = normalise(search && search.value);
+  const events = Array.from(document.querySelectorAll('#timeline .event, #timeline .tl-event'));
   events.forEach(event => {
     const text = normalise(event.textContent + ' ' + (event.dataset.search || ''));
     const visible = matchesFilter(event) && (!term || text.includes(term));
@@ -4730,6 +5135,52 @@ if (siteNav) {
 window.addEventListener('resize', () => {
   if (!isMobileNav()) closeMobileNav();
 });
+
+// Reveal meaningful groups as the reader reaches them. This keeps the initial
+// viewport calm and gives long research pages a clear sense of progression.
+(function initScrollReveals() {
+  const revealSelectors = [
+    '.home-brief',
+    '.source-status-grid',
+    '.query-hub',
+    '.home-layout',
+    '.forms-section',
+    '.report-grid',
+    '.framework-grid',
+    '.research-grid',
+    '.corpus-overview',
+    '.timeline .event',
+    '.case-event',
+    '.preview-grid',
+    '.cloud-note'
+  ];
+  const elements = Array.from(document.querySelectorAll(revealSelectors.join(',')));
+  const hashTarget = window.location.hash
+    ? document.getElementById(window.location.hash.replace(/^#/, ''))
+    : null;
+  elements.forEach((element, index) => {
+    element.classList.add('scroll-reveal');
+    const siblings = element.parentElement ? Array.from(element.parentElement.children) : [];
+    const siblingIndex = Math.max(0, siblings.indexOf(element));
+    element.style.setProperty('--reveal-delay', `${Math.min(siblingIndex * 55, 220)}ms`);
+    if (hashTarget && (element === hashTarget || element.contains(hashTarget))) element.classList.add('is-visible');
+  });
+
+  if (!('IntersectionObserver' in window)) {
+    elements.forEach(element => element.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  elements.forEach(element => observer.observe(element));
+})();
 
 // Contribution Popup Logic
 (function() {

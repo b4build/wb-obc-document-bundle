@@ -1,7 +1,7 @@
 {
-  "name": "WB OBC Documentation",
-  "short_name": "WB OBC Docs",
-  "description": "West Bengal OBC Documents Timeline - A consolidated view of notifications, court orders, and policy documents from 1993-2026",
+  "name": "WB OBC Archive",
+  "short_name": "WB OBC Archive",
+  "description": "WB OBC Archive - A consolidated archive of West Bengal OBC notifications, court orders, hearings, source PDFs, and policy documents from 1993-2026",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4f1eb",

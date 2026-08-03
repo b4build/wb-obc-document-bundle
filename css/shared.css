@@ -1,4 +1,4 @@
-/* Shared styles for WB OBC Documentation - Single source for EN/BN */
+/* Shared styles for WB OBC Archive - Single source for EN/BN */
 
 :root {
   --bg: #ffffff;
@@ -544,6 +544,49 @@ tr:hover td { background: var(--card-bg); }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------------------------
+   Reusable interaction/animation utilities.
+   Add these classes to any card, grid item, or stat block on any
+   page that links this stylesheet — no per-page CSS needed.
+   .lift            hover/focus elevation for a clickable card
+   .stagger-in > *  fades+rises each direct child in on load, one
+                    after another (works for grids up to 10 items)
+   .accent-*        4px top accent stripe for visual variety in a
+                     grid of otherwise-identical cards
+   --------------------------------------------------------------- */
+.lift {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.lift:hover, .lift:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg, 0 10px 25px rgba(0,0,0,0.15));
+}
+
+.stagger-in > * {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+.stagger-in > *:nth-child(1) { animation-delay: 0.03s; }
+.stagger-in > *:nth-child(2) { animation-delay: 0.09s; }
+.stagger-in > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-in > *:nth-child(4) { animation-delay: 0.21s; }
+.stagger-in > *:nth-child(5) { animation-delay: 0.27s; }
+.stagger-in > *:nth-child(6) { animation-delay: 0.33s; }
+.stagger-in > *:nth-child(7) { animation-delay: 0.39s; }
+.stagger-in > *:nth-child(8) { animation-delay: 0.45s; }
+.stagger-in > *:nth-child(9) { animation-delay: 0.51s; }
+.stagger-in > *:nth-child(10) { animation-delay: 0.57s; }
+
+.accent-blue   { border-top: 4px solid #245478 !important; }
+.accent-gold   { border-top: 4px solid #b57917 !important; }
+.accent-green  { border-top: 4px solid #1a5c3e !important; }
+.accent-red    { border-top: 4px solid #a94331 !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger-in > * { opacity: 1; animation: none; }
+  .lift:hover, .lift:focus-visible { transform: none; }
 }
 
 /* Data load warning */

@@ -1,5 +1,5 @@
-// Service Worker for WB OBC Documentation - Offline Support
-const CACHE_NAME = 'wb-obc-docs-v1';
+// Service Worker for WB OBC Archive - Offline Support
+const CACHE_NAME = 'wb-obc-archive-v4';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -25,7 +25,9 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[SW] Caching core assets');
-      return cache.addAll(ASSETS_TO_CACHE);
+      return Promise.allSettled(
+        ASSETS_TO_CACHE.map(asset => cache.add(asset))
+      );
     }).catch((err) => {
       console.log('[SW] Cache install error:', err);
     })
@@ -62,6 +64,23 @@ self.addEventListener('fetch', (event) => {
     if (url.hostname === 'raw.githubusercontent.com') {
       event.respondWith(fetch(event.request));
     }
+    return;
+  }
+
+  // App shell, scripts, styles, and JSON must update when the bundle changes.
+  // Use the network first for these files, while retaining the cache as an
+  // offline fallback. Large PDF assets remain cache-first below.
+  const isAppFile = /\.(?:html|js|css|json)$/.test(url.pathname) || event.request.mode === 'navigate';
+  if (isAppFile) {
+    event.respondWith(
+      fetch(event.request).then(networkResponse => {
+        if (networkResponse && networkResponse.status === 200) {
+          const responseToCache = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseToCache));
+        }
+        return networkResponse;
+      }).catch(() => caches.match(event.request))
+    );
     return;
   }
   
