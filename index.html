@@ -30,7 +30,16 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="site-header-inner">
-      <a href="#home" class="site-logo" data-i18n="siteLogo">WB OBC Archive</a>
+      <a href="#home" class="site-logo" aria-label="WB OBC Archive — home">
+        <svg class="site-logo-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+          <rect x="1" y="1" width="30" height="30" rx="8" fill="#10253f" stroke="#f0c96a" stroke-width="1.5"/>
+          <rect x="9" y="8" width="14" height="16" rx="1.5" fill="none" stroke="#f0c96a" stroke-width="1.6"/>
+          <line x1="12" y1="12.5" x2="20" y2="12.5" stroke="#f0c96a" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="12" y1="16" x2="20" y2="16" stroke="#f0c96a" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="12" y1="19.5" x2="17" y2="19.5" stroke="#f0c96a" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span class="site-logo-text" data-i18n="siteLogo">WB OBC Archive</span>
+      </a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -74,7 +83,7 @@
 
   <section class="hero">
     <div class="hero-inner wrap">
-      <p class="hero-eyebrow" id="hero-eyebrow" data-i18n="heroEyebrow">West Bengal · Backward Classes Welfare Department · 1993–2026</p>
+      <p class="hero-eyebrow" id="hero-eyebrow" data-i18n="heroEyebrow">West Bengal OBC Archive · 1993–2026</p>
       <h1 id="hero-title" data-i18n="heroTitle">OBC Reservation and List Timeline</h1>
       <p class="hero-sub" id="hero-sub" data-i18n="heroSub">A consolidated view of the PDFs in <strong>OBC OLD</strong> and <strong>OBC 2025</strong>, starting with the 1993 Commission Act and continuing through the 2026 notification and litigation record.</p>
       <div class="hero-stats stagger-in">
@@ -132,11 +141,11 @@
           <div id="site-search-results" class="site-search-results" aria-live="polite"></div>
         </div>
         <div class="search-footer">
-          <div class="search-scope" aria-label="Search coverage">
-            <span><strong data-i18n="searchScopeTimeline">Timeline</strong> <span data-i18n="searchScopeTimelineDesc">notification trail</span></span>
-            <span><strong data-i18n="searchScopeLitigation">Litigation</strong> <span data-i18n="searchScopeLitigationDesc">court orders and status notes</span></span>
-            <span><strong data-i18n="searchScopeOBCList">OBC List</strong> <span data-i18n="searchScopeOBCListDesc">current and historical class rows</span></span>
-            <span><strong data-i18n="searchScopePDFs">Source PDFs</strong> <span data-i18n="searchScopePDFsDesc">extracted document text</span></span>
+          <div class="search-scope compact" aria-label="Search coverage">
+            <span><strong data-i18n="searchScopeTimeline">Timeline</strong></span>
+            <span><strong data-i18n="searchScopeLitigation">Litigation</strong></span>
+            <span><strong data-i18n="searchScopeOBCList">OBC List</strong></span>
+            <span><strong data-i18n="searchScopePDFs">Source PDFs</strong></span>
           </div>
           <div class="query-actions" aria-label="Quick navigation">
             <a href="#timeline" data-i18n="queryAction1">Trace timeline</a>
@@ -145,6 +154,10 @@
             <a href="#documents" data-i18n="queryAction4">Search source PDFs</a>
             <a href="#reports" data-i18n="queryAction5">Check policy basis</a>
             <a href="#about" data-i18n="queryAction6">Read scope &amp; source care</a>
+          </div>
+          <div class="query-actions query-actions-utility" aria-label="Bundle resources">
+            <a href="obc_pdf_manifest.json" data-i18n="homeStatus5Num">JSON</a>
+            <a href="https://github.com/b4build/wb-obc-document-bundle" target="_blank" rel="noreferrer" data-i18n="homeStatus6Num">GitHub</a>
           </div>
         </div>
       </div>
@@ -153,42 +166,11 @@
         <article><strong data-i18n="homeStep2Title">Follow the record</strong><span data-i18n="homeStep2Desc">Use Timeline for policy changes and Litigation for court orders and procedural status.</span></article>
         <article><strong data-i18n="homeStep3Title">Open the source</strong><span data-i18n="homeStep3Desc">Every summary should lead to a bundled PDF or a clearly labelled original source link.</span></article>
       </section>
-      <div class="source-status-grid stagger-in">
-        <a class="source-status lift" href="#documents"><strong data-i18n="homeStatus1Num">84</strong><span data-i18n="homeStatus1Desc">PDF sources bundled locally across notifications, hearings, reports, and litigation records</span></a>
-        <a class="source-status lift" href="#public-hearings"><strong data-i18n="homeStatus2Num">17</strong><span data-i18n="homeStatus2Desc">hearing / public notice PDFs bundled locally</span></a>
-        <a class="source-status lift" href="#reports"><strong data-i18n="homeStatus3Num">6</strong><span data-i18n="homeStatus3Desc">policy/process sources bundled for context</span></a>
-        <a class="source-status lift" href="#missing-records"><strong data-i18n="homeStatus4Num">5</strong><span data-i18n="homeStatus4Desc">priority evidence gaps and follow-ups tracked</span></a>
-        <a class="source-status lift" href="obc_pdf_manifest.json"><strong data-i18n="homeStatus5Num">JSON</strong><span data-i18n="homeStatus5Desc">renamed PDF manifest for local or cloud use</span></a>
-        <a class="source-status lift" href="https://github.com/b4build/wb-obc-document-bundle" target="_blank" rel="noreferrer"><strong data-i18n="homeStatus6Num">GitHub</strong><span data-i18n="homeStatus6Desc">Repository for the OBC document bundle</span></a>
-      </div>
-
-      <div id="query-hub" class="query-hub" aria-label="OBC query hub">
-        <div class="search-intro">
-          <p class="panel-kicker" data-i18n="searchHubKicker">Bundle search</p>
-          <h2 data-i18n="searchHubTitle">Search the timeline, litigation, OBC list, and source PDFs together</h2>
-          <p data-i18n="searchHubDesc">This searches connected indexes at once: timeline entries, litigation records, class-list rows, and extracted document text. Results are labelled by source area and open the matching tab.</p>
-        </div>
-        <div class="search-panel">
-          <label class="visually-hidden" for="site-search">Search the research bundle</label>
-          <input id="site-search" class="search-input site-search" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Try: 945 BCW, 944 withdrawal, Aatmadeep, certificate, JEMAS" autocomplete="off" aria-controls="site-search-results">
-          <div id="site-search-results" class="site-search-results" aria-live="polite"></div>
-        </div>
-        <div class="search-footer">
-          <div class="search-scope" aria-label="Search coverage">
-            <span><strong data-i18n="searchScopeTimeline">Timeline</strong> <span data-i18n="searchScopeTimelineDesc">notification trail</span></span>
-            <span><strong data-i18n="searchScopeLitigation">Litigation</strong> <span data-i18n="searchScopeLitigationDesc">court orders and status notes</span></span>
-            <span><strong data-i18n="searchScopeOBCList">OBC List</strong> <span data-i18n="searchScopeOBCListDesc">current and historical class rows</span></span>
-            <span><strong data-i18n="searchScopePDFs">Source PDFs</strong> <span data-i18n="searchScopePDFsDesc">extracted document text</span></span>
-          </div>
-          <div class="query-actions" aria-label="Quick navigation">
-            <a href="#timeline" data-i18n="queryAction1">Trace timeline</a>
-            <a href="#cases" data-i18n="queryAction2">Track litigation</a>
-            <a href="#obc-list" data-i18n="queryAction3">Check class status</a>
-            <a href="#documents" data-i18n="queryAction4">Search source PDFs</a>
-            <a href="#reports" data-i18n="queryAction5">Check policy basis</a>
-            <a href="#about" data-i18n="queryAction6">Read scope &amp; source care</a>
-          </div>
-        </div>
+      <div class="source-status-grid stagger-in" id="home-stats">
+        <a class="source-status lift" href="#documents" data-count-target="84"><strong data-i18n="homeStatus1Num" data-stat="0">84</strong><span data-i18n="homeStatus1Desc">PDF sources bundled locally across notifications, hearings, reports, and litigation records</span></a>
+        <a class="source-status lift" href="#public-hearings" data-count-target="17"><strong data-i18n="homeStatus2Num" data-stat="0">17</strong><span data-i18n="homeStatus2Desc">hearing / public notice PDFs bundled locally</span></a>
+        <a class="source-status lift" href="#reports" data-count-target="6"><strong data-i18n="homeStatus3Num" data-stat="0">6</strong><span data-i18n="homeStatus3Desc">policy/process sources bundled for context</span></a>
+        <a class="source-status lift" href="#missing-records" data-count-target="5"><strong data-i18n="homeStatus4Num" data-stat="0">5</strong><span data-i18n="homeStatus4Desc">priority evidence gaps and follow-ups tracked</span></a>
       </div>
 
       <div class="home-layout stagger-in">
@@ -4279,6 +4261,181 @@ input[type="date"]:focus {
   border-color: #1b5d7d;
   box-shadow: 0 0 0 3px rgba(27, 93, 125, 0.1);
 }
+
+/* ---------------------------------------------------------------
+   Homepage refresh: compact search-scope row, brighter stat cards,
+   utility buttons, and a wider responsive breakpoint for the
+   quick-reference table so it doesn't need to scroll on laptop-
+   width screens. Placed last so it wins over older duplicate rules.
+   --------------------------------------------------------------- */
+.search-scope.compact {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 8px;
+  padding: 0;
+  background: none;
+  border: 0;
+  justify-content: start;
+}
+.search-scope.compact span {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(36, 84, 120, 0.08);
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: #1b3a54;
+}
+.search-scope.compact strong {
+  font-weight: 700;
+  color: #1b3a54;
+}
+/* .query-hub is a dark panel elsewhere in this stylesheet (white/gold
+   text on a dark gradient) — the compact pills need matching contrast
+   here, since a light-mode default would render invisible on it. */
+.query-hub .search-scope.compact span {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  color: #e8f2f2;
+}
+.query-hub .search-scope.compact strong {
+  color: #ffda83;
+}
+
+.query-actions-utility {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(0,0,0,0.08);
+}
+.query-actions-utility a {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12.5px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.04);
+  color: #46617a;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+.query-actions-utility a:hover {
+  background: rgba(0,0,0,0.08);
+}
+.query-hub .query-actions-utility {
+  border-top-color: rgba(255,255,255,.2);
+}
+.query-hub .query-actions-utility a {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  color: #e8f2f2;
+}
+.query-hub .query-actions-utility a:hover {
+  background: rgba(255,255,255,.2);
+  color: #fff;
+}
+
+#home-stats.source-status-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+#home-stats .source-status {
+  background: #ffffff !important;
+  border: 1px solid #e2e8ee;
+  border-radius: 12px;
+  padding: 14px 16px !important;
+  min-height: 0 !important;
+  box-shadow: 0 2px 6px rgba(15, 40, 70, 0.06);
+}
+#home-stats .source-status::before { display: none; }
+#home-stats .source-status:nth-child(1) { border-top: 3px solid #245478; }
+#home-stats .source-status:nth-child(2) { border-top: 3px solid #b57917; }
+#home-stats .source-status:nth-child(3) { border-top: 3px solid #1a5c3e; }
+#home-stats .source-status:nth-child(4) { border-top: 3px solid #a94331; }
+#home-stats .source-status strong {
+  font-size: 28px !important;
+  color: #16324a !important;
+  display: block;
+  margin-bottom: 2px;
+}
+#home-stats .source-status span {
+  color: #55677a !important;
+  font-size: 12.5px !important;
+  line-height: 1.4;
+}
+@media (max-width: 720px) {
+  #home-stats.source-status-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Quick-reference table: switch to a stacked card layout earlier
+   than the general 640px breakpoint, since 3 text-heavy columns
+   don't fit comfortably down to laptop widths. */
+@media (max-width: 900px) {
+  .home-table.table-wrap {
+    overflow: visible;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+  .home-table table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  .home-table thead { display: none; }
+  .home-table table, .home-table tbody, .home-table tr, .home-table td {
+    display: block;
+    width: 100%;
+  }
+  .home-table tr {
+    background: #fff;
+    border: 1px solid #e2e8ee;
+    border-radius: 12px;
+    padding: 4px 0;
+  }
+  .home-table td {
+    padding: 8px 14px;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+  }
+  .home-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #8a97a6;
+    margin-bottom: 2px;
+  }
+}
+
+/* Header logo: icon + wordmark, icon-only on narrow screens */
+.site-logo {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 9px;
+}
+.site-logo-mark {
+  flex: 0 0 auto;
+  display: block;
+}
+.site-logo-text {
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .site-logo-text {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
 </style>
 
 
@@ -4902,6 +5059,57 @@ renderObcClassList();
 renderPublicHearings();
 renderDocumentInventory();
 labelResponsiveTables();
+
+// --- Homepage stat cards: real counts + count-up animation ---
+function refreshHomeStatDigits() {
+  const lang = (window.WBOBCI18n && window.WBOBCI18n.getCurrentLang) ? window.WBOBCI18n.getCurrentLang() : 'en';
+  const bnDigits = { '0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯' };
+  document.querySelectorAll('#home-stats [data-count-target]').forEach(el => {
+    const strongEl = el.querySelector('strong');
+    if (!strongEl) return;
+    const value = strongEl.dataset.finalValue || strongEl.textContent;
+    strongEl.dataset.finalValue = value;
+    strongEl.textContent = lang === 'bn' ? String(value).replace(/[0-9]/g, d => bnDigits[d]) : value;
+  });
+}
+
+function animateHomeStats() {
+  const docCount = OBC_DOCS.length || 84;
+  const hearingCount = PUBLIC_HEARINGS.length || 17;
+  const reportCount = document.querySelectorAll('#reports .report-card').length || 6;
+  const cards = document.querySelectorAll('#home-stats [data-count-target]');
+  const targets = [docCount, hearingCount, reportCount, null]; // 4th (gaps) stays as authored
+  cards.forEach((card, i) => {
+    const target = targets[i];
+    if (target == null) return;
+    card.dataset.countTarget = String(target);
+  });
+  if (!('IntersectionObserver' in window)) { refreshHomeStatDigits(); return; }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const strongEl = entry.target.querySelector('strong');
+      const target = parseInt(entry.target.dataset.countTarget, 10);
+      if (!strongEl || Number.isNaN(target)) { observer.unobserve(entry.target); return; }
+      const suffix = strongEl.textContent.replace(/[0-9]/g, '');
+      const duration = 900;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        strongEl.textContent = Math.round(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+        else { strongEl.dataset.finalValue = target + suffix; refreshHomeStatDigits(); }
+      }
+      requestAnimationFrame(tick);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+  cards.forEach(card => observer.observe(card));
+}
+animateHomeStats();
+document.addEventListener('wbobc:langchange', refreshHomeStatDigits);
+
 ['obc-class-search', 'obc-source-filter'].forEach(id => {
   document.getElementById(id)?.addEventListener('input', filterObcClassList);
 });
@@ -4936,7 +5144,7 @@ let previousBodyOverflow = '';
 
 const HERO_CONTENT = {
   home: {
-    eyebrow: 'West Bengal · Backward Classes Welfare Department · 1993–2026',
+    eyebrow: 'West Bengal OBC Archive · 1993–2026',
     titleKey: 'heroTitle',
     subKey: 'heroSub',
     stats: [
