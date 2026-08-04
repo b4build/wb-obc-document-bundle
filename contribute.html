@@ -271,7 +271,7 @@
         link.href = `contribute.html?lang=${link.dataset.langOption}${window.location.hash || ''}`;
       });
       const backLink = document.getElementById('back-link');
-      if (backLink) backLink.href = lang === 'bn' ? 'obc_timeline_bn.html#home' : 'index.html#home';
+      if (backLink) backLink.href = lang === 'bn' ? 'index.html?lang=bn#home' : 'index.html#home';
     }
 
     applyLanguage(activeLanguage());

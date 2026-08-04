@@ -5,7 +5,6 @@ const ASSETS_TO_CACHE = [
   './index.html',
   './index-standalone.html',
   './contribute.html',
-  './obc_timeline_bn.html',
   './pwa-manifest.json',
   './obc_documents.json',
   './obc_classes.json',

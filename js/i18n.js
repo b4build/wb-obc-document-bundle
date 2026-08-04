@@ -128,80 +128,9 @@
       });
     });
 
-    // Set up navigation dropdown toggles
-    setupNavDropdowns();
-
     // Initial render
     updatePageContent();
     document.dispatchEvent(new CustomEvent('wbobc:langchange', { detail: { lang: currentLang } }));
-  }
-
-  // Setup navigation dropdown functionality
-  function setupNavDropdowns() {
-    // Handle nav group toggle buttons (dropdowns)
-    document.querySelectorAll('.nav-group-toggle').forEach(toggle => {
-      toggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-        
-        // Close all other dropdowns
-        document.querySelectorAll('.nav-group-toggle[aria-expanded="true"]').forEach(other => {
-          if (other !== toggle) {
-            other.setAttribute('aria-expanded', 'false');
-          }
-        });
-        
-        // Toggle current dropdown
-        toggle.setAttribute('aria-expanded', !isExpanded);
-      });
-    });
-
-    // Handle mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const siteNav = document.querySelector('.site-nav');
-    const navOverlay = document.querySelector('.nav-overlay');
-    
-    if (navToggle && siteNav) {
-      navToggle.addEventListener('click', () => {
-        const isOpen = siteNav.classList.contains('open');
-        siteNav.classList.toggle('open', !isOpen);
-        navToggle.setAttribute('aria-expanded', !isOpen);
-        if (navOverlay) {
-          navOverlay.classList.toggle('open', !isOpen);
-        }
-      });
-    }
-
-    // Close nav when clicking overlay
-    if (navOverlay && siteNav) {
-      navOverlay.addEventListener('click', () => {
-        siteNav.classList.remove('open');
-        navToggle?.setAttribute('aria-expanded', 'false');
-        navOverlay.classList.remove('open');
-      });
-    }
-
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.nav-group')) {
-        document.querySelectorAll('.nav-group-toggle[aria-expanded="true"]').forEach(toggle => {
-          toggle.setAttribute('aria-expanded', 'false');
-        });
-      }
-    });
-
-    // Handle keyboard navigation for dropdowns
-    document.querySelectorAll('.nav-group-toggle').forEach(toggle => {
-      toggle.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggle.click();
-        }
-        if (e.key === 'Escape') {
-          toggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
   }
 
   // Expose globally
