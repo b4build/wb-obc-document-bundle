@@ -3457,6 +3457,10 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSyst
     display: inline-flex;
   }
 
+  .nav-close {
+    display: inline-flex;
+  }
+
   .site-header-inner {
     flex-direction: row;
     align-items: center;
@@ -5750,6 +5754,12 @@ if (navToggle) {
 
 if (navCloseButton) navCloseButton.addEventListener('click', closeMobileNav);
 if (navOverlay) navOverlay.addEventListener('click', closeMobileNav);
+
+document.addEventListener('click', event => {
+  if (!siteNav || !siteNav.classList.contains('is-open')) return;
+  if (event.target.closest('#site-nav') || event.target.closest('.nav-toggle')) return;
+  closeMobileNav();
+});
 
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') closeMobileNav();
