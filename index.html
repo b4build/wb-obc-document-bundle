@@ -30,7 +30,7 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="site-header-inner">
-      <span class="site-logo" data-i18n="siteLogo">WB OBC Archive</span>
+      <a href="#home" class="site-logo" data-i18n="siteLogo">WB OBC Archive</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -116,9 +116,37 @@
 
     <section id="home" class="home-panel tab-panel" data-tab-panel="home" aria-label="Home dashboard">
       <div class="home-intro">
-        <p class="panel-kicker" data-i18n="homePanelKicker">Offline bundle</p>
+        <p class="panel-kicker" data-i18n="homePanelKicker">Research bundle</p>
         <h2 data-i18n="homePanelTitle">Research Home</h2>
-        <p data-i18n="homePanelIntro">Use this single HTML as a source-led research desk. It connects statutory background, notifications, certificate and roster records, hearing notices, policy reports, litigation, and the PDFs that support each claim.</p>
+        <p data-i18n="homePanelIntro">A unified OBC archive for statutory context, notifications, certificates, hearings, policy reports, litigation, and bundled source PDFs.</p>
+      </div>
+      <div id="query-hub" class="query-hub" aria-label="OBC query hub">
+        <div class="search-intro">
+          <p class="panel-kicker" data-i18n="searchHubKicker">Bundle search</p>
+          <h2 data-i18n="searchHubTitle">Search the timeline, litigation, OBC list, and source PDFs together</h2>
+          <p data-i18n="searchHubDesc">This searches connected indexes at once: timeline entries, litigation records, class-list rows, and extracted document text. Results are labelled by source area and open the matching tab.</p>
+        </div>
+        <div class="search-panel">
+          <label class="visually-hidden" for="site-search">Search the research bundle</label>
+          <input id="site-search" class="search-input site-search" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Try: 945 BCW, 944 withdrawal, Aatmadeep, certificate, JEMAS" autocomplete="off" aria-controls="site-search-results">
+          <div id="site-search-results" class="site-search-results" aria-live="polite"></div>
+        </div>
+        <div class="search-footer">
+          <div class="search-scope" aria-label="Search coverage">
+            <span><strong data-i18n="searchScopeTimeline">Timeline</strong> <span data-i18n="searchScopeTimelineDesc">notification trail</span></span>
+            <span><strong data-i18n="searchScopeLitigation">Litigation</strong> <span data-i18n="searchScopeLitigationDesc">court orders and status notes</span></span>
+            <span><strong data-i18n="searchScopeOBCList">OBC List</strong> <span data-i18n="searchScopeOBCListDesc">current and historical class rows</span></span>
+            <span><strong data-i18n="searchScopePDFs">Source PDFs</strong> <span data-i18n="searchScopePDFsDesc">extracted document text</span></span>
+          </div>
+          <div class="query-actions" aria-label="Quick navigation">
+            <a href="#timeline" data-i18n="queryAction1">Trace timeline</a>
+            <a href="#cases" data-i18n="queryAction2">Track litigation</a>
+            <a href="#obc-list" data-i18n="queryAction3">Check class status</a>
+            <a href="#documents" data-i18n="queryAction4">Search source PDFs</a>
+            <a href="#reports" data-i18n="queryAction5">Check policy basis</a>
+            <a href="#about" data-i18n="queryAction6">Read scope &amp; source care</a>
+          </div>
+        </div>
       </div>
       <section class="home-brief stagger-in" aria-label="How to use this site">
         <article><strong data-i18n="homeStep1Title">Start with the question</strong><span data-i18n="homeStep1Desc">Search a community, notification, case number, date, or legal term.</span></article>
@@ -1895,28 +1923,51 @@ main {
 }
 
 .source-status {
-  min-height: 86px;
-  padding: 14px;
-  background: #f8faf9;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  position: relative;
+  min-height: 82px;
+  padding: 14px 14px 12px;
+  background: #fff;
+  border: 1px solid rgba(26,58,92,.08);
+  border-radius: 12px;
+  box-shadow: 0 10px 22px rgba(17,37,63,.06);
   text-decoration: none;
+  overflow: hidden;
 }
+
+.source-status::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  border-radius: 12px 12px 0 0;
+  background: #2a8b81;
+}
+
+.source-status:nth-child(1) { background: rgba(42,139,129,.08); }
+.source-status:nth-child(2) { background: rgba(217,155,43,.08); }
+.source-status:nth-child(3) { background: rgba(184,87,74,.08); }
+.source-status:nth-child(4) { background: rgba(57,102,162,.08); }
+.source-status:nth-child(5) { background: rgba(217,155,43,.08); }
+.source-status:nth-child(6) { background: rgba(184,87,74,.08); }
+.source-status:nth-child(2)::before,
+.source-status:nth-child(5)::before { background: #d99b2b; }
+.source-status:nth-child(3)::before,
+.source-status:nth-child(6)::before { background: #b8574a; }
 
 .source-status strong {
   display: block;
-  color: var(--accent);
+  color: #10253f;
   font-family: var(--mono);
-  font-size: 22px;
-  line-height: 1.1;
+  font-size: 20px;
+  line-height: 1.05;
 }
 
 .source-status span {
   display: block;
-  margin-top: 6px;
+  margin-top: 5px;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.35;
+  font-size: 12.75px;
+  line-height: 1.45;
 }
 
 .cloud-note {
@@ -1970,38 +2021,50 @@ main {
 }
 
 .search-scope {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
   margin: 0;
 }
 
 .search-scope span {
   display: inline-flex;
-  gap: 5px;
-  align-items: baseline;
-  min-height: 28px;
-  padding: 4px 8px;
-  background: var(--panel);
-  border: 1px solid var(--border);
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-start;
+  padding: 8px 10px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(26,58,92,.12);
   border-radius: 999px;
-  color: var(--muted);
+  color: var(--text);
   font-size: 12px;
+}
+
+.search-scope span span {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.3;
 }
 
 .search-scope strong {
   color: var(--accent);
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: .04em;
+  letter-spacing: .06em;
   text-transform: uppercase;
 }
 
 .query-actions {
   display: grid;
-  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 8px;
-  min-width: min(440px, 100%);
+  min-width: 0;
+}
+
+.query-actions a {
+  min-height: 36px;
+  padding: 9px 10px;
+  font-size: 12px;
 }
 
 .query-actions a {
